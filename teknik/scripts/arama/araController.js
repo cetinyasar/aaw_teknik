@@ -12,37 +12,27 @@
 				});
 			}
 
-			$scope.kriterAl = function ()
-			{
+			$scope.kriterAl = function () {
 
 				var modalInstance = $modal.open({
 					templateUrl: '/views/arama/filtre.html',
-					scope: $scope
+					controller: filtreServis,
+					scope: $scope,
+					resolve: {
+						aaaa : function() { alert("resolve"); }
+					}
 				});
+
 				console.log('modal opened');
-				modalInstance.result.then(function () {
+
+				modalInstance.result.then(function (cevap) {
+					alert("then");
 					console.log($scope.selected);
 				}, function () {
+					alert("else");
 					console.log('Modal dismissed at: ' + new Date());
 				});
-
-				//var modalInstance = $modal.open({
-				//	templateUrl: '/views/arama/filtre.html',
-				//	controller: filtreServis,
-				//	resolve: {
-				//		items: function () {
-				//			return $scope.items;
-				//		}
-				//	}
-				//});
-
-				//modalInstance.result.then(function (selectedItem) {
-				//    alert(selectedItem);
-			    //}, function () {
-				//    alert("dismissed");
-			    //});
 			}
-
 		}
     ]);
 
@@ -52,10 +42,12 @@
 		function ($scope, $modalInstance) {
 
 			$scope.ok = function () {
+				alert("ok");
 				$modalInstance.close("close");
 			};
 
 			$scope.cancel = function () {
+				alert("cancel");
 				$modalInstance.dismiss('cancel');
 			};
 		}
