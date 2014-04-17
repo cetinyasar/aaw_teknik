@@ -1,0 +1,11 @@
+﻿ARAMA SAYFASI
+<div ng-controller="araController">
+	{{Arama.Baslik}}
+	
+	<br />
+	<button ng-click="kriterAl()"> Arama Yap </button>
+	<br />
+	<button ng-click="aramaYap()"> Arama Yap </button>
+	
+	<a href="#">Toplam : <span class="badge">{{Arama.AramaSonuc.hits.total}}</span></a>
+</div>

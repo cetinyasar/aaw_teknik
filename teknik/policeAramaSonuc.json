@@ -1,0 +1,3085 @@
+﻿[{
+  "took": 118,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2973,
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "169216",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "5099166-9"
+          ],
+          "brans": [
+            "608"
+          ],
+          "sigortaliAcik": [
+            "HASAN KADİR VELİMAHMUTOĞLU"
+          ],
+          "musteriAdiAcik": [
+            "VEDAT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-06T00:00:00"
+          ]
+        },
+        "sort": [
+          "9",
+          1357430400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "168324",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "801340312"
+          ],
+          "brans": [
+            "191"
+          ],
+          "sigortaliAcik": [
+            "NECATİ TÜRK"
+          ],
+          "musteriAdiAcik": [
+            "NECATİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ]
+        },
+        "sort": [
+          "801340312",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "168698",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "800805210"
+          ],
+          "brans": [
+            "191"
+          ],
+          "sigortaliAcik": [
+            "SERPİL ÇETİN"
+          ],
+          "musteriAdiAcik": [
+            "SERPİL"
+          ],
+          "tanzimTarihi": [
+            "2013-01-27T00:00:00"
+          ]
+        },
+        "sort": [
+          "800805210",
+          1359244800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "167681",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "800386110"
+          ],
+          "brans": [
+            "191"
+          ],
+          "sigortaliAcik": [
+            "SUZAN ERİŞ"
+          ],
+          "musteriAdiAcik": [
+            "SUZAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "800386110",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172756",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65766"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "ŞAZİYE BİRİNCİ"
+          ],
+          "musteriAdiAcik": [
+            "ŞAZİYE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65766",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172760",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65744"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "GÜLSÜM ŞABAHAT"
+          ],
+          "musteriAdiAcik": [
+            "GÜLSÜM"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65744",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172755",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65714"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "SEDAT ŞABAHAT"
+          ],
+          "musteriAdiAcik": [
+            "SEDAT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65714",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172759",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65653"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "SELMA ALPSAR"
+          ],
+          "musteriAdiAcik": [
+            "SELMA"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65653",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172758",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65648"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "GÜLAY SEVİNDİK"
+          ],
+          "musteriAdiAcik": [
+            "GÜLAY"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65648",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172757",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65642"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "ÜLVİYYE AYDIN"
+          ],
+          "musteriAdiAcik": [
+            "ULVİYE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65642",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172752",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65633"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "TUFAN TEKİN"
+          ],
+          "musteriAdiAcik": [
+            "TUFAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65633",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172501",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65626"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "KEZBAN KÖSE"
+          ],
+          "musteriAdiAcik": [
+            "KEZBAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65626",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172754",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65371"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "TUĞÇE AKDEMİR"
+          ],
+          "musteriAdiAcik": [
+            "TUĞÇE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65371",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172762",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65369"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "ALİ BİRİNCİ"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65369",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172761",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65362"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "YEŞİM DÜZGÜN"
+          ],
+          "musteriAdiAcik": [
+            "YEŞİM"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ]
+        },
+        "sort": [
+          "65362",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172782",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "65069"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "NECMETTİN ORMAN"
+          ],
+          "musteriAdiAcik": [
+            "NECMETTİN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-29T00:00:00"
+          ]
+        },
+        "sort": [
+          "65069",
+          1359417600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172772",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64915"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "YASEMİN BAYIR"
+          ],
+          "musteriAdiAcik": [
+            "YASEMİN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-29T00:00:00"
+          ]
+        },
+        "sort": [
+          "64915",
+          1359417600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172771",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64907"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "BURAK ÇOBAN"
+          ],
+          "musteriAdiAcik": [
+            "BURAK"
+          ],
+          "tanzimTarihi": [
+            "2013-01-29T00:00:00"
+          ]
+        },
+        "sort": [
+          "64907",
+          1359417600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172770",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64704"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "ALİ RIZA ERGEZEN"
+          ],
+          "musteriAdiAcik": [
+            "ALİ RIZA"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ]
+        },
+        "sort": [
+          "64704",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172769",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64702"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "SERHAT YILMAZ"
+          ],
+          "musteriAdiAcik": [
+            "SERHAT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ]
+        },
+        "sort": [
+          "64702",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172768",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64701"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "MURAT ÖLTER"
+          ],
+          "musteriAdiAcik": [
+            "MURAT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ]
+        },
+        "sort": [
+          "64701",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172767",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64699"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "HACER GÖKÇE KOLAN"
+          ],
+          "musteriAdiAcik": [
+            "HACER GÖKCE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ]
+        },
+        "sort": [
+          "64699",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172764",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64698"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "HÜSEYİN ILGAZDAĞ"
+          ],
+          "musteriAdiAcik": [
+            "HÜSEYİN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ]
+        },
+        "sort": [
+          "64698",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172766",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64671"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "SAFİYE YILMAZ"
+          ],
+          "musteriAdiAcik": [
+            "SAFİYE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ]
+        },
+        "sort": [
+          "64671",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172765",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64471"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "ALİ ÖZ"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ]
+        },
+        "sort": [
+          "64471",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172763",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64467"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "ÜLKÜ CANBOLAT"
+          ],
+          "musteriAdiAcik": [
+            "ÜLKÜ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ]
+        },
+        "sort": [
+          "64467",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172775",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64121"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "AYŞE UZUN"
+          ],
+          "musteriAdiAcik": [
+            "AYŞE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "64121",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172774",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64119"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "KUDRET ÇUKURTAŞ"
+          ],
+          "musteriAdiAcik": [
+            "KUDRET"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "64119",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172773",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64117"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "HAKAN UÇAR"
+          ],
+          "musteriAdiAcik": [
+            "HAKAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "64117",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172777",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64115"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "ZEHRA OKAN"
+          ],
+          "musteriAdiAcik": [
+            "ZEHRA"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "64115",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172776",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "64113"
+          ],
+          "brans": [
+            "804"
+          ],
+          "sigortaliAcik": [
+            "SEVİL AY"
+          ],
+          "musteriAdiAcik": [
+            "SEVİL"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "64113",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172753",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63816"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "ÖZKAN DEMİR"
+          ],
+          "musteriAdiAcik": [
+            "ÖZKAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-17T00:00:00"
+          ]
+        },
+        "sort": [
+          "63816",
+          1358380800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172779",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63813"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "FİLİZ BOZTEPE"
+          ],
+          "musteriAdiAcik": [
+            "FİLİZ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-17T00:00:00"
+          ]
+        },
+        "sort": [
+          "63813",
+          1358380800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172778",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63812"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "YUNUS BOZTEPE"
+          ],
+          "musteriAdiAcik": [
+            "YUNUS"
+          ],
+          "tanzimTarihi": [
+            "2013-01-17T00:00:00"
+          ]
+        },
+        "sort": [
+          "63812",
+          1358380800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172494",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63643"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "HAKAN GÜNDÜZ"
+          ],
+          "musteriAdiAcik": [
+            "HAKAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-14T00:00:00"
+          ]
+        },
+        "sort": [
+          "63643",
+          1358121600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172781",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63615"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "REYHAN ÖZTÜRK"
+          ],
+          "musteriAdiAcik": [
+            "REYHAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-14T00:00:00"
+          ]
+        },
+        "sort": [
+          "63615",
+          1358121600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172780",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63613"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "TUĞBA ÜLKE"
+          ],
+          "musteriAdiAcik": [
+            "TUĞBA"
+          ],
+          "tanzimTarihi": [
+            "2013-01-14T00:00:00"
+          ]
+        },
+        "sort": [
+          "63613",
+          1358121600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172751",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63382"
+          ],
+          "brans": [
+            "801"
+          ],
+          "sigortaliAcik": [
+            "AHMET YILMAZ"
+          ],
+          "musteriAdiAcik": [
+            "AHMET"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63382",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172750",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63380"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "EMİNE ÖZTÜRK GÜMÜŞ"
+          ],
+          "musteriAdiAcik": [
+            "EMİNE"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63380",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172784",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63378"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "MEHMET ALİ GÜMÜŞ"
+          ],
+          "musteriAdiAcik": [
+            "MEHMET ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63378",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172749",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63375"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "ŞABAN ÖZCAN"
+          ],
+          "musteriAdiAcik": [
+            "ŞABAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63375",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172748",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63373"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "İLKAY KARAKAYA-"
+          ],
+          "musteriAdiAcik": [
+            "İLKAY"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63373",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "172783",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "63371"
+          ],
+          "brans": [
+            "803"
+          ],
+          "sigortaliAcik": [
+            "NURAN KIRIMLI"
+          ],
+          "musteriAdiAcik": [
+            "NURAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-09T00:00:00"
+          ]
+        },
+        "sort": [
+          "63371",
+          1357689600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171797",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62581373"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "YILMAZSAY NAK.TAŞ.TUR.VE OTO.İ TH.İHRTİC.LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "YILMAZSAY NAKLİYAT TAŞ.TURZM VE OTO İHR.TİC.LTD.ŞT"
+          ],
+          "plaka": [
+            "34L4315"
+          ]
+        },
+        "sort": [
+          "62581373",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171796",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62562181"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "48"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ADİL YILMAZ"
+          ],
+          "musteriAdiAcik": [
+            "ADİL"
+          ],
+          "plaka": [
+            "48LA282"
+          ]
+        },
+        "sort": [
+          "62562181",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171910",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62559607"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "EKİN AĞIR YÜK VE PROJE TAŞIMAC ILIĞI A.Ş."
+          ],
+          "musteriAdiAcik": [
+            "EKİN AĞIR YÜK VE PROJE TAŞIMACILIĞI A.Ş."
+          ],
+          "plaka": [
+            "34GB5695"
+          ]
+        },
+        "sort": [
+          "62559607",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171799",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62555655"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62555655",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171798",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62546186"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62546186",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171704",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62542874"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62542874",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171703",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62540000"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "TURKUAZ SOSYAL VE DESTEK HİZM. TEM.SAN.TİC.LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "BAŞARAN ENTEGRE GIDASANAYİ VE TİCARET A.Ş"
+          ],
+          "plaka": [
+            "34DS5222"
+          ]
+        },
+        "sort": [
+          "62540000",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171795",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62464697"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "SELAMİ AYDIN"
+          ],
+          "musteriAdiAcik": [
+            "SELAMİ"
+          ],
+          "plaka": [
+            "34UZ1813"
+          ]
+        },
+        "sort": [
+          "62464697",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171486",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62453558"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "YUSUF BOZ"
+          ],
+          "musteriAdiAcik": [
+            "YUSUF"
+          ],
+          "plaka": [
+            "34JL213"
+          ]
+        },
+        "sort": [
+          "62453558",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171646",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62445416"
+          ],
+          "tanzimTarihi": [
+            "2013-01-29T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "14"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "NURHAN CENGİZ"
+          ],
+          "musteriAdiAcik": [
+            "NURHAN"
+          ],
+          "plaka": [
+            "14DG843"
+          ]
+        },
+        "sort": [
+          "62445416",
+          1359417600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171484",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62443727"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "OSMAN IŞIKCAN"
+          ],
+          "musteriAdiAcik": [
+            "OSMAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ]
+        },
+        "sort": [
+          "62443727",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171483",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62433516"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "PAYLAŞ MUKAVVA SANAYİ VE TİCAR ET LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "PAYLAŞ MUKAVVA SAN. VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34PCC56"
+          ]
+        },
+        "sort": [
+          "62433516",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171702",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62430539"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "59"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LTD.ŞT"
+          ],
+          "musteriAdiAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LT"
+          ],
+          "plaka": [
+            "59YE403"
+          ]
+        },
+        "sort": [
+          "62430539",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171482",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62427880"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "59"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LTD.ŞT"
+          ],
+          "musteriAdiAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LT"
+          ],
+          "plaka": [
+            "59YK"
+          ]
+        },
+        "sort": [
+          "62427880",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171723",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62427880"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "59"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LTD.ŞT"
+          ],
+          "musteriAdiAcik": [
+            "KERİM PETROL ÜRÜN.OTOM.TAŞIMA. GIDA SAN.VE TİC.LT"
+          ],
+          "plaka": [
+            "59YE403"
+          ]
+        },
+        "sort": [
+          "62427880",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171481",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62407521"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "OSMAN IŞIKCAN"
+          ],
+          "musteriAdiAcik": [
+            "OSMAN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ]
+        },
+        "sort": [
+          "62407521",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171479",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62406125"
+          ],
+          "brans": [
+            "103"
+          ],
+          "sigortaliAcik": [
+            "AYKUT POSTALCIOĞLU"
+          ],
+          "musteriAdiAcik": [
+            "AYKUT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-26T00:00:00"
+          ]
+        },
+        "sort": [
+          "62406125",
+          1359158400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171485",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62406102"
+          ],
+          "brans": [
+            "103"
+          ],
+          "sigortaliAcik": [
+            "AYKUT POSTALCIOĞLU"
+          ],
+          "musteriAdiAcik": [
+            "AYKUT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-28T00:00:00"
+          ]
+        },
+        "sort": [
+          "62406102",
+          1359331200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171480",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62406063"
+          ],
+          "brans": [
+            "103"
+          ],
+          "sigortaliAcik": [
+            "AYKUT POSTALCIOĞLU"
+          ],
+          "musteriAdiAcik": [
+            "AYKUT"
+          ],
+          "tanzimTarihi": [
+            "2013-01-26T00:00:00"
+          ]
+        },
+        "sort": [
+          "62406063",
+          1359158400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171237",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62400459"
+          ],
+          "tanzimTarihi": [
+            "2013-01-26T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "SELAHATTİN PEHLİVAN"
+          ],
+          "musteriAdiAcik": [
+            "SELAHATTİN"
+          ],
+          "plaka": [
+            "34HD4986"
+          ]
+        },
+        "sort": [
+          "62400459",
+          1359158400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171233",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62398073"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "plaka": [
+            "34JD2531"
+          ]
+        },
+        "sort": [
+          "62398073",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171235",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62397994"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "plaka": [
+            "34FG9012"
+          ]
+        },
+        "sort": [
+          "62397994",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171234",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62397886"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "plaka": [
+            "34FG9011"
+          ]
+        },
+        "sort": [
+          "62397886",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171231",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62388794"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "RANA GAMZE KARAKUŞ"
+          ],
+          "musteriAdiAcik": [
+            "RANA GAMZE"
+          ],
+          "plaka": [
+            "34FU9671"
+          ]
+        },
+        "sort": [
+          "62388794",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171232",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62386931"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "EMİNE AYTEKİN"
+          ],
+          "musteriAdiAcik": [
+            "EMİNE"
+          ],
+          "plaka": [
+            "34TZC58"
+          ]
+        },
+        "sort": [
+          "62386931",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171236",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62380709"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "FUAT YAKUT"
+          ],
+          "musteriAdiAcik": [
+            "FUAT"
+          ],
+          "plaka": [
+            "34Y1876"
+          ]
+        },
+        "sort": [
+          "62380709",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171119",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62374576"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "16"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ERDAL MARANGOZ"
+          ],
+          "musteriAdiAcik": [
+            "ERDAL"
+          ],
+          "plaka": [
+            "16JBS52"
+          ]
+        },
+        "sort": [
+          "62374576",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171054",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62354020"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ERKAN GÜLFIRAT"
+          ],
+          "musteriAdiAcik": [
+            "SERKAN"
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62354020",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171803",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62354020"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ERKAN GÜLFIRAT"
+          ],
+          "musteriAdiAcik": [
+            "SERKAN"
+          ],
+          "plaka": [
+            "34GEG24"
+          ]
+        },
+        "sort": [
+          "62354020",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171055",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62353759"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "ERKAN GÜLFIRAT"
+          ],
+          "musteriAdiAcik": [
+            "SERKAN"
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62353759",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171802",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62353759"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "ERKAN GÜLFIRAT"
+          ],
+          "musteriAdiAcik": [
+            "SERKAN"
+          ],
+          "plaka": [
+            "34GEG24"
+          ]
+        },
+        "sort": [
+          "62353759",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171057",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62351478"
+          ],
+          "tanzimTarihi": [
+            "2013-01-30T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "SARIALİOĞLU İSTANBULTARNSP.GRU P TAŞ.VE TİC.A.Ş."
+          ],
+          "musteriAdiAcik": [
+            "SARIALİOĞLU İSTANBUL TRANSP.GRUP TAŞ.VE TİC.A.Ş."
+          ],
+          "plaka": [
+            "34VMS46"
+          ]
+        },
+        "sort": [
+          "62351478",
+          1359504000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171053",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62335691"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "TMC LOJİSTİK DIŞ TİCARET LİMİT ED ŞİRKETİ"
+          ],
+          "musteriAdiAcik": [
+            "TMC LOJİSTİK DIŞ TİCARET LİMİTED ŞİRKETİ"
+          ],
+          "plaka": [
+            "34FF5128"
+          ]
+        },
+        "sort": [
+          "62335691",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171230",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62316570"
+          ],
+          "tanzimTarihi": [
+            "2013-01-25T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "ÇETİN VE ÇETİN DANIŞMANLIK LTD .ŞTİ."
+          ],
+          "plaka": [
+            "34JD2308"
+          ]
+        },
+        "sort": [
+          "62316570",
+          1359072000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171049",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62309532"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62309532",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171061",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62306200"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62306200",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171050",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62306200"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC. LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "HİDROPAKS HİDROLİK SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "plaka": [
+            "34YK"
+          ]
+        },
+        "sort": [
+          "62306200",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170889",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62300117"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "TMC LOJİSTİK DIŞ TİCARET LİMİT ED ŞİRKETİ"
+          ],
+          "musteriAdiAcik": [
+            "TMC LOJİSTİK DIŞ TİCARET LİMİTED ŞİRKETİ"
+          ],
+          "plaka": [
+            "34BEU52"
+          ]
+        },
+        "sort": [
+          "62300117",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170892",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62282229"
+          ],
+          "tanzimTarihi": [
+            "2013-01-22T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "54"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "MEHMET POMAK"
+          ],
+          "musteriAdiAcik": [
+            "YILMAZSAY NAKLİYAT TAŞ.TURZM VE OTO İHR.TİC.LTD.ŞT"
+          ],
+          "plaka": [
+            "54FH679"
+          ]
+        },
+        "sort": [
+          "62282229",
+          1358812800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170893",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62253660"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "ALİ GÜLER"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-22T00:00:00"
+          ]
+        },
+        "sort": [
+          "62253660",
+          1358812800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170859",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62227639"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "CAN EMİR KOÇ"
+          ],
+          "musteriAdiAcik": [
+            "CAN EMİR"
+          ],
+          "plaka": [
+            "34UD5030"
+          ]
+        },
+        "sort": [
+          "62227639",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170860",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62226099"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "BİLGİ TEKNİK HIRDAVAKALIP PLAS SN.VETİC.LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "BİLGİ TEKNİK HIRD.KALIP  PLS. SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "62226099",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170669",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62207947"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "İKİZTRANS OTOMOTİV İNŞAAT TEKS TİL SAN.VE TİC.LTD.ŞTİ"
+          ],
+          "musteriAdiAcik": [
+            "İKİZ TRANS OTOM İNŞ. TEKSTİL SAN. VE TİC. LTD."
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "62207947",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171238",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62201223"
+          ],
+          "tanzimTarihi": [
+            "2013-01-31T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "AYŞE CEVVALE TOPCU"
+          ],
+          "musteriAdiAcik": [
+            "AYŞE CEVVALE"
+          ],
+          "plaka": [
+            "34ET1814"
+          ]
+        },
+        "sort": [
+          "62201223",
+          1359590400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "171052",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62182486"
+          ],
+          "tanzimTarihi": [
+            "2013-01-24T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "ALTINSAY FİLMİŞLERİYAPIM YAYIN PROJE DANIŞ TİC LTD."
+          ],
+          "musteriAdiAcik": [
+            "ALTINSAY FİLM İŞLERİ"
+          ],
+          "plaka": [
+            "34VS1903"
+          ]
+        },
+        "sort": [
+          "62182486",
+          1358985600000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170858",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62182419"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ALTINSAY FİLMİŞLERİYAPIM YAYIN PROJE DANIŞ TİC LTD."
+          ],
+          "musteriAdiAcik": [
+            "ALTINSAY FİLM İŞLERİ"
+          ],
+          "plaka": [
+            "34VS1903"
+          ]
+        },
+        "sort": [
+          "62182419",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170537",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62177788"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "61"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "BAŞARAN ENTEGRE GIDASANAYİ VE TİCARET A.Ş"
+          ],
+          "musteriAdiAcik": [
+            "BAŞARAN ENTEGRE GIDASANAYİ VE TİCARET A.Ş"
+          ],
+          "plaka": [
+            "61K21116"
+          ]
+        },
+        "sort": [
+          "62177788",
+          1358467200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170538",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62177719"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "61"
+          ],
+          "brans": [
+            "335"
+          ],
+          "sigortaliAcik": [
+            "BAŞARAN ENTEGRE GIDASANAYİ VE TİCARET A.Ş"
+          ],
+          "musteriAdiAcik": [
+            "BAŞARAN ENTEGRE GIDASANAYİ VE TİCARET A.Ş"
+          ],
+          "plaka": [
+            "61K21117"
+          ]
+        },
+        "sort": [
+          "62177719",
+          1358467200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170536",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62169136"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "ALİ KANAT"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "plaka": [
+            "34CDS60"
+          ]
+        },
+        "sort": [
+          "62169136",
+          1358467200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170535",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62167552"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "07"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "TAHİR CENGİZ"
+          ],
+          "musteriAdiAcik": [
+            "TAHİR"
+          ],
+          "plaka": [
+            "07GV726"
+          ]
+        },
+        "sort": [
+          "62167552",
+          1358467200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170668",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62166777"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "ORKUN BİNGÖL"
+          ],
+          "musteriAdiAcik": [
+            "ORKUN"
+          ],
+          "tanzimTarihi": [
+            "2013-01-21T00:00:00"
+          ]
+        },
+        "sort": [
+          "62166777",
+          1358726400000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170505",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62140088"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "ALİ GÜLER"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ]
+        },
+        "sort": [
+          "62140088",
+          1358467200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170894",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62140088"
+          ],
+          "brans": [
+            "102"
+          ],
+          "sigortaliAcik": [
+            "ALİ GÜLER"
+          ],
+          "musteriAdiAcik": [
+            "ALİ"
+          ],
+          "tanzimTarihi": [
+            "2013-01-22T00:00:00"
+          ]
+        },
+        "sort": [
+          "62140088",
+          1358812800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170455",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62130311"
+          ],
+          "tanzimTarihi": [
+            "2013-01-20T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "61"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "BORDO GIDA SAN.VE TİC.LTD.ŞTİ."
+          ],
+          "musteriAdiAcik": [
+            "BORDO GIDA SAN.VE TİC. LTD. ŞTİ."
+          ],
+          "plaka": [
+            "61LD403"
+          ]
+        },
+        "sort": [
+          "62130311",
+          1358640000000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170456",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62127765"
+          ],
+          "tanzimTarihi": [
+            "2013-01-23T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "PERİHAN YÜRÜK"
+          ],
+          "musteriAdiAcik": [
+            "PERİHAN"
+          ],
+          "plaka": [
+            "34TV3721"
+          ]
+        },
+        "sort": [
+          "62127765",
+          1358899200000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170459",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62127268"
+          ],
+          "tanzimTarihi": [
+            "2013-01-27T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "38"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "EKER ULUSLARARASI NAKLİYAT TUR İZM TİCARET LİMİTED ŞİRKETİ"
+          ],
+          "musteriAdiAcik": [
+            "EKER ULUSLARARASI NA KLİYAT TİC.LTD.Ş İ."
+          ],
+          "plaka": [
+            "38RD164"
+          ]
+        },
+        "sort": [
+          "62127268",
+          1359244800000
+        ]
+      },
+      {
+        "_index": "aaw",
+        "_type": "police",
+        "_id": "170506",
+        "_score": null,
+        "fields": {
+          "sirketPoliceNo": [
+            "62123301"
+          ],
+          "tanzimTarihi": [
+            "2013-01-18T00:00:00"
+          ],
+          "plakaIlKodu": [
+            "34"
+          ],
+          "brans": [
+            "300"
+          ],
+          "sigortaliAcik": [
+            "MUZAFFER AKBULUT"
+          ],
+          "musteriAdiAcik": [
+            "MUZAFFER"
+          ],
+          "plaka": [
+            "34GL4359"
+          ]
+        },
+        "sort": [
+          "62123301",
+          1358467200000
+        ]
+      }
+    ]
+  },
+  "facets": {
+    "policeGrubu": {
+      "_type": "terms",
+      "missing": 0,
+      "total": 2973,
+      "other": 0,
+      "terms": [
+        {
+          "term": "kko",
+          "count": 1177
+        },
+        {
+          "term": "trf",
+          "count": 690
+        },
+        {
+          "term": "kza",
+          "count": 561
+        },
+        {
+          "term": "nak",
+          "count": 305
+        },
+        {
+          "term": "dsk",
+          "count": 82
+        },
+        {
+          "term": "yng",
+          "count": 78
+        },
+        {
+          "term": "bes",
+          "count": 39
+        },
+        {
+          "term": "sag",
+          "count": 26
+        },
+        {
+          "term": "mhe",
+          "count": 15
+        }
+      ]
+    },
+    "policeGrubuTotal": {
+      "_type": "terms",
+      "missing": 0,
+      "total": 31605,
+      "other": 0,
+      "terms": [
+        {
+          "term": "trf",
+          "count": 8972
+        },
+        {
+          "term": "kko",
+          "count": 7706
+        },
+        {
+          "term": "kza",
+          "count": 6650
+        },
+        {
+          "term": "nak",
+          "count": 5020
+        },
+        {
+          "term": "dsk",
+          "count": 1589
+        },
+        {
+          "term": "yng",
+          "count": 1164
+        },
+        {
+          "term": "sag",
+          "count": 306
+        },
+        {
+          "term": "bes",
+          "count": 102
+        },
+        {
+          "term": "mhe",
+          "count": 95
+        },
+        {
+          "term": "hay",
+          "count": 1
+        }
+      ]
+    }
+  }
+}]
