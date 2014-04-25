@@ -1,7 +1,6 @@
-define([], function ()
-{
+define([], function () {
 	return {
-		defaultRoutePath: '/',
+		defaultRoutePath: '/index.html',
 		routes: {
 			'/arama': {
 				templateUrl: '/views/arama/ara.html',
@@ -15,10 +14,6 @@ define([], function ()
                     'police/polController'
 				]
 			}
-		},
-		otherwise:
-		{
-			redirectTo : '/arama'
 		}
 	};
 });

@@ -1,11 +1,66 @@
-﻿ARAMA SAYFASI
-<div ng-controller="araController">
-	{{Arama.Baslik}}
-	
+﻿<div ng-controller="araController">
+	<div class="col-lg-12">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="Arama.Kriterler.Sorgu">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
+			</span>
+		</div>
+	</div>
 	<br />
-	<button ng-click="kriterAl()"> Arama Yap </button>
+	<div class="col-lg-3">
+		<ul class="list-group">
+			<li class="list-group-item">Tanzim Tarihi
+				<br /><input class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic" />-<input class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis" />
+			</li>
+			<li class="list-group-item">Branş
+				<br /><input class="small" ng-model="Arama.Kriterler.BransBaslangic" />-<input class="small" ng-model="Arama.Kriterler.BransBitis" />
+			</li>
+			<li class="list-group-item">Plaka İl Kodu
+				<br /><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" />
+			</li>
+			<li class="list-group-item">Model Yılı
+				<br /><input class="small" ng-model="Arama.Kriterler.ModelYili" />
+			</li>
+			<li class="list-group-item">Marka
+				<br /><input class="small" ng-model="Arama.Kriterler.Marka" />
+			</li>
+			<li class="list-group-item">
+				Tip
+				<br /><input class="small" ng-model="Arama.Kriterler.Tip" />
+			</li>
+
+			<li class="list-group-item">Sigortalı İl Kodu
+				<br /><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" />
+			</li>
+			<li class="list-group-item">
+				<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
+			</li>
+		</ul>
+	</div>
 	<br />
-	<button ng-click="aramaYap()"> Arama Yap </button>
-	
-	<a href="#">Toplam : <span class="badge">{{Arama.AramaSonuc.hits.total}}</span></a>
+	<div class="col-lg-9">
+		<span ng-show="Arama.VeriAliniyor"> Veri Alınıyor</span>
+		<span ng-show="Arama.Aramasonuc.hits.total > 0" >
+			<a href="#">Toplam : <span class="badge">{{Arama.AramaSonuc.hits.total}}</span></a>
+		</span>
+		<div>
+			<table>
+				<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
+					<td>{{hit.fields.sirketPoliceNo[0]}}</td>
+					<td>{{hit.fields.musteriAdiAcik[0]}}</td>
+					<td>{{hit.fields.tanzimTarihi[0]}}</td>
+					<td>{{hit.fields.plaka[0]}}</td>
+				</tr>
+			</table>
+
+			<!--<ul class="list-group">
+				<li class="list-group-item" ng-repeat="hit in Arama.AramaSonuc.hits.hits">
+					<h5 class="h5 small">{{hit.fields.sirketPoliceNo[0]}} {{hit.fields.musteriAdiAcik[0]}}</h5>
+					<h6 class="h6 small">{{hit.fields.tanzimTarihi[0]}}  {{"-" + hit.fields.plaka[0]}}</h6>
+				</li>
+			</ul>-->
+		</div>
+	</div>
+
 </div>
