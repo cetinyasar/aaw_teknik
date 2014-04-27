@@ -1,14 +1,18 @@
 ﻿<div ng-controller="araController">
 	<div class="col-lg-12">
-		<div class="input-group">
-			<input type="text" class="form-control" ng-model="Arama.Kriterler.Sorgu">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
-			</span>
+		<br />
+		<div class="alert alert-info">
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="Arama.Kriterler.Sorgu">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
+				</span>
+			</div>
 		</div>
+	
 	</div>
 	<br />
-	<div class="col-lg-3">
+	<div class="col-lg-3" ng-show="Arama.Aramasonuc.hits.total > 0">
 		<ul class="list-group">
 			<li class="list-group-item">Tanzim Tarihi
 				<br /><input class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic" />-<input class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis" />

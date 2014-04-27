@@ -1,6 +1,6 @@
 define([], function () {
 	return {
-		defaultRoutePath: '/index.html',
+		defaultRoutePaths: '/',
 		routes: {
 			'/arama': {
 				templateUrl: '/views/arama/ara.html',
