@@ -44,6 +44,7 @@ function AramaKriterleri() {
 	this.Guvenlik = new Guvenlik();
 	this.Tipi = "PoliceArama";
 	this.Sorgu = "";
+	this.tar = "15.04.2014".OnHanelidenTarihAl();
 	this.TanzimTarihiBaslangic = "15.04.2014".OnHanelidenTarihAl();
 	this.TanzimTarihiBitis = "21/04/2014".OnHanelidenTarihAl();
 	this.BransBaslangic = "100";
