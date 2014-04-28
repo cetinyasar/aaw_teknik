@@ -1,5 +1,5 @@
 define(['routes', 'services/dependencyResolverFor'], function (config, dependencyResolverFor) {
-	var app = angular.module('app', ['ngRoute', 'ui.bootstrap']);
+	var app = angular.module('app', ['ngRoute', 'ui.bootstrap', 'ada.tarih']);
 
 	app.config(
     [

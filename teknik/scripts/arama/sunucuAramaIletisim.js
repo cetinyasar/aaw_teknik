@@ -10,7 +10,10 @@
 			this.veriAl = function(obj)
 			{
 				var kilit = erteleme.defer();
-				this.http.post("raporAl.ada", kilit).success(function (data) { kilit.resolve(data); }).error(function(errorData) {  });
+				this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function(data)
+				{
+					kilit.resolve(sunucudanAldiginVeriyiIsledata);
+				}).error(function (errorData) { });
 				return kilit.promise;
 			}
 		}

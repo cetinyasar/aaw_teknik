@@ -1,70 +1,112 @@
 ﻿<div ng-controller="araController">
-	<div class="col-lg-12">
-		<br />
-		<div class="alert alert-info">
-			<div class="input-group">
-				<input type="text" class="form-control" ng-model="Arama.Kriterler.Sorgu">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
-				</span>
+	<br />
+	<div class="search-classic">
+		<div class="input-group well">
+			<input type="text" class="form-control" placeholder="Arama...">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="button" ng-click="aramaYap()">
+					<i class="fa fa-search"></i> Ara
+				</button>
+			</span>
+		</div>
+	</div>
+
+
+	<div class="col-lg-12" >
+		<div class="col-lg-3">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<a class="editable editable-click" id="dob" href="#" data-original-title="Select Date of birth" data-value="1984-05-15" data-pk="1" data-type="combodate" data-template="D / MMM / YYYY" data-viewformat="DD/MM/YYYY" data-format="YYYY-MM-DD">15/05/1984</a>
+					asdfasdf
+					<ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih>
+				</li>
+				<li class="list-group-item">
+					Tanzim Tarihi
+					<!--<br /><input class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic" />-<input class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis" />-->
+				</li>
+				<li class="list-group-item">
+					Branş
+					<br /><input class="small" ng-model="Arama.Kriterler.BransBaslangic" />-<input class="small" ng-model="Arama.Kriterler.BransBitis" />
+				</li>
+				<li class="list-group-item">
+					Plaka İl Kodu
+					<br /><input class="small"  ng-model="Arama.Kriterler.PlakaIlKodu" />
+				</li>
+				<li class="list-group-item">
+					Model Yılı
+					<br /><input class="small" ng-model="Arama.Kriterler.ModelYili" />
+				</li>
+				<li class="list-group-item">
+					Marka
+					<br /><input class="small" ng-model="Arama.Kriterler.Marka" />
+				</li>
+				<li class="list-group-item">
+					Tip
+					<br /><input class="small" ng-model="Arama.Kriterler.Tip" />
+				</li>
+
+				<li class="list-group-item">
+					Sigortalı İl Kodu
+					<br /><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" />
+				</li>
+				<li class="list-group-item">
+					<button class="btn btn-primary" type="button" ng-click="aramaYap()">
+						<i class="fa fa-search"></i> Ara
+					</button>
+				</li>
+			</ul>
+
+		</div>
+		<div class="col-lg-9">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					Arama Sonuçları
+					<div class="panel-tools">
+						<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+						</a>
+						<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="btn btn-xs btn-link panel-refresh" href="#">
+							<i class="fa fa-refresh"></i>
+						</a>
+						<a class="btn btn-xs btn-link panel-expand" href="#">
+							<i class="fa fa-resize-full"></i>
+						</a>
+						<a class="btn btn-xs btn-link panel-close" href="#">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover" id="sample-table-1">
+							<thead>
+								<tr>
+									<th>Branş</th>
+									<th>Poliçe No</th>
+									<th>Müşteri</th>
+									<th>Tanzim Tarihi</th>
+									<th>Plaka</th>
+									<th>Sigortalı</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
+									<td>{{hit.fields.brans[0]}}</td>
+									<td>{{hit.fields.sirketPoliceNo[0]}}</td>
+									<td>{{hit.fields.musteriAdiAcik[0]}}</td>
+									<td>{{hit.fields.tanzimTarihi[0]}}</td>
+									<td>{{hit.fields.plaka[0]}}</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
-	
 	</div>
-	<br />
-	<div class="col-lg-3" ng-show="Arama.Aramasonuc.hits.total > 0">
-		<ul class="list-group">
-			<li class="list-group-item">Tanzim Tarihi
-				<br /><input class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic" />-<input class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis" />
-			</li>
-			<li class="list-group-item">Branş
-				<br /><input class="small" ng-model="Arama.Kriterler.BransBaslangic" />-<input class="small" ng-model="Arama.Kriterler.BransBitis" />
-			</li>
-			<li class="list-group-item">Plaka İl Kodu
-				<br /><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" />
-			</li>
-			<li class="list-group-item">Model Yılı
-				<br /><input class="small" ng-model="Arama.Kriterler.ModelYili" />
-			</li>
-			<li class="list-group-item">Marka
-				<br /><input class="small" ng-model="Arama.Kriterler.Marka" />
-			</li>
-			<li class="list-group-item">
-				Tip
-				<br /><input class="small" ng-model="Arama.Kriterler.Tip" />
-			</li>
-
-			<li class="list-group-item">Sigortalı İl Kodu
-				<br /><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" />
-			</li>
-			<li class="list-group-item">
-				<button class="btn btn-default" type="button" ng-click="aramaYap()"> Ara </button>
-			</li>
-		</ul>
-	</div>
-	<br />
-	<div class="col-lg-9">
-		<span ng-show="Arama.VeriAliniyor"> Veri Alınıyor</span>
-		<span ng-show="Arama.Aramasonuc.hits.total > 0" >
-			<a href="#">Toplam : <span class="badge">{{Arama.AramaSonuc.hits.total}}</span></a>
-		</span>
-		<div>
-			<table>
-				<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
-					<td>{{hit.fields.sirketPoliceNo[0]}}</td>
-					<td>{{hit.fields.musteriAdiAcik[0]}}</td>
-					<td>{{hit.fields.tanzimTarihi[0]}}</td>
-					<td>{{hit.fields.plaka[0]}}</td>
-				</tr>
-			</table>
-
-			<!--<ul class="list-group">
-				<li class="list-group-item" ng-repeat="hit in Arama.AramaSonuc.hits.hits">
-					<h5 class="h5 small">{{hit.fields.sirketPoliceNo[0]}} {{hit.fields.musteriAdiAcik[0]}}</h5>
-					<h6 class="h6 small">{{hit.fields.tanzimTarihi[0]}}  {{"-" + hit.fields.plaka[0]}}</h6>
-				</li>
-			</ul>-->
-		</div>
-	</div>
-
 </div>
+

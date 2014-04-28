@@ -8,6 +8,7 @@
 
 			$scope.aramaYap = function ()
 			{
+				alert($scope.Arama.Kriterler.TanzimTarihiBaslangic);
 				$scope.Arama.VeriAliniyor = true;
 				sunucuAramaIletisim.veriAl(this).then(function (sonuc) {
 					$scope.Arama.ayarla(sonuc[0]);
@@ -43,8 +44,8 @@ function AramaKriterleri() {
 	this.Guvenlik = new Guvenlik();
 	this.Tipi = "PoliceArama";
 	this.Sorgu = "";
-	this.TanzimTarihiBaslangic = "01/01/2014";
-	this.TanzimTarihiBitis = "21/04/2014";
+	this.TanzimTarihiBaslangic = "15.04.2014".OnHanelidenTarihAl();
+	this.TanzimTarihiBitis = "21/04/2014".OnHanelidenTarihAl();
 	this.BransBaslangic = "100";
 	this.BransBitis = "999";
 	this.PlakaIlKodu = "034";

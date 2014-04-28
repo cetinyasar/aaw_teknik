@@ -14,15 +14,17 @@ require.config({
 		'clipone-jquery-iCheck': '/assets/plugins/iCheck/jquery.icheck.min',
 		'clipone-jquery-perfect-scrollbar-mousewheel': '/assets/plugins/perfect-scrollbar/src/jquery.mousewheel',
 		'clipone-jquery-perfect-scrollbar': '/assets/plugins/perfect-scrollbar/src/perfect-scrollbar',
-		//'clipone-less': '/assets/plugins/less/less-1.5.0.min',
 		'clipone-jquery-cookie': '/assets/plugins/jquery-cookie/jquery.cookie',
 		'clipone-bootstrap-colorpalette': '/assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette',
-		'clipone-main': '/assets/js/main'
+		'clipone-main': '/assets/js/main',
+		'ada-angular-modules': '/lib/ada/adaAngularModules',
+		'angular-ui-utils': '/lib/angular/angular-ui/ui-utils',
+		'ada-extensions': '/lib/ada/adaExtensions'
 
 	},
 	shim: {
 		'app': {
-			deps: ['angular', 'angular-route', 'angular-resource', 'angular-ui', 'clipone-main']
+			deps: ['angular', 'angular-route', 'angular-resource', 'angular-ui', 'clipone-main', 'ada-angular-modules']
 		},
 		'angular-route': {
 			deps: ['angular']
@@ -33,15 +35,17 @@ require.config({
 		'angular-ui': {
 			deps: ['angular']
 		},
+		'ada-angular-modules': {
+			deps: ['angular', 'angular-ui-utils', 'ada-extensions']
+		},
+		'angular-ui-utils': {
+			deps: ['angular']
+		},
 		'clipone-main': {
 			deps: ['angular', 'clipone-jquery', 'clipone-jquery-ui', 'clipone-bootstrap', 'clipone-bootstrap-hover-dropdown', 'clipone-jquery-blockUI', 'clipone-jquery-iCheck',
 			'clipone-jquery-perfect-scrollbar-mousewheel', 'clipone-jquery-perfect-scrollbar', 'clipone-jquery-cookie', 'clipone-bootstrap-colorpalette']
 			
 		},
-		//'clipone-main': {
-		//	deps: ['angular', 'clipone-jquery', 'clipone-jquery-ui', 'clipone-bootstrap', 'clipone-bootstrap-hover-dropdown', 'clipone-jquery-blockUI', 'clipone-jquery-iCheck',
-		//	'clipone-jquery-perfect-scrollbar-mousewheel', 'clipone-jquery-perfect-scrollbar', 'clipone-jquery-cookie', 'clipone-bootstrap-colorpalette']
-		//},
 		'clipone-jquery-ui': {
 			deps: ['clipone-jquery']
 		},
@@ -72,30 +76,6 @@ require.config({
 		
 	}
 });
-
-//require.config({
-//	baseUrl: 'scripts',
-//	paths: {
-//		'angular': '/lib/angular/angular',
-//		'angular-route': '/lib/angular/angular-route/angular-route',
-//		'angular-resource': '/lib/angular/angular-resource/angular-resource',
-//		'angular-ui': '/lib/angular/ui-bootstrap-tpls-0.10.0'
-//	},
-//	shim: {
-//		'app': {
-//			deps: ['angular', 'angular-route', 'angular-resource', 'angular-ui']
-//		},
-//		'angular-route': {
-//			deps: ['angular']
-//		},
-//		'angular-resource': {
-//			deps: ['angular']
-//		},
-//		'angular-ui': {
-//			deps: ['angular']
-//		}
-//	}
-//});
 
 require
 (
