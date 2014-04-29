@@ -10,11 +10,16 @@
 			this.veriAl = function(obj)
 			{
 				var kilit = erteleme.defer();
-				this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function(data)
-				{
-					kilit.resolve(sunucudanAldiginVeriyiIsledata);
+				//this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function(data)
+				//{
+				//	kilit.resolve(sunucudanAldiginVeriyiIsle(data));
+				//}).error(function (errorData) { });
+				this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function (data) {
+					kilit.resolve(sunucudanAldiginVeriyiIsle(data));
 				}).error(function (errorData) { });
+
 				return kilit.promise;
+
 			}
 		}
 	]);

@@ -14,49 +14,54 @@
 
 	<div class="col-lg-12" >
 		<div class="col-lg-3">
-			<ul class="list-group">
-				<li class="list-group-item">
-					<a class="editable editable-click" id="dob" href="#" data-original-title="Select Date of birth" data-value="1984-05-15" data-pk="1" data-type="combodate" data-template="D / MMM / YYYY" data-viewformat="DD/MM/YYYY" data-format="YYYY-MM-DD">15/05/1984</a>
+			<div class="panel panel-default" >
+				<div class="panel-heading">
+					<i class="fa fa-external-link-square"></i>
+					Ek Kriterler
+				</div>
+				<div class="panel-body">
+					<table width="100%" class="table ">
+						<tr>
+							<td>Tanzim Tarihi</td>
+							<td>
+								<ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih> - <ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBitis"></ada-tarih>
+							</td>
+						</tr>
+						<tr>
+							<td>Branş</td>
+							<td><ada-brans class="small" ng-model="Arama.Kriterler.BransBaslangic"></ada-brans> - <ada-brans class="small" ng-model="Arama.Kriterler.BransBitis"></ada-brans></td>
+						</tr>
+						<tr>
+							<td>Plaka İl Kodu</td>
+							<td><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" /></td>
+						</tr>
+						<tr>
+							<td>Model Yılı</td>
+							<td><input class="small" ng-model="Arama.Kriterler.ModelYili" /></td>
+						</tr>
+						<tr>
+							<td>Marka</td>
+							<td><input class="small" ng-model="Arama.Kriterler.Marka" /></td>
+						</tr>
+						<tr>
+							<td>Tip</td>
+							<td><input class="small" ng-model="Arama.Kriterler.Tip" /></td>
+						</tr>
+						<tr>
+							<td>Sigortalı İl Kodu</td>
+							<td><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button class="btn btn-primary" type="button" ng-click="aramaYap()">
+									<i class="fa fa-search"></i> Ara
+								</button>
+							</td>
+						</tr>
+					</table>
 					
-					
-				</li>
-				<li class="list-group-item">
-					Tanzim Tarihi<br />
-					<ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih> - <ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBitis"></ada-tarih>
-					<!--<input class="small" ng-model="Arama.Kriterler.tar" ada-tarih-internal>-->
-				</li>
-				<li class="list-group-item">
-					Branş<br />
-					<ada-brans class="small" ng-model="Arama.Kriterler.BransBaslangic" ></ada-brans> - 
-					<ada-brans class="small" ng-model="Arama.Kriterler.BransBitis" ></ada-brans>
-				</li>
-				<li class="list-group-item">
-					Plaka İl Kodu
-					<br /><input class="small"  ng-model="Arama.Kriterler.PlakaIlKodu" />
-				</li>
-				<li class="list-group-item">
-					Model Yılı
-					<br /><input class="small" ng-model="Arama.Kriterler.ModelYili" />
-				</li>
-				<li class="list-group-item">
-					Marka
-					<br /><input class="small" ng-model="Arama.Kriterler.Marka" />
-				</li>
-				<li class="list-group-item">
-					Tip
-					<br /><input class="small" ng-model="Arama.Kriterler.Tip" />
-				</li>
-
-				<li class="list-group-item">
-					Sigortalı İl Kodu
-					<br /><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" />
-				</li>
-				<li class="list-group-item">
-					<button class="btn btn-primary" type="button" ng-click="aramaYap()">
-						<i class="fa fa-search"></i> Ara
-					</button>
-				</li>
-			</ul>
+				</div>
+			</div>
 
 		</div>
 		<div class="col-lg-9">

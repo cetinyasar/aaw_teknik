@@ -8,11 +8,9 @@
 
 			$scope.aramaYap = function ()
 			{
-				alert($scope.Arama.Kriterler.TanzimTarihiBaslangic);
 				$scope.Arama.VeriAliniyor = true;
-				sunucuAramaIletisim.veriAl(this).then(function (sonuc) {
+				sunucuAramaIletisim.veriAl(this.Arama).then(function (sonuc) {
 					$scope.Arama.ayarla(sonuc[0]);
-					
 				});
 			}
 		}
@@ -45,15 +43,15 @@ function AramaKriterleri() {
 	this.Tipi = "PoliceArama";
 	this.Sorgu = "";
 	this.tar = "15.04.2014".OnHanelidenTarihAl();
-	this.TanzimTarihiBaslangic = "15.04.2014".OnHanelidenTarihAl();
+	this.TanzimTarihiBaslangic = "01.01.2000".OnHanelidenTarihAl();
 	this.TanzimTarihiBitis = "21/04/2014".OnHanelidenTarihAl();
 	this.BransBaslangic = "100";
 	this.BransBitis = "999";
-	this.PlakaIlKodu = "034";
-	this.ModelYili = "2013";
-	this.Marka = "MERCEDES";
+	this.PlakaIlKodu = "";
+	this.ModelYili = "";
+	this.Marka = "";
 	this.Tip = "";
-	this.SigortaliIlKodu = "016";
+	this.SigortaliIlKodu = "";
 }
 
 function Guvenlik() {
