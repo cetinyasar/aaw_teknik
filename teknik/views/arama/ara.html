@@ -1,119 +1,121 @@
-﻿<div ng-controller="araController">
-	<br />
-	<div class="search-classic">
-		<div class="input-group well">
-			<input type="text" class="form-control" placeholder="Arama...">
-			<span class="input-group-btn">
-				<button class="btn btn-primary" type="button" ng-click="aramaYap()">
-					<i class="fa fa-search"></i> Ara
-				</button>
-			</span>
+﻿
+<div ng-controller="araController">
+	<div class="row">
+		<br />
+		<div class="search-classic col-lg-12">
+			<div class="input-group well">
+				<input type="text" class="form-control" placeholder="Arama...">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="button" ng-click="aramaYap()">
+						<i class="fa fa-search"></i> Ara
+					</button>
+				</span>
+			</div>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-lg-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-external-link-square"></i>
+						Ek Kriterler
+					</div>
+					<div class="panel-body">
+						<table width="100%" class="table ">
+							<tr>
+								<td>Tanzim Tarihi</td>
+								<td>
+									<ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih> - <ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBitis"></ada-tarih>
+								</td>
+							</tr>
+							<tr>
+								<td>Branş</td>
+								<td><ada-brans class="large" ng-model="Arama.Kriterler.BransBaslangic"></ada-brans> - <ada-brans class="small" ng-model="Arama.Kriterler.BransBitis"></ada-brans></td>
+							</tr>
+							<tr>
+								<td>Plaka İl Kodu</td>
+								<td><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" /></td>
+							</tr>
+							<tr>
+								<td>Model Yılı</td>
+								<td><input class="small" ng-model="Arama.Kriterler.ModelYili" /></td>
+							</tr>
+							<tr>
+								<td>Marka</td>
+								<td><input class="small" ng-model="Arama.Kriterler.Marka" /></td>
+							</tr>
+							<tr>
+								<td>Tip</td>
+								<td><input class="small" ng-model="Arama.Kriterler.Tip" /></td>
+							</tr>
+							<tr>
+								<td>Sigortalı İl Kodu</td>
+								<td><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" /></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<button class="btn btn-primary" type="button" ng-click="aramaYap()">
+										<i class="fa fa-search"></i> Ara
+									</button>
+								</td>
+							</tr>
+						</table>
 
-
-	<div class="col-lg-12" >
-		<div class="col-lg-3">
-			<div class="panel panel-default" >
-				<div class="panel-heading">
-					<i class="fa fa-external-link-square"></i>
-					Ek Kriterler
-				</div>
-				<div class="panel-body">
-					<table width="100%" class="table ">
-						<tr>
-							<td>Tanzim Tarihi</td>
-							<td>
-								<ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih> - <ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBitis"></ada-tarih>
-							</td>
-						</tr>
-						<tr>
-							<td>Branş</td>
-							<td><ada-brans class="small" ng-model="Arama.Kriterler.BransBaslangic"></ada-brans> - <ada-brans class="small" ng-model="Arama.Kriterler.BransBitis"></ada-brans></td>
-						</tr>
-						<tr>
-							<td>Plaka İl Kodu</td>
-							<td><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" /></td>
-						</tr>
-						<tr>
-							<td>Model Yılı</td>
-							<td><input class="small" ng-model="Arama.Kriterler.ModelYili" /></td>
-						</tr>
-						<tr>
-							<td>Marka</td>
-							<td><input class="small" ng-model="Arama.Kriterler.Marka" /></td>
-						</tr>
-						<tr>
-							<td>Tip</td>
-							<td><input class="small" ng-model="Arama.Kriterler.Tip" /></td>
-						</tr>
-						<tr>
-							<td>Sigortalı İl Kodu</td>
-							<td><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" /></td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<button class="btn btn-primary" type="button" ng-click="aramaYap()">
-									<i class="fa fa-search"></i> Ara
-								</button>
-							</td>
-						</tr>
-					</table>
-					
-				</div>
-			</div>
-
-		</div>
-		<div class="col-lg-9">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<i class="fa fa-external-link-square"></i>
-					Arama Sonuçları
-					<div class="panel-tools">
-						<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-						</a>
-						<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-							<i class="fa fa-wrench"></i>
-						</a>
-						<a class="btn btn-xs btn-link panel-refresh" href="#">
-							<i class="fa fa-refresh"></i>
-						</a>
-						<a class="btn btn-xs btn-link panel-expand" href="#">
-							<i class="fa fa-resize-full"></i>
-						</a>
-						<a class="btn btn-xs btn-link panel-close" href="#">
-							<i class="fa fa-times"></i>
-						</a>
 					</div>
 				</div>
-				<div class="panel-body">
-					<div class="table-responsive">
-						<table class="table table-bordered table-hover" id="sample-table-1">
-							<thead>
-								<tr>
-									<th>Branş</th>
-									<th>Poliçe No</th>
-									<th>Müşteri</th>
-									<th>Tanzim Tarihi</th>
-									<th>Plaka</th>
-									<th>Sigortalı</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
-									<td>{{hit.fields.brans[0]}}</td>
-									<td>{{hit.fields.sirketPoliceNo[0]}}</td>
-									<td>{{hit.fields.musteriAdiAcik[0]}}</td>
-									<td>{{hit.fields.tanzimTarihi[0]}}</td>
-									<td>{{hit.fields.plaka[0]}}</td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
+			</div>
+			<div class="col-lg-9">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-external-link-square"></i>
+						Arama Sonuçları
+						<div class="panel-tools">
+							<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+							</a>
+							<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+								<i class="fa fa-wrench"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-refresh" href="#">
+								<i class="fa fa-refresh"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-expand" href="#">
+								<i class="fa fa-resize-full"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-close" href="#">
+								<i class="fa fa-times"></i>
+							</a>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover" id="sample-table-1">
+								<thead>
+									<tr>
+										<th>Branş</th>
+										<th>Poliçe No</th>
+										<th>Müşteri</th>
+										<th>Tanzim Tarihi</th>
+										<th>Plaka</th>
+										<th>Sigortalı</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
+										<td>{{hit.fields.brans[0]}}</td>
+										<td>{{hit.fields.sirketPoliceNo[0]}}</td>
+										<td>{{hit.fields.musteriAdiAcik[0]}}</td>
+										<td>{{hit.fields.tanzimTarihi[0]}}</td>
+										<td>{{hit.fields.plaka[0]}}</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-

@@ -3,12 +3,13 @@
     {
         return {
             restrict: 'E',
-            template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+        	//template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+            template: '<input ada-tarih-internal type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
             scope: { ngModelDegeri: '=ngModel' },
             link: function(scope, element, attrs) {
-	            //scope.classAdi = "small"; //attrs.class;
-            	scope.width = "75";
-	            scope.fontSize = "12";
+	            scope.classAdi = attrs.class;
+            	//scope.width = "75";
+	            //scope.fontSize = "12";
 	            //scope.width = element.hasClass("input-buyuk") ? "85" : "60";
             }
         };
@@ -296,8 +297,8 @@ angular.module('ada.brans', [])
 			scope: { ngModelDegeri: '=ngModel' },
 			link: function(scope, element, attrs) {
 				scope.classAdi = attrs.class;
-				scope.width = "35";
-				scope.fontSize = "12";
+				//scope.width = "35";
+				//scope.fontSize = "12";
 				//scope.width = element.hasClass("input-buyuk") ? "85" : "60";
 			}
 		};

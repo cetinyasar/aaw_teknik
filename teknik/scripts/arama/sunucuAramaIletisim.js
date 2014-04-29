@@ -9,18 +9,21 @@
 			var erteleme = $q;
 			this.veriAl = function(obj)
 			{
+				return this.istekGonder("raporAl.ada", obj);
+			}
+
+			this.kriterleriAl = function (obj) {
+				return this.istekGonder("kriterleriAl.ada", obj);
+			}
+
+			this.istekGonder = function(istekTipi, veri) {
 				var kilit = erteleme.defer();
-				//this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function(data)
-				//{
-				//	kilit.resolve(sunucudanAldiginVeriyiIsle(data));
-				//}).error(function (errorData) { });
-				this.http.post("raporAl.ada", sunucuyaGondermedenOnceIsle(obj)).success(function (data) {
+				this.http.post(istekTipi, sunucuyaGondermedenOnceIsle(veri)).success(function (data) {
 					kilit.resolve(sunucudanAldiginVeriyiIsle(data));
 				}).error(function (errorData) { });
-
 				return kilit.promise;
-
 			}
+			
 		}
 	]);
 });
