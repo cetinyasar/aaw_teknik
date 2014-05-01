@@ -1,18 +1,17 @@
 ﻿angular.module('ada.tarih', ['ui.mask'])
-    .directive('adaTarih', function ()
-    {
-        return {
-            restrict: 'E',
-        	//template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
-            template: '<input ada-tarih-internal type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
-            scope: { ngModelDegeri: '=ngModel' },
-            link: function(scope, element, attrs) {
-	            scope.classAdi = attrs.class;
-            	//scope.width = "75";
-	            //scope.fontSize = "12";
-	            //scope.width = element.hasClass("input-buyuk") ? "85" : "60";
-            }
-        };
+    .directive('adaTarih', function () {
+    	return {
+    		restrict: 'A',
+    		//template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+    		template: '<input x-ada-tarih-internal type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+    		scope: { ngModelDegeri: '=ngModel' },
+    		link: function (scope, element, attrs) {
+    			scope.classAdi = attrs.class;
+    			//scope.width = "75";
+    			//scope.fontSize = "12";
+    			//scope.width = element.hasClass("input-buyuk") ? "85" : "60";
+    		}
+    	};
     })
     .directive("adaTarihInternal", function ($filter)
     {
@@ -99,7 +98,6 @@
                         var lGun = d.getDate() + "";
                         var lAy = d.getMonth() + 1 + "";
                         var lYil = d.getFullYear() + "";
-	                    debugger;
                         oElement.value = lGun.PadLeft(2, "0") + "." + lAy.PadLeft(2, "0") + "." + lYil;
                         //$scope.ngModelDegeri = new Date(Date.UTC(oElement.value.substr(4, 4), oElement.value.substr(2, 2) - 1, oElement.value.substr(0, 2)));
                         //evt.returnValue = 0;
@@ -292,8 +290,9 @@ angular.module('ada.dosya.upload', [])
 angular.module('ada.brans', [])
 	.directive('adaBrans', function() {
 		return {
-			restrict: 'E',
-			template: '<input type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" class="{{classAdi}}" maxlength="3"  />',
+			restrict: 'A',
+			//template: '<input type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" class="{{classAdi}}" maxlength="3"  />',
+			template: '<input type="text" />',
 			scope: { ngModelDegeri: '=ngModel' },
 			link: function(scope, element, attrs) {
 				scope.classAdi = attrs.class;
@@ -303,3 +302,36 @@ angular.module('ada.brans', [])
 			}
 		};
 	});
+
+//angular.module('ada.test', [])
+//	.directive('adaTest', function () {
+//		return {
+//			restrict: 'A',
+//			template: '<input type="text" />',
+//			scope: { ngModelDegeri: '=ngModel' },
+//			link: function (scope, element, attrs) {
+//				scope.classAdi = attrs.class;
+//				//scope.width = "35";
+//				//scope.fontSize = "12";
+//				//scope.width = element.hasClass("input-buyuk") ? "85" : "60";
+//			}
+//		};
+//	});
+
+//angular.module('ada.tarih2', [])
+//	.directive('adaTarih2', function() {
+//		return {
+//			restrict: 'E',
+//			require: "ngModel",
+//			priority: 150,
+//			//template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+//			template: '<input x-ada-tarih-internal type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+//			scope: { ngModelDegeri: '=ngModel' },
+//			link: function(scope, element, attrs) {
+//				scope.classAdi = attrs.class;
+//				//scope.width = "75";
+//				//scope.fontSize = "12";
+//				//scope.width = element.hasClass("input-buyuk") ? "85" : "60";
+//			}
+//		};
+//	});

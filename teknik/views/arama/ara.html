@@ -15,8 +15,7 @@
 	</div>
 	
 	<div class="row">
-		<div class="col-lg-12">
-			<div class="col-lg-3">
+			<div class="col-sm-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<i class="fa fa-external-link-square"></i>
@@ -27,12 +26,23 @@
 							<tr>
 								<td>Tanzim Tarihi</td>
 								<td>
-									<ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></ada-tarih> - <ada-tarih ng-model="Arama.Kriterler.TanzimTarihiBitis"></ada-tarih>
+									<div x-ada-tarih class="normal small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></div> -
+									<div x-ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis"></div>
 								</td>
 							</tr>
+							<!--<tr>
+								<td>Tanzim Tarihi 2</td>
+								<td>
+									<x-ada-tarih2 class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></x-ada-tarih2> -
+									<x-ada-tarih2 class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis"></x-ada-tarih2>
+								</td>
+							</tr>-->
 							<tr>
 								<td>Branş</td>
-								<td><ada-brans class="large" ng-model="Arama.Kriterler.BransBaslangic"></ada-brans> - <ada-brans class="small" ng-model="Arama.Kriterler.BransBitis"></ada-brans></td>
+								<td>
+									<input ada-brans class="small" ng-model="Arama.Kriterler.BransBaslangic" /> - 
+									<input ada-brans class="small" ng-model="Arama.Kriterler.BransBitis" />
+								</td>
 							</tr>
 							<tr>
 								<td>Plaka İl Kodu</td>
@@ -66,7 +76,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-9">
+			<div class="col-sm-9">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<i class="fa fa-external-link-square"></i>
@@ -117,5 +127,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
