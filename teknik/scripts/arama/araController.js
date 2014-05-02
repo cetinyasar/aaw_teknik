@@ -13,6 +13,8 @@
 					$scope.Arama.ayarla(sonuc[0]);
 				});
 			}
+
+			//Main.init();
 		}
     ]);
 });
@@ -45,8 +47,7 @@ function AramaKriterleri() {
 	this.tar = "15.04.2014".OnHanelidenTarihAl();
 	this.TanzimTarihiBaslangic = "01.01.2000".OnHanelidenTarihAl();
 	this.TanzimTarihiBitis = "21/04/2014".OnHanelidenTarihAl();
-	this.BransBaslangic = "100";
-	this.BransBitis = "999";
+	this.Brans = "";
 	this.PlakaIlKodu = "";
 	this.ModelYili = "";
 	this.Marka = "";

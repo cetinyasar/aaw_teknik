@@ -3,7 +3,7 @@
     	return {
     		restrict: 'A',
     		//template: '<input ada-tarih-internal type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
-    		template: '<input x-ada-tarih-internal type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
+    		template: '<input  type="text" ng-model="ngModelDegeri" ui-mask="99.99.9999" class="{{classAdi}}" maxlength="10"  />',
     		scope: { ngModelDegeri: '=ngModel' },
     		link: function (scope, element, attrs) {
     			scope.classAdi = attrs.class;

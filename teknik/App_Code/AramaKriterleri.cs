@@ -14,8 +14,7 @@ public class AramaKriterleri
 	public string Sorgu { get; set; }
 	public DateTime TanzimTarihiBaslangic { get; set; }
 	public DateTime TanzimTarihiBitis { get; set; }
-	public string BransBaslangic { get; set; }
-	public string BransBitis { get; set; }
+	public string Brans { get; set; }
 	public string PlakaIlKodu { get; set; }
 	public string ModelYili { get; set; }
 	public string Marka { get; set; }
