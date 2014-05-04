@@ -14,7 +14,9 @@
 				});
 			}
 
-			//Main.init();
+			$scope.yeniSecilen = function(secimAlani, secilen) {
+				$scope.Arama.Kriterler.SeciliKriter.policeGrubu.push(secilen);
+			}
 		}
     ]);
 });
@@ -44,16 +46,17 @@ function AramaKriterleri() {
 	this.Guvenlik = new Guvenlik();
 	this.Tipi = "PoliceArama";
 	this.Sorgu = "";
-	this.tar = "15.04.2014".OnHanelidenTarihAl();
-	this.TanzimTarihiBaslangic = "01.01.2000".OnHanelidenTarihAl();
-	this.TanzimTarihiBitis = "21/04/2014".OnHanelidenTarihAl();
-	this.Brans = "";
-	this.PlakaIlKodu = "";
-	this.ModelYili = "";
-	this.Marka = "";
-	this.Tip = "";
-	this.SigortaliIlKodu = "";
+	this.SeciliKriter = new SeciliKriter();
 }
+
+function SeciliKriter() {
+	this.policeGrubu = [];
+	this.brans = [];
+	this.taliAdiAcik = [];
+	this.saticiAdiAcik = [];
+	this.marka = [];
+}
+
 
 function Guvenlik() {
 	this.TarihSaat = "";

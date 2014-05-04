@@ -1,5 +1,5 @@
 ﻿[{
-   "took": 187,
+   "took": 745,
    "timed_out": false,
    "_shards": {
       "total": 5,
@@ -18240,6 +18240,102 @@
             }
          ]
       },
+      "brans": {
+         "_type": "terms",
+         "missing": 0,
+         "total": 2973,
+         "other": 545,
+         "terms": [
+            {
+               "term": "343",
+               "count": 553
+            },
+            {
+               "term": "220",
+               "count": 427
+            },
+            {
+               "term": "300",
+               "count": 307
+            },
+            {
+               "term": "340",
+               "count": 256
+            },
+            {
+               "term": "303",
+               "count": 223
+            },
+            {
+               "term": "411",
+               "count": 193
+            },
+            {
+               "term": "310",
+               "count": 153
+            },
+            {
+               "term": "334",
+               "count": 119
+            },
+            {
+               "term": "335",
+               "count": 104
+            },
+            {
+               "term": "332",
+               "count": 93
+            }
+         ]
+      },
+      "bransTotal": {
+         "_type": "terms",
+         "missing": 0,
+         "total": 31605,
+         "other": 7030,
+         "terms": [
+            {
+               "term": "220",
+               "count": 5080
+            },
+            {
+               "term": "300",
+               "count": 3970
+            },
+            {
+               "term": "411",
+               "count": 2778
+            },
+            {
+               "term": "303",
+               "count": 2669
+            },
+            {
+               "term": "343",
+               "count": 2202
+            },
+            {
+               "term": "310",
+               "count": 1906
+            },
+            {
+               "term": "340",
+               "count": 1840
+            },
+            {
+               "term": "334",
+               "count": 1806
+            },
+            {
+               "term": "191",
+               "count": 1327
+            },
+            {
+               "term": "335",
+               "count": 997
+            }
+         ]
+      },
       "marka": {
          "_type": "terms",
          "missing": 1108,
@@ -18333,6 +18429,390 @@
             {
                "term": "otoyolivecofiat",
                "count": 411
+            }
+         ]
+      },
+      "plakaIlKodu": {
+         "_type": "terms",
+         "missing": 1104,
+         "total": 1869,
+         "other": 51,
+         "terms": [
+            {
+               "term": "34",
+               "count": 1465
+            },
+            {
+               "term": "81",
+               "count": 103
+            },
+            {
+               "term": "14",
+               "count": 97
+            },
+            {
+               "term": "31",
+               "count": 71
+            },
+            {
+               "term": "38",
+               "count": 21
+            },
+            {
+               "term": "61",
+               "count": 18
+            },
+            {
+               "term": "54",
+               "count": 15
+            },
+            {
+               "term": "33",
+               "count": 13
+            },
+            {
+               "term": "78",
+               "count": 10
+            },
+            {
+               "term": "08",
+               "count": 5
+            }
+         ]
+      },
+      "plakaIlKoduTotal": {
+         "_type": "terms",
+         "missing": 14930,
+         "total": 16675,
+         "other": 957,
+         "terms": [
+            {
+               "term": "34",
+               "count": 13024
+            },
+            {
+               "term": "14",
+               "count": 779
+            },
+            {
+               "term": "31",
+               "count": 777
+            },
+            {
+               "term": "38",
+               "count": 255
+            },
+            {
+               "term": "80",
+               "count": 219
+            },
+            {
+               "term": "41",
+               "count": 184
+            },
+            {
+               "term": "33",
+               "count": 150
+            },
+            {
+               "term": "06",
+               "count": 119
+            },
+            {
+               "term": "54",
+               "count": 116
+            },
+            {
+               "term": "81",
+               "count": 95
+            }
+         ]
+      },
+      "taliAdiAcik": {
+         "_type": "terms",
+         "missing": 170,
+         "total": 10558,
+         "other": 5503,
+         "terms": [
+            {
+               "term": "a.ş",
+               "count": 1071
+            },
+            {
+               "term": "lojistik",
+               "count": 665
+            },
+            {
+               "term": "ve",
+               "count": 629
+            },
+            {
+               "term": "tls",
+               "count": 584
+            },
+            {
+               "term": "und",
+               "count": 485
+            },
+            {
+               "term": "seyahat",
+               "count": 428
+            },
+            {
+               "term": "tic",
+               "count": 355
+            },
+            {
+               "term": "san.ve",
+               "count": 326
+            },
+            {
+               "term": "nakliyat",
+               "count": 320
+            },
+            {
+               "term": "tirsan",
+               "count": 192
+            }
+         ]
+      },
+      "taliAdiAcikTotal": {
+         "_type": "terms",
+         "missing": 2324,
+         "total": 107496,
+         "other": 62560,
+         "terms": [
+            {
+               "term": "a.ş",
+               "count": 6959
+            },
+            {
+               "term": "ve",
+               "count": 6876
+            },
+            {
+               "term": "und",
+               "count": 6100
+            },
+            {
+               "term": "seyahat",
+               "count": 5079
+            },
+            {
+               "term": "nakliyat",
+               "count": 4070
+            },
+            {
+               "term": "san.ve",
+               "count": 3783
+            },
+            {
+               "term": "tic",
+               "count": 3705
+            },
+            {
+               "term": "tirsan",
+               "count": 3402
+            },
+            {
+               "term": "treyler",
+               "count": 3327
+            },
+            {
+               "term": "tic.ltd.şti",
+               "count": 1635
+            }
+         ]
+      },
+      "sorumluAdiAcik": {
+         "_type": "terms",
+         "missing": 0,
+         "total": 3114,
+         "other": 7,
+         "terms": [
+            {
+               "term": "özge",
+               "count": 893
+            },
+            {
+               "term": "gülay",
+               "count": 698
+            },
+            {
+               "term": "selma",
+               "count": 388
+            },
+            {
+               "term": "yurdanur",
+               "count": 356
+            },
+            {
+               "term": "şenol",
+               "count": 346
+            },
+            {
+               "term": "sorumlu",
+               "count": 138
+            },
+            {
+               "term": "bayi",
+               "count": 138
+            },
+            {
+               "term": "antakya",
+               "count": 95
+            },
+            {
+               "term": "derya",
+               "count": 36
+            },
+            {
+               "term": "demet",
+               "count": 19
+            }
+         ]
+      },
+      "sorumluAdiAcikTotal": {
+         "_type": "terms",
+         "missing": 6,
+         "total": 34203,
+         "other": 112,
+         "terms": [
+            {
+               "term": "gülay",
+               "count": 7801
+            },
+            {
+               "term": "özge",
+               "count": 5581
+            },
+            {
+               "term": "yurdanur",
+               "count": 4886
+            },
+            {
+               "term": "selma",
+               "count": 4431
+            },
+            {
+               "term": "şenol",
+               "count": 4368
+            },
+            {
+               "term": "sorumlu",
+               "count": 2556
+            },
+            {
+               "term": "bayi",
+               "count": 2556
+            },
+            {
+               "term": "antakya",
+               "count": 1393
+            },
+            {
+               "term": "demet",
+               "count": 303
+            },
+            {
+               "term": "derya",
+               "count": 216
+            }
+         ]
+      },
+      "saticiAdiAcik": {
+         "_type": "terms",
+         "missing": 0,
+         "total": 2992,
+         "other": 58,
+         "terms": [
+            {
+               "term": "özge",
+               "count": 1041
+            },
+            {
+               "term": "ibrahim",
+               "count": 610
+            },
+            {
+               "term": "selma",
+               "count": 446
+            },
+            {
+               "term": "yurdanur",
+               "count": 260
+            },
+            {
+               "term": "gülay",
+               "count": 214
+            },
+            {
+               "term": "demet",
+               "count": 214
+            },
+            {
+               "term": "şenol",
+               "count": 86
+            },
+            {
+               "term": "derya",
+               "count": 30
+            },
+            {
+               "term": "ismail",
+               "count": 18
+            },
+            {
+               "term": "hakki",
+               "count": 15
+            }
+         ]
+      },
+      "saticiAdiAcikTotal": {
+         "_type": "terms",
+         "missing": 6,
+         "total": 31887,
+         "other": 1055,
+         "terms": [
+            {
+               "term": "özge",
+               "count": 7812
+            },
+            {
+               "term": "ibrahim",
+               "count": 6887
+            },
+            {
+               "term": "selma",
+               "count": 5101
+            },
+            {
+               "term": "yurdanur",
+               "count": 4084
+            },
+            {
+               "term": "demet",
+               "count": 3066
+            },
+            {
+               "term": "gülay",
+               "count": 1890
+            },
+            {
+               "term": "şenol",
+               "count": 954
+            },
+            {
+               "term": "derya",
+               "count": 520
+            },
+            {
+               "term": "ismail",
+               "count": 288
+            },
+            {
+               "term": "hakki",
+               "count": 230
             }
          ]
       }

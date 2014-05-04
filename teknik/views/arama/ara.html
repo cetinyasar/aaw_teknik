@@ -16,78 +16,196 @@
 	
 	<div class="row">
 			<div class="col-sm-3">
+				<!-- start: ACCORDION PANEL -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<i class="fa fa-external-link-square"></i>
-						Ek Kriterler
+						<i class="fa fa-reorder"></i>
+						Kriterler
+						<div class="panel-tools">
+							<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+							</a>
+							<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+								<i class="fa fa-wrench"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-refresh" href="#">
+								<i class="fa fa-refresh"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-expand" href="#">
+								<i class="fa fa-resize-full"></i>
+							</a>
+							<a class="btn btn-xs btn-link panel-close" href="#">
+								<i class="fa fa-times"></i>
+							</a>
+						</div>
 					</div>
 					<div class="panel-body">
-						<table width="100%" class="table ">
-							<tr>
-								<td>Tanzim Tarihi</td>
-								<td>
-									<div x-ada-tarih class="normal small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></div> -
-									<div x-ada-tarih class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis"></div>
-								</td>
-							</tr>
-							<!--<tr>
-								<td>Tanzim Tarihi 2</td>
-								<td>
-									<x-ada-tarih2 class="small" ng-model="Arama.Kriterler.TanzimTarihiBaslangic"></x-ada-tarih2> -
-									<x-ada-tarih2 class="small" ng-model="Arama.Kriterler.TanzimTarihiBitis"></x-ada-tarih2>
-								</td>
-							</tr>-->
-							<tr>
-								<td>Branş</td>
-								<td>
-									<input ada-brans class="small" ng-model="Arama.Kriterler.Brans" />
-								</td>
-							</tr>
-							<tr>
-								<td>Plaka İl Kodu</td>
-								<td><input class="small" ng-model="Arama.Kriterler.PlakaIlKodu" /></td>
-							</tr>
-							<tr>
-								<td>Model Yılı</td>
-								<td><input class="small" ng-model="Arama.Kriterler.ModelYili" /></td>
-							</tr>
-							<tr>
-								<td>Marka</td>
-								<td><input class="small" ng-model="Arama.Kriterler.Marka" /></td>
-							</tr>
-							<tr>
-								<td>Tip</td>
-								<td><input class="small" ng-model="Arama.Kriterler.Tip" /></td>
-							</tr>
-							<tr>
-								<td>Sigortalı İl Kodu</td>
-								<td><input class="small" ng-model="Arama.Kriterler.SigortaliIlKodu" /></td>
-							</tr>
-							<tr>
-								<td colspan="2">Ürün Grubu</td>
-							</tr>
-							<tr ng-repeat="facetPoliceGrubu in Arama.AramaSonuc.facets.policeGrubu.terms">
-								<td>{{facetPoliceGrubu.term}} </td>
-								<td>{{facetPoliceGrubu.count}}</td>
-							</tr>
-							<tr>
-								<td colspan="2">Marka</td>
-							</tr>
-							<tr ng-repeat="facetMarka in Arama.AramaSonuc.facets.marka.terms">
-								<td>{{facetMarka.term}} </td>
-								<td>{{facetMarka.count}}</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<button class="btn btn-primary" type="button" ng-click="aramaYap()">
-										<i class="fa fa-search"></i> Ara
-									</button>
-								</td>
-							</tr>
-						</table>
-
+						<span ng-repeat="secilen in Arama.Kriterler.SeciliKriter.policeGrubu">
+							<span class="label label-default" style="margin: 2px 2px 2px 2px; ">{{secilen}}</span>
+						</span>
 					</div>
-				</div>
+					<div class="panel-body">
+							<div class="panel-group accordion-custom accordion-teal" id="accordion">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseUrunGrubu">
+												<i class="icon-arrow"></i>
+												Ürün Grubu
+											</a>
+										</h4>
+									</div>
+									<div id="collapseUrunGrubu" class="panel-collapse collapse">
+										<table class="table table-condensed table-hover" id="sample-table-3">
+											<tbody>
+												<tr ng-repeat="facetPoliceGrubu in Arama.AramaSonuc.facets.policeGrubu.terms">
+													<td class="center hidden-xs">
+														<div class="checkbox-table">
+															<label>
+																<input type="checkbox" class="flat-grey" ng-click="yeniSecilen('policeGrubu', facetPoliceGrubu.term)">
+															</label>
+														</div>
+													</td>
+													<td>
+														<a href="#">
+															{{facetPoliceGrubu.term}}
+														</a>
+													</td>
+													<td class="hidden-xs">{{facetPoliceGrubu.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseBrans">
+												<i class="icon-arrow"></i>
+												Branş
+											</a>
+										</h4>
+									</div>
+									<div id="collapseBrans" class="panel-collapse collapse">
+										<table class="table table-condensed table-hover" id="sample-table-3">
+											<tbody>
+												<tr ng-repeat="facetBrans in Arama.AramaSonuc.facets.brans.terms">
+													<td class="center hidden-xs">
+														<div class="checkbox-table">
+															<label>
+																<input type="checkbox" class="flat-grey">
+															</label>
+														</div>
+													</td>
+													<td>
+														<a href="#">
+															{{facetBrans.term}}
+														</a>
+													</td>
+													<td class="hidden-xs">{{facetBrans.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTali">
+												<i class="icon-arrow"></i>
+												Tali
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTali" class="panel-collapse collapse">
+										<table class="table table-condensed table-hover" id="sample-table-3">
+											<tbody>
+												<tr ng-repeat="facetTali in Arama.AramaSonuc.facets.taliAdiAcik.terms">
+													<td class="center hidden-xs">
+														<div class="checkbox-table">
+															<label>
+																<input type="checkbox" class="flat-grey">
+															</label>
+														</div>
+													</td>
+													<td>
+														<a href="#">
+															{{facetTali.term}}
+														</a>
+													</td>
+													<td class="hidden-xs">{{facetTali.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSatici">
+												<i class="icon-arrow"></i>
+												Satıcı
+											</a>
+										</h4>
+									</div>
+									<div id="collapseSatici" class="panel-collapse collapse">
+										<table class="table table-condensed table-hover" id="sample-table-3">
+											<tbody>
+												<tr ng-repeat="facetSatici in Arama.AramaSonuc.facets.saticiAdiAcik.terms">
+													<td class="center hidden-xs">
+														<div class="checkbox-table">
+															<label>
+																<input type="checkbox" class="flat-grey">
+															</label>
+														</div>
+													</td>
+													<td>
+														<a href="#">
+															{{facetSatici.term}}
+														</a>
+													</td>
+													<td class="hidden-xs">{{facetSatici.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+												<i class="icon-arrow"></i>
+												Araç Marka
+											</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse">
+										<table class="table table-condensed table-hover" id="sample-table-3">
+											<tbody>
+												<tr ng-repeat="facetMarka in Arama.AramaSonuc.facets.marka.terms">
+													<td class="center hidden-xs">
+														<div class="checkbox-table">
+															<label>
+																<input type="checkbox" class="flat-grey">
+															</label>
+														</div>
+													</td>
+													<td>
+														<a href="#">
+															{{facetMarka.term}}
+														</a>
+													</td>
+													<td class="hidden-xs">{{facetMarka.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- end: ACCORDION PANEL -->
 			</div>
 			<div class="col-sm-9">
 				<div class="panel panel-default">
