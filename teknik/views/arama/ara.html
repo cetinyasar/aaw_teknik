@@ -39,8 +39,8 @@
 						</div>
 					</div>
 					<div class="panel-body">
-						<span ng-repeat="secilen in Arama.Kriterler.policeGrubu | filter:secilen.secili">
-							<span class="label label-default" style="margin: 2px 2px 2px 2px; ">{{secilen}}</span>
+						<span ng-repeat="secilen in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
+							<span class="label label-default" style="margin: 2px 2px 2px 2px; ">{{secilen.adi}} {{secilen.secili}}</span>
 						</span>
 					</div>
 					<div class="panel-body">
@@ -57,7 +57,7 @@
 									<div id="collapseUrunGrubu" class="panel-collapse collapse">
 										<table class="table table-condensed table-hover" id="sample-table-3">
 											<tbody>
-												<tr ng-repeat="pg in Arama.Kriterler.policeGrubu">
+												<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
 													<td class="center hidden-xs">
 														<div class="checkbox-table">
 															<label>

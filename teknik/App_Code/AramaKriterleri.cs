@@ -8,24 +8,39 @@ using System.Web;
 /// </summary>
 public class AramaKriterleri
 {
-	public string Baslik { get; set; }
-	public Guvenlik Guvenlik {get;set;}
-	public string Tipi { get; set; }
-	public string Sorgu { get; set; }
-	public DateTime TanzimTarihiBaslangic { get; set; }
-	public DateTime TanzimTarihiBitis { get; set; }
-	public string Brans { get; set; }
-	public string PlakaIlKodu { get; set; }
-	public string ModelYili { get; set; }
-	public string Marka { get; set; }
-	public string Tip { get; set; }
-	public string SigortaliIlKodu { get; set; }
-
+	public SecilebilirKriter SecilebilirKriterler { get; set; }
+	//public string Sonuc { get; set; }
 	public AramaKriterleri()
 	{
 		
 
 	}
+
+	public static AramaKriterleri Olustur()
+	{
+		AramaKriterleri retVal = new AramaKriterleri();
+		retVal.SecilebilirKriterler = SecilebilirKriter.Olustur();
+		return retVal;
+	}
+}
+
+public class SecilebilirKriter
+{
+	public List<Kriter> PoliceGrubu { get; set; }
+
+	public static SecilebilirKriter Olustur()
+	{
+		SecilebilirKriter retVal = new SecilebilirKriter();
+		retVal.PoliceGrubu = new List<Kriter>();
+		return retVal;
+	}
+}
+
+public class Kriter
+{
+	public bool Secili { get; set; }
+	public string Adi { get; set; }
+	public int Count { get; set; }
 }
 
 public class Guvenlik

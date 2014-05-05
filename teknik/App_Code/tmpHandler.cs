@@ -25,9 +25,16 @@ public class tmpHandler : IHttpHandler
 
 		HttpResponse response = context.Response;
 		string url = request.RawUrl;
-		//string readToEnd = new StreamReader("D:\\Cetin\\Belgelerim\\Visual Studio 2013\\Projects\\aaw_apps\\teknik\\policeAramaSonuc.json").ReadToEnd();
-		string readToEnd = new StreamReader("C:\\GitHub\\aaw_teknik\\teknik\\policeAramaSonuc.json").ReadToEnd();
-		response.Write(readToEnd);
+		string readToEnd = new StreamReader("D:\\Cetin\\Belgelerim\\Visual Studio 2013\\Projects\\aaw_apps\\teknik\\policeAramaSonuc.json").ReadToEnd();
+		
+		//string readToEnd = new StreamReader("C:\\GitHub\\aaw_teknik\\teknik\\policeAramaSonuc.json").ReadToEnd();
+
+		AramaKriterleri retVal = AramaKriterleri.Olustur();
+		//retVal.Sonuc = readToEnd;
+
+		string serializeObject = JsonConvert.SerializeObject(retVal);
+		response.Write("{ \"Sonuc\" : " + readToEnd + ", \"Kriterler\" : " + serializeObject + " }");
+		//response.Write(serializeObject);
 	}
 
 	public bool IsReusable { get; private set; }

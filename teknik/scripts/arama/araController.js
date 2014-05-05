@@ -9,13 +9,13 @@
 			$scope.aramaYap = function ()
 			{
 				$scope.Arama.VeriAliniyor = true;
-				sunucuAramaIletisim.veriAl(this.Arama).then(function (sonuc) {
-					$scope.Arama.ayarla(sonuc[0]);
+				sunucuAramaIletisim.veriAl(this.Arama).then(function (aramaSonucu) {
+					$scope.Arama.ayarla(aramaSonucu);
 				});
 			}
 
 			$scope.yeniSecilen = function(secilen) {
-				secilen.secili = !secil.secili;
+				secilen.secili = !secilen.secili;
 			}
 		}
     ]);
@@ -23,44 +23,43 @@
 
 function Arama()
 {
-
-	this.Baslik = "Poliçe Ara";
 	this.VeriAliniyor = false;
 	this.Kriterler = new AramaKriterleri();
 	this.AramaSonuc = new AramaSonuc();
 	
-	this.ayarla = function (sonuc)
-	{
-		this.AramaSonuc = sonuc;
-		this.Kriterler = new AramaKriterleri();
+	this.ayarla = function (aramaSonucu) {
+		
+		this.AramaSonuc = aramaSonucu.Sonuc[0];
+		this.Kriterler = aramaSonucu.Kriterler;
 
-		//örnek: key == "policeGrubu"    
-		for (var key in sonuc.facets)
+		//örnek: key == "policeGrubu"
+		for (var key in this.AramaSonuc.facets)
 		{
-			if (isUndefined(sonuc.facets) || sonuc.facets == null)
+			
+			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;
-			if (!sonuc.facets.hasOwnProperty(key))
+			if (!this.AramaSonuc.facets.hasOwnProperty(key))
 				continue;
-			var value = sonuc.facets[key];
+			
+			var value = this.AramaSonuc.facets[key];
 			//örnek value.terms == array içinde term = "kko" ve count = 111, term = "trf" ve count = 456 gibi bilgi var
 			for (var i = 0; i < value.terms.length; i++)
 			{
+				var sk = new SecilebilirKriter();
+				sk.secili = false;
+				sk.adi = value.terms[i].term;
+				sk.adet = value.terms[i].count;
+
 				if (key == "policeGrubu")
-				{
-					var sk = new SecilebilirKriter();
-					sk.secili = false;
-					sk.adi = value.terms[i].term;
-					sk.adet = value.terms[i].count;
-					this.Kriterler.policeGrubu.push(sk);
-				}
+					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
 			}
 		}
+		
 		this.VeriAliniyor = false;
 	};
 }
 
-function AramaSonuc()
-{
+function AramaSonuc() {
 	this.hits = new Object();
 	this.hits.total = 0;
 	this.hits.hits = [];
@@ -68,7 +67,7 @@ function AramaSonuc()
 
 function AramaKriterleri()
 {
-	this.policeGrubu = [];
+	this.PoliceGrubu = [];
 }
 
 function SecilebilirKriter()
