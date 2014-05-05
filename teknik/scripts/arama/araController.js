@@ -14,8 +14,8 @@
 				});
 			}
 
-			$scope.yeniSecilen = function(secimAlani, secilen) {
-				$scope.Arama.Kriterler.SeciliKriter.policeGrubu.push(secilen);
+			$scope.yeniSecilen = function(secilen) {
+				secilen.secili = !secil.secili;
 			}
 		}
     ]);
@@ -28,9 +28,33 @@ function Arama()
 	this.VeriAliniyor = false;
 	this.Kriterler = new AramaKriterleri();
 	this.AramaSonuc = new AramaSonuc();
+	
 	this.ayarla = function (sonuc)
 	{
 		this.AramaSonuc = sonuc;
+		this.Kriterler = new AramaKriterleri();
+
+		//örnek: key == "policeGrubu"    
+		for (var key in sonuc.facets)
+		{
+			if (isUndefined(sonuc.facets) || sonuc.facets == null)
+				continue;
+			if (!sonuc.facets.hasOwnProperty(key))
+				continue;
+			var value = sonuc.facets[key];
+			//örnek value.terms == array içinde term = "kko" ve count = 111, term = "trf" ve count = 456 gibi bilgi var
+			for (var i = 0; i < value.terms.length; i++)
+			{
+				if (key == "policeGrubu")
+				{
+					var sk = new SecilebilirKriter();
+					sk.secili = false;
+					sk.adi = value.terms[i].term;
+					sk.adet = value.terms[i].count;
+					this.Kriterler.policeGrubu.push(sk);
+				}
+			}
+		}
 		this.VeriAliniyor = false;
 	};
 }
@@ -42,11 +66,16 @@ function AramaSonuc()
 	this.hits.hits = [];
 }
 
-function AramaKriterleri() {
-	this.Guvenlik = new Guvenlik();
-	this.Tipi = "PoliceArama";
-	this.Sorgu = "";
-	this.SeciliKriter = new SeciliKriter();
+function AramaKriterleri()
+{
+	this.policeGrubu = [];
+}
+
+function SecilebilirKriter()
+{
+	this.secili = false;
+	this.adi = "";
+	this.adet = 0;
 }
 
 function SeciliKriter() {
