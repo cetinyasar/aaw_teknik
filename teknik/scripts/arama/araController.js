@@ -22,6 +22,9 @@
 				sk.Adet = secilen.Adet;
 				//$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu[sk.Adi] = sk;
 				$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.push(sk);
+				
+				alert($scope.Arama.Kriterler.SecilebilirKriterler.PoliceGrubu[0].Secili);
+				$scope.aramaYap();
 			}
 		}
     ]);
@@ -37,35 +40,34 @@ function Arama()
 		
 		this.AramaSonuc = aramaSonucu.Sonuc[0];
 		this.Kriterler = aramaSonucu.Kriterler;
-		//örnek: key == "policeGrubu"
-		this.Kriterler.SecilebilirKriterler.PoliceGrubu = [];
-		for (var key in this.AramaSonuc.facets)
-		{
-			
+		if (this.Kriterler.SecilebilirKriterler.PoliceGrubu.length == 0) {
+			this.ilkCalistirmaIcinKriterleriAyarla();
+		}
+		this.VeriAliniyor = false;
+	};
+
+	this.ilkCalistirmaIcinKriterleriAyarla = function () {
+
+		for (var key in this.AramaSonuc.facets) {
 			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;
 			if (!this.AramaSonuc.facets.hasOwnProperty(key))
 				continue;
-			
+
 			var value = this.AramaSonuc.facets[key];
 			//örnek value.terms == array içinde term = "kko" ve count = 111, term = "trf" ve count = 456 gibi bilgi var
-			
-			for (var i = 0; i < value.terms.length; i++)
-			{
+			for (var i = 0; i < value.terms.length; i++) {
 				var sk = new Kriter();
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
-				if (key == "policeGrubu")
-				{
-					//this.Kriterler.SecilebilirKriterler.PoliceGrubu[sk.Adi] = sk;
+				if (key == "policeGrubu") {
 					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
 				}
 			}
 		}
-		debugger;
-		this.VeriAliniyor = false;
 	};
+
 }
 
 function AramaSonuc() {
