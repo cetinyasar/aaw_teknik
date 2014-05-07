@@ -19,10 +19,12 @@
 				//sk.Secili = secilen.Secili;
 				//sk.Adi = secilen.Adi;
 				//sk.Adet = secilen.Adet;
-				////$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu[sk.Adi] = sk;
-				//$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.push(sk);
-				
-				alert($scope.Arama.Kriterler.SecilebilirKriterler.PoliceGrubu[0].Secili + " --- " + $scope.Arama.Kriterler.SecilebilirKriterler.PoliceGrubu[0].Adi);
+				//for (var i = 0; i < $scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.length; i++) {
+				//	if ($scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu[i].Adi == secilen.Adi) {
+				//		$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.removeItem(i);
+				//	} else 
+				//		$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.push(sk);
+				//}
 				$scope.aramaYap();
 			}
 		}
