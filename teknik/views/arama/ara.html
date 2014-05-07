@@ -61,22 +61,22 @@
 													<td class="center hidden-xs">
 														<div class="checkbox-table">
 															<label>
-																<input type="checkbox" class="flat-grey" ng-click="yeniSecilen(pg)">
+																<input type="checkbox" class="flat-grey" ng-click="yeniSecilen(pg)" ng-model="pg.Secili">
 															</label>
 														</div>
 													</td>
 													<td>
-														<a href="#">
-															{{pg.Adi}}
+														<a href="#" ng-bind="pg.Adi">
+															
 														</a>
 													</td>
-													<td class="hidden-xs">{{pg.Adet}}</td>
+													<td class="hidden-xs" ng-bind="pg.Adet"></td>
 												</tr>
 											</tbody>
 										</table>
 									</div>
 								</div>
-								<div class="panel panel-default">
+								<!--<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseBrans">
@@ -201,7 +201,7 @@
 											</tbody>
 										</table>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>
