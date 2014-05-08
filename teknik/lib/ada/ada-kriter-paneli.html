@@ -1,0 +1,31 @@
+﻿<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#{{idsi}}">
+				<i class="icon-arrow"></i>
+				{{title}}
+			</a>
+		</h4>
+	</div>
+	<div id="{{idsi}}" class="panel-collapse collapse">
+		<table class="table table-condensed table-hover">
+			<tbody>
+				<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
+					<td class="center hidden-xs">
+						<div class="checkbox-table">
+							<label>
+								<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(pg)" ng-model="pg.Secili">
+							</label>
+						</div>
+					</td>
+					<td>
+						<a href="#" ng-bind="pg.Adi">
+
+						</a>
+					</td>
+					<td class="hidden-xs" ng-bind="pg.Adet"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

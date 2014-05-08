@@ -38,172 +38,76 @@
 							</a>
 						</div>
 					</div>
+
 					<div class="panel-body">
-						<span ng-repeat="secilen in Arama.Kriterler.SeciliKriterler.PoliceGrubu">
-							<span class="label label-default" style="margin: 2px 2px 2px 2px; ">{{secilen.Adi}} {{secilen.secili}}</span>
-						</span>
-					</div>
-					<div class="panel-body">
-							<div class="panel-group accordion-custom accordion-teal" id="accordion">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseUrunGrubu">
-												<i class="icon-arrow"></i>
-												Ürün Grubu
-											</a>
-										</h4>
-									</div>
-									<div id="collapseUrunGrubu" class="panel-collapse collapse">
-										<table class="table table-condensed table-hover" id="sample-table-3">
-											<tbody>
-												<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
-													<td class="center hidden-xs">
-														<div class="checkbox-table">
-															<label>
-																<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(pg)" ng-model="pg.Secili">
-															</label>
-														</div>
-													</td>
-													<td>
-														<a href="#" ng-bind="pg.Adi">
+						
+						<div class="panel-group accordion-custom accordion-teal" id="accordion">
+							<ada-kriter-paneli title="Deneme" idsi="denemePanel"></ada-kriter-paneli>
+
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseUrunGrubu">
+											<i class="icon-arrow"></i>
+											Ürün Grubu
+										</a>
+									</h4>
+								</div>
+								<div id="collapseUrunGrubu" class="panel-collapse collapse">
+									<table class="table table-condensed table-hover">
+										<tbody>
+											<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
+												<td class="center hidden-xs">
+													<div class="checkbox-table">
+														<label>
+															<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(pg)" ng-model="pg.Secili">
+														</label>
+													</div>
+												</td>
+												<td>
+													<a href="#" ng-bind="pg.Adi">
 															
-														</a>
-													</td>
-													<td class="hidden-xs" ng-bind="pg.Adet"></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+													</a>
+												</td>
+												<td class="hidden-xs" ng-bind="pg.Adet"></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseBrans">
-												<i class="icon-arrow"></i>
-												Branş
-											</a>
-										</h4>
-									</div>
-									<div id="collapseBrans" class="panel-collapse collapse">
-										<table class="table table-condensed table-hover" id="sample-table-3">
-											<tbody>
-												<tr ng-repeat="facetBrans in Arama.AramaSonuc.facets.brans.terms">
-													<td class="center hidden-xs">
-														<div class="checkbox-table">
-															<label>
-																<input type="checkbox" class="flat-grey">
-															</label>
-														</div>
-													</td>
-													<td>
-														<a href="#">
-															{{facetBrans.term}}
-														</a>
-													</td>
-													<td class="hidden-xs">{{facetBrans.count}}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseMarka">
+											<i class="icon-arrow"></i>
+											Marka
+										</a>
+									</h4>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTali">
-												<i class="icon-arrow"></i>
-												Tali
-											</a>
-										</h4>
-									</div>
-									<div id="collapseTali" class="panel-collapse collapse">
-										<table class="table table-condensed table-hover" id="sample-table-3">
-											<tbody>
-												<tr ng-repeat="facetTali in Arama.AramaSonuc.facets.taliAdiAcik.terms">
-													<td class="center hidden-xs">
-														<div class="checkbox-table">
-															<label>
-																<input type="checkbox" class="flat-grey">
-															</label>
-														</div>
-													</td>
-													<td>
-														<a href="#">
-															{{facetTali.term}}
-														</a>
-													</td>
-													<td class="hidden-xs">{{facetTali.count}}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
+								<div id="collapseMarka" class="panel-collapse collapse">
+									<table class="table table-condensed table-hover">
+										<tbody>
+											<tr ng-repeat="marka in Arama.Kriterler.SecilebilirKriterler.Marka">
+												<td class="center hidden-xs">
+													<div class="checkbox-table">
+														<label>
+															<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(marka)" ng-model="marka.Secili">
+														</label>
+													</div>
+												</td>
+												<td>
+													<a href="#" ng-bind="marka.Adi">
 
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSatici">
-												<i class="icon-arrow"></i>
-												Satıcı
-											</a>
-										</h4>
-									</div>
-									<div id="collapseSatici" class="panel-collapse collapse">
-										<table class="table table-condensed table-hover" id="sample-table-3">
-											<tbody>
-												<tr ng-repeat="facetSatici in Arama.AramaSonuc.facets.saticiAdiAcik.terms">
-													<td class="center hidden-xs">
-														<div class="checkbox-table">
-															<label>
-																<input type="checkbox" class="flat-grey">
-															</label>
-														</div>
-													</td>
-													<td>
-														<a href="#">
-															{{facetSatici.term}}
-														</a>
-													</td>
-													<td class="hidden-xs">{{facetSatici.count}}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-												<i class="icon-arrow"></i>
-												Araç Marka
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse">
-										<table class="table table-condensed table-hover" id="sample-table-3">
-											<tbody>
-												<tr ng-repeat="facetMarka in Arama.AramaSonuc.facets.marka.terms">
-													<td class="center hidden-xs">
-														<div class="checkbox-table">
-															<label>
-																<input type="checkbox" class="flat-grey">
-															</label>
-														</div>
-													</td>
-													<td>
-														<a href="#">
-															{{facetMarka.term}}
-														</a>
-													</td>
-													<td class="hidden-xs">{{facetMarka.count}}</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+													</a>
+												</td>
+												<td class="hidden-xs" ng-bind="marka.Adet"></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>
+					</div>
 					</div>
 				<!-- end: ACCORDION PANEL -->
 			</div>

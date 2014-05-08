@@ -15,16 +15,6 @@
 			}
 
 			$scope.yeniSecilen = function(secilen) {
-				//var sk = new Kriter();
-				//sk.Secili = secilen.Secili;
-				//sk.Adi = secilen.Adi;
-				//sk.Adet = secilen.Adet;
-				//for (var i = 0; i < $scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.length; i++) {
-				//	if ($scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu[i].Adi == secilen.Adi) {
-				//		$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.removeItem(i);
-				//	} else 
-				//		$scope.Arama.Kriterler.SeciliKriterler.PoliceGrubu.push(sk);
-				//}
 				$scope.aramaYap();
 			}
 		}
@@ -62,13 +52,14 @@ function Arama()
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
-				if (key == "policeGrubu") {
+				if (key == "policeGrubuTotal")
 					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
-				}
+				if (key == "markaTotal")
+					this.Kriterler.SecilebilirKriterler.Marka.push(sk);
+
 			}
 		}
 	};
-
 }
 
 function AramaSonuc() {
@@ -81,16 +72,14 @@ function AramaKriterleri()
 {
 	this.Query = "";
 	this.SecilebilirKriterler = new SecilebilirKriterler();
-	this.SeciliKriterler = new SecilebilirKriterler();
 }
 
 function SecilebilirKriterler()
 {
 	this.PoliceGrubu = [];
-
 	this.Brans = [];
-	this.TaliAdiAcik = [];
-	this.SaticiAdiAcik = [];
+	this.Tali = [];
+	this.Satici = [];
 	this.Marka = [];
 }
 
@@ -98,11 +87,4 @@ function Kriter() {
 	this.Secili = false;
 	this.Adi = "";
 	this.Adet = 0;
-}
-
-
-function Guvenlik() {
-	this.TarihSaat = "";
-	this.KullaniciAdi = "";
-	this.Parola = "";
 }
