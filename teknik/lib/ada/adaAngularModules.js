@@ -296,9 +296,6 @@ angular.module('ada.brans', [])
 			scope: { ngModelDegeri: '=ngModel' },
 			link: function(scope, element, attrs) {
 				scope.classAdi = attrs.class;
-				//scope.width = "35";
-				//scope.fontSize = "12";
-				//scope.width = element.hasClass("input-buyuk") ? "85" : "60";
 			}
 		};
 	});
@@ -306,10 +303,10 @@ angular.module('ada.brans', [])
 angular.module('ada.kriterPaneli', [])
 	.directive('adaKriterPaneli', function () {
 		return {
-			restrict: 'E',
-			//template: '<input type="text" style="width:{{width}}px;font-size:{{fontSize}}px;" ng-model="ngModelDegeri" class="{{classAdi}}" maxlength="3"  />',
+			restrict: 'A',
+			//template: '<input type="text" />',
 			templateUrl: '/lib/ada/ada-kriter-paneli.html',
-			scope: { ngModelDegeri: '=ngModel' },
+			scope: { ngModelDegeri: '=ngModel', secenekler: '=kriterler'},
 			link: function (scope, element, attrs) {
 				scope.title = attrs.title;
 				scope.idsi = attrs.idsi;

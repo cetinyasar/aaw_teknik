@@ -40,75 +40,12 @@
 					</div>
 
 					<div class="panel-body">
-						
 						<div class="panel-group accordion-custom accordion-teal" id="accordion">
-							<ada-kriter-paneli title="Deneme" idsi="denemePanel"></ada-kriter-paneli>
-
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseUrunGrubu">
-											<i class="icon-arrow"></i>
-											Ürün Grubu
-										</a>
-									</h4>
-								</div>
-								<div id="collapseUrunGrubu" class="panel-collapse collapse">
-									<table class="table table-condensed table-hover">
-										<tbody>
-											<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
-												<td class="center hidden-xs">
-													<div class="checkbox-table">
-														<label>
-															<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(pg)" ng-model="pg.Secili">
-														</label>
-													</div>
-												</td>
-												<td>
-													<a href="#" ng-bind="pg.Adi">
-															
-													</a>
-												</td>
-												<td class="hidden-xs" ng-bind="pg.Adet"></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseMarka">
-											<i class="icon-arrow"></i>
-											Marka
-										</a>
-									</h4>
-								</div>
-								<div id="collapseMarka" class="panel-collapse collapse">
-									<table class="table table-condensed table-hover">
-										<tbody>
-											<tr ng-repeat="marka in Arama.Kriterler.SecilebilirKriterler.Marka">
-												<td class="center hidden-xs">
-													<div class="checkbox-table">
-														<label>
-															<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(marka)" ng-model="marka.Secili">
-														</label>
-													</div>
-												</td>
-												<td>
-													<a href="#" ng-bind="marka.Adi">
-
-													</a>
-												</td>
-												<td class="hidden-xs" ng-bind="marka.Adet"></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
+							<div ada-kriter-paneli title="Ürün Tipi" idsi="denemePanel" kriterler="Arama.Kriterler.SecilebilirKriterler.PoliceGrubu"></div>
+							<div ada-kriter-paneli title="Marka" idsi="denemePanel2" kriterler="Arama.Kriterler.SecilebilirKriterler.Marka"></div>
 						</div>
 					</div>
-					</div>
+				</div>
 				<!-- end: ACCORDION PANEL -->
 			</div>
 			<div class="col-sm-9">

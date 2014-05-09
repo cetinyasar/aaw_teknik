@@ -10,20 +10,20 @@
 	<div id="{{idsi}}" class="panel-collapse collapse">
 		<table class="table table-condensed table-hover">
 			<tbody>
-				<tr ng-repeat="pg in Arama.Kriterler.SecilebilirKriterler.PoliceGrubu">
+				<tr ng-repeat="secenek in secenekler">
 					<td class="center hidden-xs">
 						<div class="checkbox-table">
 							<label>
-								<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(pg)" ng-model="pg.Secili">
+								<input type="checkbox" class="flat-grey" ng-change="yeniSecilen(secenek)" ng-model="secenek.Secili">
 							</label>
 						</div>
 					</td>
 					<td>
-						<a href="#" ng-bind="pg.Adi">
+						<a href="#" ng-bind="secenek.Adi">
 
 						</a>
 					</td>
-					<td class="hidden-xs" ng-bind="pg.Adet"></td>
+					<td class="hidden-xs" ng-bind="secenek.Adet"></td>
 				</tr>
 			</tbody>
 		</table>
