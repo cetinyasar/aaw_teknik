@@ -1,0 +1,105 @@
+﻿GET _search
+{
+   "from": 0,
+   "size": 500,
+   "fields": [ "sigortaliAcik","sirketPoliceNo","plaka","brans","tanzimTarihi","musteriAdiAcik","plakaIlKodu","markaAcik","modelAcik","modelYili" ],
+   "filter": {
+      "and": [
+         {
+            "range": {
+               "tanzimTarihi": {"from": "2013-01-01T00:00:00","to": "2013-01-31T23:59:59"
+               }
+            }
+         }, 
+	{
+	"terms": {
+               "policeGrubu": [
+                  "kko", "trf"
+               ]
+            }
+         }
+      ]
+   },
+   "sort": [{"sirketPoliceNo": "desc"},{"tanzimTarihi": "asc"}],
+   "facets": {
+      "policeGrubu": {
+         "terms": {"field": "policeGrubu","size": 10},
+         "facet_filter": {
+            "and": {"filters": [{"range": {"tanzimTarihi": {"from": "2013-01-01T00:00:00","to": "2013-01-31T23:59:59"}}}]}
+            
+         }
+      },
+      "policeGrubuTotal": {
+         "terms": {
+            "field": "policeGrubu",
+            "size": 10
+         }
+      },
+      "marka": {
+         "terms": {"field": "markaAcik","size": 100},
+         "facet_filter": {
+            "and": {"filters": [{"range": {"tanzimTarihi": {"from": "2013-01-01T00:00:00","to": "2013-01-31T23:59:59"}}}]}
+         }
+      },
+      "markaTotal": {
+         "terms": {
+            "field": "markaAcik",
+            "size": 10
+         }
+      }
+   }
+}
+
+POST /_search
+{
+   "from": 0,
+   "size": 100,
+    "query": {
+        "query_string": {
+            "query": "mercedes"
+        }
+    },
+	   "filter": {
+      "and": [
+         {
+            "terms": {
+               "policeGrubu": [
+                  "KKO"
+               ]
+            }
+         }]
+		 }
+
+}
+
+POST /_search
+{
+   "from": 0,
+   "size": 100,
+   "filter": {
+      "and": [
+         {
+            "terms": {
+               "policeGrubu": [
+                  "KKO"
+               ]
+            }
+         },
+         {
+            "terms": {
+               "sirketPoliceNo": [
+                  "123762313"
+               ]
+            }
+         },
+         {
+            "range": {
+               "tanzimTarihi": {
+                  "from": "2013-01-01T00:00:00",
+                  "to": "2013-12-31T23:59:59"
+               }
+            }
+         }
+      ]
+   }
+}

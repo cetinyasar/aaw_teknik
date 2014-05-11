@@ -7,6 +7,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "teknik(1)", "http://localho
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{5dc6c55a-5c13-4ffd-ab8b-b3370a96d9db}|app_aaw_lib.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53092"
 		Debug.AspNetCompiler.PhysicalPath = "teknik\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53092\"
