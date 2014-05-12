@@ -169,7 +169,7 @@ namespace app_test
 			return retVal;
 		}
 
-		private List<EsFacets> aramaKriterlerindenFacetsAl(AramaKriterleri aramaKriterleri)
+		private List<EsFacets> aramaKriterlerindenFacetsAl(AramaKriterleri ak)
 		{
 			List<EsFacets> retVal = new List<EsFacets>();
 			EsFacets facet = new EsFacets();
@@ -180,12 +180,14 @@ namespace app_test
 
 			facet.policeGrubu.facet_filter = new FacetFacetFilter();
 			facet.policeGrubu.facet_filter.and = new FacetAnd();
-			facet.policeGrubu.facet_filter.and.filters = new List<FacetFilters>();
+			facet.policeGrubu.facet_filter.and.filters = new List<object>();
 
-			FacetFilters fff = new FacetFilters();
-			fff.
-			
-			facet.policeGrubu.facet_filter.and.filters.Add(fff);
+			FacetFilters ff = new FacetFilters();
+			EsRange range = EsRange.Olustur();
+			range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
+			range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
+			ff.range = range;
+			facet.policeGrubu.facet_filter.and.filters.Add(ff);
 
 			retVal.Add(facet);
 
@@ -220,13 +222,8 @@ namespace app_test
 				rangeAnd.range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
 				esAnd.Add(rangeAnd);
 			}
-
-
-
-
 			return esAnd;
 		}
-
 	}
 
 	public class ElasticSearchGet
@@ -271,12 +268,13 @@ namespace app_test
 
 	public class FacetAnd
 	{
-		public List<FacetFilters> filters { get; set; }
+		public List<object> filters { get; set; }
 	}
 
 	public class FacetFilters
 	{
 		public object terms { get; set; }
+		public object range { get; set; }
 	}
 
 	#endregion
