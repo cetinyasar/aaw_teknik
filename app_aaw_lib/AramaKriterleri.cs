@@ -14,7 +14,8 @@ namespace app_aaw_lib
 		public SecilebilirKriter SecilebilirKriterler { get; set; }
 		public AramaKriterleri()
 		{
-		
+			From = 0;
+			Size = 100;
 
 		}
 
