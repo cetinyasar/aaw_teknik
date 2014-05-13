@@ -22,8 +22,8 @@ namespace app_test
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
 			ElasticSearchGet esg = olusturan.Olustur(ak);
-			Assert.AreEqual(esg.fields.Count, 0);
-			Assert.AreEqual(esg.fields.Count, 0);
+			Assert.AreEqual(esg.filter, null);
+			
 		}
 
 		[Test]
@@ -131,6 +131,10 @@ namespace app_test
 			ak.Query = "renault";
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "kko" });
 			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "renault" });
+			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "bmc" });
+			ak.SecilebilirKriterler.Brans.Add(new Kriter { Adi = "100" });
+			ak.SecilebilirKriterler.Brans.Add(new Kriter { Adi = "200" });
+			ak.SecilebilirKriterler.Brans.Add(new Kriter { Adi = "300" });
 			ak.SecilebilirKriterler.TanzimTarihAraligi = new BaslangicBitisTarihi { IlkTarih = new DateTime(2000, 1, 1), SonTarih = new DateTime(2014, 12, 31) };
 
 			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
@@ -164,66 +168,107 @@ namespace app_test
 				retVal.filter.and = kriterlerindenTermsFiltreleriAl;
 			}
 
-			retVal.facets = new List<EsFacets>();
-			retVal.facets.AddRange(aramaKriterlerindenFacetsAl(ak));
+			//retVal.facets = new List<EsFacets>();
+			retVal.facets = aramaKriterlerindenFacetsAl(ak);
 			return retVal;
 		}
 
-		private List<EsFacets> aramaKriterlerindenFacetsAl(AramaKriterleri ak)
+		private EsFacets aramaKriterlerindenFacetsAl(AramaKriterleri ak)
 		{
-			List<EsFacets> retVal = new List<EsFacets>();
-			EsFacets facet = new EsFacets();
-			facet.policeGrubu = new FacetPoliceGrubu();
-			facet.policeGrubu.terms = new FacetTerms();
-			facet.policeGrubu.terms.field = "policeGrubu";
-			facet.policeGrubu.terms.size = 10;
+			EsFacets retVal = new EsFacets();
 
-			facet.policeGrubu.facet_filter = new FacetFacetFilter();
-			facet.policeGrubu.facet_filter.and = new FacetAnd();
-			facet.policeGrubu.facet_filter.and.filters = new List<object>();
+			retVal.policeGrubu = bosFacetOlustur("policeGrubu", ak);
+			retVal.policeGrubu.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
+			retVal.policeGrubu.facet_filter.and.filters.Add(markaKriterleriniEkle(ak));
+			retVal.policeGrubu.facet_filter.and.filters.Add(bransKriterleriniEkle(ak));
 
-			FacetFilters ff = new FacetFilters();
-			EsRange range = EsRange.Olustur();
-			range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
-			range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
-			ff.range = range;
-			facet.policeGrubu.facet_filter.and.filters.Add(ff);
+			retVal.brans = bosFacetOlustur("brans", ak);
+			retVal.brans.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
+			retVal.brans.facet_filter.and.filters.Add(markaKriterleriniEkle(ak));
+			retVal.brans.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle(ak));
 
-			retVal.Add(facet);
+			retVal.marka = bosFacetOlustur("marka", ak);
+			retVal.marka.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
+			retVal.marka.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle(ak));
+			retVal.marka.facet_filter.and.filters.Add(bransKriterleriniEkle(ak));
 
+			//retVal.policeGrubu = policeGrubuFacetOlustur(ak);
+			//retVal.marka = markaGrubuFacetEkle(ak);
 			return retVal;
 		}
 
+		private facet bosFacetOlustur(string facetAdi, AramaKriterleri ak)
+		{
+			FacetPoliceGrubu facet = new FacetPoliceGrubu();
+
+			facet.terms = new FacetTerms();
+			facet.terms.field = facetAdi;
+			facet.terms.size = 10;
+
+			facet.facet_filter = new FacetFacetFilter();
+			facet.facet_filter.and = new FacetAnd();
+			facet.facet_filter.and.filters = new List<object>();
+
+			return facet;
+		}
+
+		#region arama kriterleri
 		private List<EsAnd> aramaKriterlerindenTermsFiltreleriAl(AramaKriterleri ak)
 		{
 			List<EsAnd> esAnd = new List<EsAnd>();
 
-			EsAnd and = new EsAnd() { terms = new TermsPoliceGrubu() { policeGrubu = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.PoliceGrubu)
-			{
-				((TermsPoliceGrubu)(and.terms)).policeGrubu.Add(kr.Adi);
-			}
 			if (ak.SecilebilirKriterler.PoliceGrubu.Count > 0)
-				esAnd.Add(and);
+				esAnd.Add(policeGrubuKriterleriniEkle(ak));
 
+			if (ak.SecilebilirKriterler.Marka.Count > 0)
+				esAnd.Add(markaKriterleriniEkle(ak));
+
+			if (ak.SecilebilirKriterler.Marka.Count > 0)
+				esAnd.Add(bransKriterleriniEkle(ak));
+
+			if (ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year != 1)
+				esAnd.Add(tanzimTarihiRangeEkle(ak));
+			return esAnd;
+		}
+
+		private EsAnd tanzimTarihiRangeEkle(AramaKriterleri ak)
+		{
+			EsAnd rangeAnd = new EsAnd() { range = EsRange.Olustur() };
+			rangeAnd.range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
+			rangeAnd.range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
+			return rangeAnd;
+		}
+
+		private EsAnd markaKriterleriniEkle(AramaKriterleri ak)
+		{
 			EsAnd item = new EsAnd() { terms = new TermsMarka() { marka = new List<string>() } };
 			foreach (Kriter kr in ak.SecilebilirKriterler.Marka)
 			{
 				((TermsMarka)(item.terms)).marka.Add(kr.Adi);
 			}
-
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				esAnd.Add(item);
-
-			if (ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year != 1)
-			{
-				EsAnd rangeAnd = new EsAnd() {range = EsRange.Olustur()};
-				rangeAnd.range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
-				rangeAnd.range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
-				esAnd.Add(rangeAnd);
-			}
-			return esAnd;
+			return item;
 		}
+
+		private EsAnd policeGrubuKriterleriniEkle(AramaKriterleri ak)
+		{
+			EsAnd and = new EsAnd() { terms = new TermsPoliceGrubu() { policeGrubu = new List<string>() } };
+			foreach (Kriter kr in ak.SecilebilirKriterler.PoliceGrubu)
+			{
+				((TermsPoliceGrubu)(and.terms)).policeGrubu.Add(kr.Adi);
+			}
+			return and;
+		}
+
+		private EsAnd bransKriterleriniEkle(AramaKriterleri ak)
+		{
+			EsAnd and = new EsAnd() { terms = new TermsBrans() { brans = new List<string>() } };
+			foreach (Kriter kr in ak.SecilebilirKriterler.Brans)
+			{
+				((TermsBrans)(and.terms)).brans.Add(kr.Adi);
+			}
+			return and;
+		}
+		#endregion
 	}
 
 	public class ElasticSearchGet
@@ -233,26 +278,29 @@ namespace app_test
 		public List<string> fields { get; set; }
 		public Query query { get; set; }
 		public EsFilter filter { get; set; }
-		public List<EsFacets> facets { get; set; }
+		public EsFacets facets { get; set; }
 	}
 
 	#region Facets
 	public class EsFacets
 	{
-		public FacetPoliceGrubu policeGrubu { get; set; }
-		public FacetMarka marka { get; set; }
+		public facet policeGrubu { get; set; }
+		public facet marka { get; set; }
+		public facet brans { get; set; }
 	}
 
-	public class FacetPoliceGrubu
+	public abstract class facet
 	{
 		public FacetTerms terms { get; set; }
 		public FacetFacetFilter facet_filter { get; set; }
 	}
 
-	public class FacetMarka
+	public class FacetPoliceGrubu : facet
 	{
-		public FacetTerms terms { get; set; }
-		public FacetFacetFilter facet_filter { get; set; }
+	}
+
+	public class FacetMarka : facet
+	{
 	}
 
 	public class FacetTerms
@@ -313,6 +361,7 @@ namespace app_test
 	{
 		public List<string> policeGrubu { get; set; }
 		public List<string> marka { get; set; }
+		public List<string> brans { get; set; }
 	}
 
 	public class TermsPoliceGrubu : Terms
@@ -333,6 +382,16 @@ namespace app_test
 			return retVal;
 		}
 	}
+	public class TermsBrans : Terms
+	{
+		public static TermsPoliceGrubu Olustur()
+		{
+			TermsPoliceGrubu retVal = new TermsPoliceGrubu();
+			retVal.policeGrubu = new List<string>();
+			return retVal;
+		}
+	}
+
 
 	public class EsFilter
 	{
@@ -363,4 +422,26 @@ namespace app_test
 			return retVal;
 		}
 	}
+
 }
+
+
+//private FacetPoliceGrubu policeGrubuFacetOlustur(AramaKriterleri ak)
+//{
+//	FacetPoliceGrubu facet = new FacetPoliceGrubu();
+
+//	facet.terms = new FacetTerms();
+//	facet.terms.field = "policeGrubu";
+//	facet.terms.size = 10;
+
+//	facet.facet_filter = new FacetFacetFilter();
+//	facet.facet_filter.and = new FacetAnd();
+//	facet.facet_filter.and.filters = new List<object>();
+
+//	if (ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year != 1)
+//		facet.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
+
+//	facet.facet_filter.and.filters.Add(markaKriterleriniEkle(ak));
+
+//	return facet;
+//}
