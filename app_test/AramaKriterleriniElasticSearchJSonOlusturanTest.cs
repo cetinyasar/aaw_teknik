@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using app_aaw_lib;
+using app_aaw_lib.EsSearch.Sorgu;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
@@ -11,6 +8,7 @@ namespace app_test
 {
     public class AramaKriterleriniElasticSearchJSonOlusturanTest
     {
+		AramaKriterdenElasticSearchOlusturan olusturan;
 		[SetUp]
 		public void Ayarlar()
 		{
@@ -20,8 +18,8 @@ namespace app_test
 		public void HicBirFiltreIcermeyenAramaKriteriGeldiginde_FiltreIcermyenElasticSearchObjesiOlusmali()
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
 			Assert.AreEqual(esg.filter, null);
 			
 		}
@@ -31,11 +29,8 @@ namespace app_test
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO" });
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
-
-			//Assert.AreEqual(1, esg.filter.and.Count);
-			//Assert.AreEqual("KKO", esg.filter.and[0].policeGrubu[0]);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
 		}
 
 		[Test]
@@ -44,8 +39,9 @@ namespace app_test
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO" });
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "TRF" });
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
 
 			Assert.AreEqual(1, esg.filter.and.Count);
 			Assert.AreEqual(2, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
@@ -60,9 +56,9 @@ namespace app_test
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO" });
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "TRF" });
 			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "mercedes" });
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
-
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+			
 			Assert.AreEqual(2, esg.filter.and.Count);
 			Assert.AreEqual(2, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
 			Assert.AreEqual(1, ((TermsMarka)(esg.filter.and[1].terms)).marka.Count);
@@ -76,8 +72,8 @@ namespace app_test
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.SecilebilirKriterler.TanzimTarihAraligi = new BaslangicBitisTarihi { IlkTarih = new DateTime(2014, 1, 1), SonTarih = new DateTime(2014, 2, 2) };
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
 
 			Assert.AreEqual(1, ((EsAnd)(esg.filter.and[0])).range.tanzimTarihi.from.Day);
 			Assert.AreEqual(2, ((EsAnd)(esg.filter.and[0])).range.tanzimTarihi.to.Day);
@@ -88,8 +84,9 @@ namespace app_test
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.Query = "query";
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
 			Assert.AreEqual("query", esg.query.query_string.query);
 		}
 
@@ -99,8 +96,9 @@ namespace app_test
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.From = 100;
 			ak.Size = 200;
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
 			Assert.AreEqual(100, esg.from);
 			Assert.AreEqual(200, esg.size);
 		}
@@ -116,8 +114,9 @@ namespace app_test
 			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "renault" });
 			ak.SecilebilirKriterler.TanzimTarihAraligi = new BaslangicBitisTarihi { IlkTarih = new DateTime(2000, 1, 1), SonTarih = new DateTime(2014, 12, 31) };
 
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
 			JsonSerializerSettings js = new JsonSerializerSettings();
 			js.NullValueHandling = NullValueHandling.Ignore;
 			string serializeObject = JsonConvert.SerializeObject(esg, js);
@@ -137,292 +136,39 @@ namespace app_test
 			ak.SecilebilirKriterler.Brans.Add(new Kriter { Adi = "300" });
 			ak.SecilebilirKriterler.TanzimTarihAraligi = new BaslangicBitisTarihi { IlkTarih = new DateTime(2000, 1, 1), SonTarih = new DateTime(2014, 12, 31) };
 
-			AramaKriterdenElasticSearchOlusturan olusturan = new AramaKriterdenElasticSearchOlusturan();
-			ElasticSearchGet esg = olusturan.Olustur(ak);
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
 			JsonSerializerSettings js = new JsonSerializerSettings();
 			js.NullValueHandling = NullValueHandling.Ignore;
 			string serializeObject = JsonConvert.SerializeObject(esg, js);
-			Assert.AreEqual(serializeObject, "{\"from\":0,\"size\":100,\"query\":{\"query_string\":{\"query\":\"renault\"}},\"filter\":{\"and\":[{\"terms\":{\"policeGrubu\":[\"kko\"]}},{\"terms\":{\"marka\":[\"renault\"]}},{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}}]}}");
+			Assert.AreEqual(serializeObject, "{\"from\":0,\"size\":100,\"query\":{\"query_string\":{\"query\":\"renault\"}},\"filter\":{\"and\":[{\"terms\":{\"policeGrubu\":[\"kko\"]}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}},{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}}]},\"facets\":{\"policeGrubu\":{\"terms\":{\"field\":\"policeGrubu\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}}]}}},\"marka\":{\"terms\":{\"field\":\"marka\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"policeGrubu\":[\"kko\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}}]}}},\"brans\":{\"terms\":{\"field\":\"brans\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"policeGrubu\":[\"kko\"]}}]}}}}}");
 		}
 
-	}
-
-	public class AramaKriterdenElasticSearchOlusturan
-	{
-		public ElasticSearchGet Olustur(AramaKriterleri ak)
+		[Test]
+		public void tmp()
 		{
-			ElasticSearchGet retVal = new ElasticSearchGet();// ElasticSearchGet.Olustur();
+			AramaKriterleri ak = AramaKriterleri.Olustur();
+			ak.Query = "";
+			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "kko" });
+			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "trf" });
+			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "renault" });
+			ak.SecilebilirKriterler.TanzimTarihAraligi = new BaslangicBitisTarihi { IlkTarih = new DateTime(2000, 1, 1), SonTarih = new DateTime(2014, 12, 31) };
 
-			retVal.from = ak.From;
-			retVal.size = ak.Size;
-			if (!string.IsNullOrEmpty(ak.Query))
-			{
-				retVal.query = Query.Olustur();
-				retVal.query.query_string.query = ak.Query;
-			}
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
 
-			List<EsAnd> kriterlerindenTermsFiltreleriAl = aramaKriterlerindenTermsFiltreleriAl(ak);
-			if (kriterlerindenTermsFiltreleriAl.Count > 0)
-			{
-				retVal.filter = EsFilter.Olustur();
-				retVal.filter.and = kriterlerindenTermsFiltreleriAl;
-			}
-
-			//retVal.facets = new List<EsFacets>();
-			retVal.facets = aramaKriterlerindenFacetsAl(ak);
-			return retVal;
+			JsonSerializerSettings js = new JsonSerializerSettings();
+			js.NullValueHandling = NullValueHandling.Ignore;
+			string serializeObject = JsonConvert.SerializeObject(esg, js);
+			Assert.AreEqual(serializeObject, "{\"from\":0,\"size\":100,\"query\":{\"query_string\":{\"query\":\"renault\"}},\"filter\":{\"and\":[{\"terms\":{\"policeGrubu\":[\"kko\"]}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}},{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}}]},\"facets\":{\"policeGrubu\":{\"terms\":{\"field\":\"policeGrubu\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}}]}}},\"marka\":{\"terms\":{\"field\":\"marka\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"policeGrubu\":[\"kko\"]}},{\"terms\":{\"brans\":[\"100\",\"200\",\"300\"]}}]}}},\"brans\":{\"terms\":{\"field\":\"brans\",\"size\":10},\"facet_filter\":{\"and\":{\"filters\":[{\"range\":{\"tanzimTarihi\":{\"from\":\"2000-01-01T00:00:00\",\"to\":\"2014-12-31T00:00:00\"}}},{\"terms\":{\"marka\":[\"renault\",\"bmc\"]}},{\"terms\":{\"policeGrubu\":[\"kko\"]}}]}}}}}");
 		}
 
-		private EsFacets aramaKriterlerindenFacetsAl(AramaKriterleri ak)
-		{
-			EsFacets retVal = new EsFacets();
-
-			retVal.policeGrubu = bosFacetOlustur("policeGrubu", ak);
-			retVal.policeGrubu.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
-			retVal.policeGrubu.facet_filter.and.filters.Add(markaKriterleriniEkle(ak));
-			retVal.policeGrubu.facet_filter.and.filters.Add(bransKriterleriniEkle(ak));
-
-			retVal.brans = bosFacetOlustur("brans", ak);
-			retVal.brans.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
-			retVal.brans.facet_filter.and.filters.Add(markaKriterleriniEkle(ak));
-			retVal.brans.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle(ak));
-
-			retVal.marka = bosFacetOlustur("marka", ak);
-			retVal.marka.facet_filter.and.filters.Add(tanzimTarihiRangeEkle(ak));
-			retVal.marka.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle(ak));
-			retVal.marka.facet_filter.and.filters.Add(bransKriterleriniEkle(ak));
-
-			//retVal.policeGrubu = policeGrubuFacetOlustur(ak);
-			//retVal.marka = markaGrubuFacetEkle(ak);
-			return retVal;
-		}
-
-		private facet bosFacetOlustur(string facetAdi, AramaKriterleri ak)
-		{
-			FacetPoliceGrubu facet = new FacetPoliceGrubu();
-
-			facet.terms = new FacetTerms();
-			facet.terms.field = facetAdi;
-			facet.terms.size = 10;
-
-			facet.facet_filter = new FacetFacetFilter();
-			facet.facet_filter.and = new FacetAnd();
-			facet.facet_filter.and.filters = new List<object>();
-
-			return facet;
-		}
-
-		#region arama kriterleri
-		private List<EsAnd> aramaKriterlerindenTermsFiltreleriAl(AramaKriterleri ak)
-		{
-			List<EsAnd> esAnd = new List<EsAnd>();
-
-			if (ak.SecilebilirKriterler.PoliceGrubu.Count > 0)
-				esAnd.Add(policeGrubuKriterleriniEkle(ak));
-
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				esAnd.Add(markaKriterleriniEkle(ak));
-
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				esAnd.Add(bransKriterleriniEkle(ak));
-
-			if (ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year != 1)
-				esAnd.Add(tanzimTarihiRangeEkle(ak));
-			return esAnd;
-		}
-
-		private EsAnd tanzimTarihiRangeEkle(AramaKriterleri ak)
-		{
-			EsAnd rangeAnd = new EsAnd() { range = EsRange.Olustur() };
-			rangeAnd.range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
-			rangeAnd.range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
-			return rangeAnd;
-		}
-
-		private EsAnd markaKriterleriniEkle(AramaKriterleri ak)
-		{
-			EsAnd item = new EsAnd() { terms = new TermsMarka() { marka = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.Marka)
-			{
-				((TermsMarka)(item.terms)).marka.Add(kr.Adi);
-			}
-			return item;
-		}
-
-		private EsAnd policeGrubuKriterleriniEkle(AramaKriterleri ak)
-		{
-			EsAnd and = new EsAnd() { terms = new TermsPoliceGrubu() { policeGrubu = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.PoliceGrubu)
-			{
-				((TermsPoliceGrubu)(and.terms)).policeGrubu.Add(kr.Adi);
-			}
-			return and;
-		}
-
-		private EsAnd bransKriterleriniEkle(AramaKriterleri ak)
-		{
-			EsAnd and = new EsAnd() { terms = new TermsBrans() { brans = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.Brans)
-			{
-				((TermsBrans)(and.terms)).brans.Add(kr.Adi);
-			}
-			return and;
-		}
-		#endregion
-	}
-
-	public class ElasticSearchGet
-	{
-		public int from { get; set; }
-		public int size { get; set; }
-		public List<string> fields { get; set; }
-		public Query query { get; set; }
-		public EsFilter filter { get; set; }
-		public EsFacets facets { get; set; }
 	}
 
 	#region Facets
-	public class EsFacets
-	{
-		public facet policeGrubu { get; set; }
-		public facet marka { get; set; }
-		public facet brans { get; set; }
-	}
-
-	public abstract class facet
-	{
-		public FacetTerms terms { get; set; }
-		public FacetFacetFilter facet_filter { get; set; }
-	}
-
-	public class FacetPoliceGrubu : facet
-	{
-	}
-
-	public class FacetMarka : facet
-	{
-	}
-
-	public class FacetTerms
-	{
-		public string field { get; set; }
-		public int size { get; set; }
-	}
-
-	public class FacetFacetFilter
-	{
-		public FacetAnd and { get; set; }
-	}
-
-	public class FacetAnd
-	{
-		public List<object> filters { get; set; }
-	}
-
-	public class FacetFilters
-	{
-		public object terms { get; set; }
-		public object range { get; set; }
-	}
 
 	#endregion
-
-	public class QueryString
-	{
-		public string query { get; set; }
-
-		public static QueryString Olustur()
-		{
-			QueryString retVal = new QueryString();
-			retVal.query = "";
-			return retVal;
-		}
-	}
-
-	public class Query
-	{
-		public QueryString query_string { get; set; }
-
-		public static Query Olustur()
-		{
-			Query retVal = new Query();
-			retVal.query_string = QueryString.Olustur();
-			return retVal;
-		}
-	}
-
-	public class EsAnd
-	{
-		public object terms { get; set; }
-		public EsRange range { get; set; }
-	}
-
-	public abstract class Terms
-	{
-		public List<string> policeGrubu { get; set; }
-		public List<string> marka { get; set; }
-		public List<string> brans { get; set; }
-	}
-
-	public class TermsPoliceGrubu : Terms
-	{
-		public static TermsPoliceGrubu Olustur()
-		{
-			TermsPoliceGrubu retVal = new TermsPoliceGrubu();
-			retVal.policeGrubu = new List<string>();
-			return retVal;
-		}
-	}
-	public class TermsMarka : Terms
-	{
-		public static TermsMarka Olustur()
-		{
-			TermsMarka retVal = new TermsMarka();
-			retVal.marka = new List<string>();
-			return retVal;
-		}
-	}
-	public class TermsBrans : Terms
-	{
-		public static TermsPoliceGrubu Olustur()
-		{
-			TermsPoliceGrubu retVal = new TermsPoliceGrubu();
-			retVal.policeGrubu = new List<string>();
-			return retVal;
-		}
-	}
-
-
-	public class EsFilter
-	{
-		public List<EsAnd> and { get; set; }
-		
-		public static EsFilter Olustur()
-		{
-			EsFilter retVal = new EsFilter();
-			retVal.and = new List<EsAnd>();
-			return retVal;
-		}
-	}
-
-	public class EsTanzimTarihi
-	{
-		public DateTime from { get; set; }
-		public DateTime to { get; set; }
-	}
-
-	public class EsRange
-	{
-		public EsTanzimTarihi tanzimTarihi { get; set; }
-
-		public static EsRange Olustur()
-		{
-			EsRange retVal = new EsRange();
-			retVal.tanzimTarihi = new EsTanzimTarihi();
-			return retVal;
-		}
-	}
-
 }
 
 

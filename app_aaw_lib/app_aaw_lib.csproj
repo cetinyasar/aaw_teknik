@@ -30,6 +30,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdaGenel, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\__OutputDLL\AdaGenel.dll</HintPath>
+    </Reference>
+    <Reference Include="AdaPublicGenel">
+      <HintPath>..\..\__OutputDLL\AdaPublicGenel.dll</HintPath>
+    </Reference>
+    <Reference Include="AdaVeriKatmani">
+      <HintPath>..\..\__OutputDLL\AdaVeriKatmani.dll</HintPath>
+    </Reference>
+    <Reference Include="Advantage.Data.Provider">
+      <HintPath>..\..\__GerekliDLL\Advantage.Data.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\__GerekliDLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.102.2.20, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\__GerekliDLL\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.1.15.Sybase.Data.AseClient">
+      <HintPath>..\..\__GerekliDLL\policy.1.15.Sybase.Data.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.Data.AseClient">
+      <HintPath>..\..\__GerekliDLL\Sybase.Data.AseClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +65,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AramaKriterdenElasticSearchOlusturan.cs" />
     <Compile Include="AramaKriterleri.cs" />
+    <Compile Include="EsSearch\Indexleme\GelenIstekDetay.cs" />
+    <Compile Include="EsSearch\Indexleme\HandlerGuvenlik.cs" />
+    <Compile Include="EsSearch\Indexleme\ICariApiIstekHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\IndexMetadata.cs" />
+    <Compile Include="EsSearch\Indexleme\IndexMetadataList.cs" />
+    <Compile Include="EsSearch\Indexleme\KayitAlan.cs" />
+    <Compile Include="EsSearch\Indexleme\PoliceAramaHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\PoliceIndexleHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\PoliceTekIndexleHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\PoliceTerimleri.cs" />
+    <Compile Include="EsSearch\Indexleme\PoliceTopluIndexleHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\TumIndexSilHandler.cs" />
+    <Compile Include="EsSearch\Indexleme\VFPAraclar.cs" />
+    <Compile Include="EsSearch\Sorgu\ElasticSearchGet.cs" />
+    <Compile Include="EsSearch\Sorgu\EsAnd.cs" />
+    <Compile Include="EsSearch\Sorgu\EsFacets.cs" />
+    <Compile Include="EsSearch\Sorgu\EsFilter.cs" />
+    <Compile Include="EsSearch\Sorgu\EsRange.cs" />
+    <Compile Include="EsSearch\Sorgu\EsTanzimTarihi.cs" />
+    <Compile Include="EsSearch\Sorgu\facet.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetAnd.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetFacetFilter.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetFilters.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetMarka.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetPoliceGrubu.cs" />
+    <Compile Include="EsSearch\Sorgu\FacetTerms.cs" />
+    <Compile Include="EsSearch\Indexleme\AAWIndexGuncellemeMotoru.cs" />
+    <Compile Include="EsSearch\Sorgu\Query.cs" />
+    <Compile Include="EsSearch\Sorgu\QueryString.cs" />
+    <Compile Include="EsSearch\Sorgu\Terms.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsBrans.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsMarka.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsPoliceGrubu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
