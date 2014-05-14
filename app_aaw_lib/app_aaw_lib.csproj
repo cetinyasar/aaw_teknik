@@ -32,16 +32,16 @@
   <ItemGroup>
     <Reference Include="AdaGenel, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\__OutputDLL\AdaGenel.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaGenel.dll</HintPath>
     </Reference>
     <Reference Include="AdaPublicGenel">
-      <HintPath>..\..\__OutputDLL\AdaPublicGenel.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaPublicGenel.dll</HintPath>
     </Reference>
     <Reference Include="AdaVeriKatmani">
-      <HintPath>..\..\__OutputDLL\AdaVeriKatmani.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaVeriKatmani.dll</HintPath>
     </Reference>
     <Reference Include="Advantage.Data.Provider">
-      <HintPath>..\..\__GerekliDLL\Advantage.Data.Provider.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__GerekliDLL\Advantage.Data.Provider.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\__GerekliDLL\Newtonsoft.Json.dll</HintPath>
@@ -51,10 +51,10 @@
       <HintPath>..\..\__GerekliDLL\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="policy.1.15.Sybase.Data.AseClient">
-      <HintPath>..\..\__GerekliDLL\policy.1.15.Sybase.Data.AseClient.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__GerekliDLL\policy.1.15.Sybase.Data.AseClient.dll</HintPath>
     </Reference>
     <Reference Include="Sybase.Data.AseClient">
-      <HintPath>..\..\__GerekliDLL\Sybase.Data.AseClient.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__GerekliDLL\Sybase.Data.AseClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
