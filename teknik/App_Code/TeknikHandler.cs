@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Web;
 using AdaGenel.Cesitli;
-using AdaVeriKatmani;
-using app_aaw_lib;
-using app_aaw_lib.EsSearch.Indexleme;
 using Newtonsoft.Json;
+using app_aaw_lib;
 
 /// <summary>
 /// Summary description for tmpHandler
 /// </summary>
-public class tmpHandler : IHttpHandler
+public class TeknikHandler : IHttpHandler
 {
 
 	public void ProcessRequest(HttpContext context)
@@ -58,7 +54,7 @@ public class tmpHandler : IHttpHandler
 			sb.Append(ex.Message + " -- " + ex.StackTrace);
 			if (ex.InnerException != null)
 				sb.Append(ex.InnerException.Message + " -- " + ex.InnerException.StackTrace);
-			Araclar.RastgeleIsimliDosyaKaydet("iamHttpHandlerHata", string.Join("\r", sb.ToString()), "txt");
+			Araclar.RastgeleIsimliDosyaKaydet("teknikHttpHandlerHata", string.Join("\r", sb.ToString()), "txt");
 			//	context.Response.Write(JsonConvert.SerializeObject(IstekSonuc.Hata("HTTP isteği işlenirken hata oluştu (" + sb + ")")));
 			//throw new Exception((ex.InnerException??ex).Message);
 
@@ -79,7 +75,7 @@ public class tmpHandler : IHttpHandler
 
 	private HttpHandlerBilgiOlusturmaSonucu handlerBilgiOlustur(string rawUrl)
 	{
-		int index = rawUrl.IndexOf(".iam", StringComparison.Ordinal);
+		int index = rawUrl.IndexOf(".teknik", StringComparison.Ordinal);
 		if (index == -1)
 			return new HttpHandlerBilgiOlusturmaSonucu { Basarili = false, Mesaj = "(436.66)" };
 		string sinifVeMetodAdi = rawUrl.Substring(0, index);
@@ -102,7 +98,9 @@ public class tmpHandler : IHttpHandler
 
 	private static Type handlerTypeOlustur(string sinifAdi)
 	{
-		Type handlerType = Type.GetType("IAM.Resources.HttpHandlers." + sinifAdi + "HttpHandler");
+		//Type handlerType = Type.GetType("app_aaw_lib.EsSearch." + sinifAdi + "HttpHandler");
+		Assembly assembly = Assembly.Load("app_aaw_lib");
+		Type handlerType = assembly.GetType("app_aaw_lib.EsSearch." + sinifAdi + "HttpHandler");
 		return handlerType;
 	}
 

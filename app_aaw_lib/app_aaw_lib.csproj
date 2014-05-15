@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,7 @@
   <ItemGroup>
     <Compile Include="AramaKriterdenElasticSearchOlusturan.cs" />
     <Compile Include="AramaKriterleri.cs" />
+    <Compile Include="EsSearch\AramaHttpHandler.cs" />
     <Compile Include="EsSearch\Indexleme\GelenIstekDetay.cs" />
     <Compile Include="EsSearch\Indexleme\HandlerGuvenlik.cs" />
     <Compile Include="EsSearch\Indexleme\ICariApiIstekHandler.cs" />

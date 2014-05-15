@@ -9,11 +9,11 @@
 			var erteleme = $q;
 			this.veriAl = function(obj)
 			{
-				return this.istekGonder("raporAl.ada", obj);
+				return this.istekGonder("Arama.Ara.teknik", obj);
 			}
 
 			this.kriterleriAl = function (obj) {
-				return this.istekGonder("kriterleriAl.ada", obj);
+				return this.istekGonder("Arama.Deneme.teknik", obj);
 			}
 
 			this.istekGonder = function(istekTipi, veri) {

@@ -37,6 +37,12 @@ namespace app_aaw_lib
 		public List<Kriter> Satici { get; set; }
 		public List<Kriter> Marka { get; set; }
 		public BaslangicBitisTarihi TanzimTarihAraligi { get; set; }
+
+		public SecilebilirKriter()
+		{
+			TanzimTarihAraligi = new BaslangicBitisTarihi();
+		}
+
 	
 
 		public static SecilebilirKriter Olustur()

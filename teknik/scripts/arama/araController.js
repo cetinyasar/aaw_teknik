@@ -28,8 +28,8 @@ function Arama()
 	this.AramaSonuc = new AramaSonuc();
 	
 	this.ayarla = function (aramaSonucu) {
-		
-		this.AramaSonuc = aramaSonucu.Sonuc[0];
+		//this.AramaSonuc = aramaSonucu.Sonuc[0];
+		this.AramaSonuc = aramaSonucu.Sonuc;
 		this.Kriterler = aramaSonucu.Kriterler;
 		if (this.Kriterler.SecilebilirKriterler.PoliceGrubu.length == 0) {
 			this.ilkCalistirmaIcinKriterleriAyarla();
