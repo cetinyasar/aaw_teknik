@@ -26,17 +26,15 @@ namespace app_aaw_lib.EsSearch
 			AramaKriterdenElasticSearchOlusturan akeso = new AramaKriterdenElasticSearchOlusturan(ak);
 			ElasticSearchGet elasticSearchGet = akeso.Olustur();
 
-			JsonSerializerSettings js = new JsonSerializerSettings();
-			js.NullValueHandling = NullValueHandling.Ignore;
-			string serializeObject = JsonConvert.SerializeObject(elasticSearchGet, js);
+			JsonSerializerSettings jss = new JsonSerializerSettings();
+			jss.NullValueHandling = NullValueHandling.Ignore;
+			string serializeObject = JsonConvert.SerializeObject(elasticSearchGet, jss);
 
 			PoliceAramaMotoru pam = new PoliceAramaMotoru();
 			string aramaSonuc = pam.AramaYap(serializeObject);
 
-
 			ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + " }");
 			//ResponseAyarla(context, sonuc.Basarili ? new FaaliyetIslemOutput {Basarili = true, Faaliyet = new IsFaaliyet().Doldur(IsAkisiInstance.Al(input.IsAkisiInstanceId, TemelVeriIslemleriOlustur()).FaaliyetAl(input.FaaliyetInstanceId), TumKullaniciAdlariniGetir(), IAMSessionNesneleri.Kullanici, TemelVeriIslemleriOlustur())} : new FaaliyetIslemOutput {Basarili = false, Mesaj = sonuc.Mesaj});
-
 		}
 
 		protected void ResponseAyarla(HttpContext context, object responseNesnesi)
@@ -51,7 +49,8 @@ namespace app_aaw_lib.EsSearch
 
 		protected T RequestNesneOlustur<T>(HttpContext context)
 		{
-			return JsonConvert.DeserializeObject<T>(new StreamReader(context.Request.InputStream).ReadToEnd());
+			string readToEnd = new StreamReader(context.Request.InputStream).ReadToEnd();
+			return JsonConvert.DeserializeObject<T>(readToEnd);
 		}
 	}
 

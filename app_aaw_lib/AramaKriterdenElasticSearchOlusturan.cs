@@ -6,23 +6,24 @@ namespace app_aaw_lib
 {
 	public class AramaKriterdenElasticSearchOlusturan
 	{
-		private readonly AramaKriterleri ak;
+		private readonly AramaKriterleri _aramaKriterleri;
 
 		public AramaKriterdenElasticSearchOlusturan(AramaKriterleri ak)
 		{
-			this.ak = ak;
+			_aramaKriterleri = ak;
 		}
 
 		public ElasticSearchGet Olustur()
 		{
 			ElasticSearchGet retVal = new ElasticSearchGet();// ElasticSearchGet.Olustur();
+			retVal.fields = new List<string> { "sirketPoliceNo", "brans", "sigortaliAcik", "musteriAdiAcik", "tanzimTarihi", "plaka", "marka" };
 
-			retVal.from = ak.From;
-			retVal.size = ak.Size;
-			if (!string.IsNullOrEmpty(ak.Query))
+			retVal.from = _aramaKriterleri.From;
+			retVal.size = _aramaKriterleri.Size;
+			if (!string.IsNullOrEmpty(_aramaKriterleri.Query))
 			{
 				retVal.query = Query.Olustur();
-				retVal.query.query_string.query = ak.Query;
+				retVal.query.query_string.query = _aramaKriterleri.Query;
 			}
 
 			List<EsAnd> kriterlerindenTermsFiltreleriAl = aramaKriterlerindenTermsFiltreleriAl();
@@ -41,26 +42,37 @@ namespace app_aaw_lib
 			EsFacets retVal = new EsFacets();
 
 			retVal.policeGrubu = bosFacetOlustur("policeGrubu");
-			retVal.policeGrubu.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				retVal.policeGrubu.facet_filter.and.filters.Add(markaKriterleriniEkle());
-			if (ak.SecilebilirKriterler.Brans.Count > 0)
-				retVal.policeGrubu.facet_filter.and.filters.Add(bransKriterleriniEkle());
-
 			retVal.brans = bosFacetOlustur("brans");
-			retVal.brans.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				retVal.brans.facet_filter.and.filters.Add(markaKriterleriniEkle());
-			if (ak.SecilebilirKriterler.PoliceGrubu.Count > 0)
-				retVal.brans.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle());
-
 			retVal.marka = bosFacetOlustur("marka");
-			retVal.marka.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
-			if (ak.SecilebilirKriterler.PoliceGrubu.Count > 0)
-				retVal.marka.facet_filter.and.filters.Add(policeGrubuKriterleriniEkle());
-			if (ak.SecilebilirKriterler.Brans.Count > 0)
-				retVal.marka.facet_filter.and.filters.Add(bransKriterleriniEkle());
-			
+
+			EsAnd markaAnd = markaKriterleriniEkle();
+			EsAnd bransAnd = bransKriterleriniEkle();
+			EsAnd policeGrubuAnd = policeGrubuKriterleriniEkle();
+
+			if (((TermsPoliceGrubu)(policeGrubuAnd.terms)).policeGrubu.Count > 0)
+			{
+				retVal.brans.facet_filter.and.filters.Add(policeGrubuAnd);
+				retVal.marka.facet_filter.and.filters.Add(policeGrubuAnd);
+			}
+
+			if (((TermsMarka)(markaAnd.terms)).marka.Count > 0)
+			{
+				retVal.policeGrubu.facet_filter.and.filters.Add(markaAnd);
+				retVal.brans.facet_filter.and.filters.Add(markaAnd);
+			}
+
+			if (((TermsBrans) (bransAnd.terms)).brans.Count > 0)
+			{
+				retVal.policeGrubu.facet_filter.and.filters.Add(bransAnd);
+				retVal.marka.facet_filter.and.filters.Add(bransAnd);
+			}
+
+			if (_aramaKriterleri.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year > 1910)
+			{
+				retVal.policeGrubu.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
+				retVal.brans.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
+				retVal.marka.facet_filter.and.filters.Add(tanzimTarihiRangeEkle());
+			}
 			return retVal;
 		}
 
@@ -83,16 +95,20 @@ namespace app_aaw_lib
 		{
 			List<EsAnd> esAnd = new List<EsAnd>();
 
-			if (ak.SecilebilirKriterler.PoliceGrubu.Count > 0)
-				esAnd.Add(policeGrubuKriterleriniEkle());
+			//if (_aramaKriterleri.SecilebilirKriterler.PoliceGrubu.Count > 0)
+			EsAnd policeGrubuAnd = policeGrubuKriterleriniEkle();
+			if (((TermsPoliceGrubu)(policeGrubuAnd.terms)).policeGrubu.Count > 0)
+				esAnd.Add(policeGrubuAnd);
 
-			if (ak.SecilebilirKriterler.Marka.Count > 0)
-				esAnd.Add(markaKriterleriniEkle());
+			EsAnd markaAnd = markaKriterleriniEkle();
+			if (((TermsMarka)(markaAnd.terms)).marka.Count > 0)
+				esAnd.Add(markaAnd);
 
-			if (ak.SecilebilirKriterler.Brans.Count > 0)
-				esAnd.Add(bransKriterleriniEkle());
+			EsAnd bransAnd = bransKriterleriniEkle();
+			if (((TermsBrans)(bransAnd.terms)).brans.Count > 0)
+				esAnd.Add(bransAnd);
 
-			if (ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year != 1)
+			if (_aramaKriterleri.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year > 1910)
 				esAnd.Add(tanzimTarihiRangeEkle());
 			return esAnd;
 		}
@@ -100,17 +116,18 @@ namespace app_aaw_lib
 		private EsAnd tanzimTarihiRangeEkle()
 		{
 			EsAnd rangeAnd = new EsAnd() { range = EsRange.Olustur() };
-			rangeAnd.range.tanzimTarihi.from = ak.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
-			rangeAnd.range.tanzimTarihi.to = ak.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
+			rangeAnd.range.tanzimTarihi.from = _aramaKriterleri.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih;
+			rangeAnd.range.tanzimTarihi.to = _aramaKriterleri.SecilebilirKriterler.TanzimTarihAraligi.SonTarih;
 			return rangeAnd;
 		}
 
 		private EsAnd markaKriterleriniEkle()
 		{
 			EsAnd item = new EsAnd() { terms = new TermsMarka() { marka = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.Marka)
+			foreach (Kriter kr in _aramaKriterleri.SecilebilirKriterler.Marka)
 			{
-				((TermsMarka)(item.terms)).marka.Add(kr.Adi);
+				if (kr.Secili)
+					((TermsMarka)(item.terms)).marka.Add(kr.Adi);
 			}
 			return item;
 		}
@@ -118,9 +135,10 @@ namespace app_aaw_lib
 		private EsAnd policeGrubuKriterleriniEkle()
 		{
 			EsAnd and = new EsAnd() { terms = new TermsPoliceGrubu() { policeGrubu = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.PoliceGrubu)
+			foreach (Kriter kr in _aramaKriterleri.SecilebilirKriterler.PoliceGrubu)
 			{
-				((TermsPoliceGrubu)(and.terms)).policeGrubu.Add(kr.Adi);
+				if (kr.Secili)
+					((TermsPoliceGrubu)(and.terms)).policeGrubu.Add(kr.Adi);
 			}
 			return and;
 		}
@@ -128,7 +146,7 @@ namespace app_aaw_lib
 		private EsAnd bransKriterleriniEkle()
 		{
 			EsAnd and = new EsAnd() { terms = new TermsBrans() { brans = new List<string>() } };
-			foreach (Kriter kr in ak.SecilebilirKriterler.Brans)
+			foreach (Kriter kr in _aramaKriterleri.SecilebilirKriterler.Brans)
 			{
 				((TermsBrans)(and.terms)).brans.Add(kr.Adi);
 			}

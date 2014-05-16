@@ -39,6 +39,7 @@ function Arama()
 
 	this.ilkCalistirmaIcinKriterleriAyarla = function ()
 	{
+		debugger;
 		for (var key in this.AramaSonuc.facets) {
 			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;
@@ -52,9 +53,9 @@ function Arama()
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
-				if (key == "policeGrubuTotal")
+				if (key == "policeGrubu")
 					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
-				if (key == "markaTotal")
+				if (key == "marka")
 					this.Kriterler.SecilebilirKriterler.Marka.push(sk);
 
 			}
@@ -70,7 +71,7 @@ function AramaSonuc() {
 
 function AramaKriterleri()
 {
-	this.Query = "";
+	this.Query = "İNTEGRAL";
 	this.SecilebilirKriterler = new SecilebilirKriterler();
 }
 

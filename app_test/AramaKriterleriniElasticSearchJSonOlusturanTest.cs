@@ -34,7 +34,7 @@ namespace app_test
 		}
 
 		[Test]
-		public void KKOVeTRFPoliceGrubuFiltresiOlanKriterGeldiginde_GetFilterAndTermsPoliceGrubuIcindeKKOVeTRFKayitOlmali()
+		public void KKOVeTRFPoliceGrubuFiltresiOlanKriterGeldigindeVeIkisideSeciliDegilIse_GetFilterAndTermsPoliceGrubuIcindeKayitOlmamali()
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO" });
@@ -44,18 +44,34 @@ namespace app_test
 
 
 			Assert.AreEqual(1, esg.filter.and.Count);
-			Assert.AreEqual(2, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
-			Assert.AreEqual("KKO", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[0]);
-			Assert.AreEqual("TRF", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[1]);
+			Assert.AreEqual(0, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
+			//Assert.AreEqual("KKO", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[0]);
+			//Assert.AreEqual("TRF", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[1]);
 		}
 
 		[Test]
-		public void KKOVeTRFPoliceGrubuVeMercedesMarkaFiltresiOlanKriterGeldiginde_GetFilterAndTermsPoliceGrubuIcindeKKOVeTRFVeMarkaIcindeMercedesKayitOlmali()
+		public void KKOVeTRFPoliceGrubuFiltresiOlanKriterGeldigindeVeSadeceKKOSeciliIse_GetFilterAndTermsPoliceGrubuIcindeSadeceKKOOlmali()
 		{
 			AramaKriterleri ak = AramaKriterleri.Olustur();
-			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO" });
+			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO", Secili=true });
 			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "TRF" });
-			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "mercedes" });
+			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
+			ElasticSearchGet esg = olusturan.Olustur();
+
+
+			Assert.AreEqual(1, esg.filter.and.Count);
+			Assert.AreEqual(1, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
+			Assert.AreEqual("KKO", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[0]);
+			//Assert.AreEqual("TRF", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[1]);
+		}
+
+		[Test]
+		public void KKOVeTRFPoliceGrubuVeMercedesMarkaFiltresiOlanKriterGeldigindeTumuSeciliyse_GetFilterAndTermsPoliceGrubuIcindeKKOVeTRFVeMarkaIcindeMercedesKayitOlmali()
+		{
+			AramaKriterleri ak = AramaKriterleri.Olustur();
+			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "KKO", Secili = true });
+			ak.SecilebilirKriterler.PoliceGrubu.Add(new Kriter { Adi = "TRF", Secili = true });
+			ak.SecilebilirKriterler.Marka.Add(new Kriter { Adi = "mercedes", Secili = true });
 			olusturan = new AramaKriterdenElasticSearchOlusturan(ak);
 			ElasticSearchGet esg = olusturan.Olustur();
 			

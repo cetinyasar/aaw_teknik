@@ -4,7 +4,7 @@
 		<br />
 		<div class="search-classic col-lg-12">
 			<div class="input-group well">
-				<input type="text" class="form-control" placeholder="Arama...">
+				<input type="text" class="form-control" ng-model="Arama.Kriterler.Query" placeholder="Arama...">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="button" ng-click="aramaYap()">
 						<i class="fa fa-search"></i> Ara
@@ -81,6 +81,7 @@
 										<th>Tanzim Tarihi</th>
 										<th>Plaka</th>
 										<th>Sigortalı</th>
+										<th>Marka</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -90,6 +91,7 @@
 										<td>{{hit.fields.musteriAdiAcik[0]}}</td>
 										<td>{{hit.fields.tanzimTarihi[0]}}</td>
 										<td>{{hit.fields.plaka[0]}}</td>
+										<td>{{hit.fields.marka[0]}}</td>
 										<td></td>
 									</tr>
 								</tbody>
