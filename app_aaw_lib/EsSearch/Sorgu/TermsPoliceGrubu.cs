@@ -10,5 +10,15 @@ namespace app_aaw_lib.EsSearch.Sorgu
 			retVal.policeGrubu = new List<string>();
 			return retVal;
 		}
+
+		public override void KriterEkle(string kriterAdi)
+		{
+			policeGrubu.Add(kriterAdi);
+		}
+
+		public override int AdetAl()
+		{
+			return policeGrubu.Count;
+		}
 	}
 }

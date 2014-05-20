@@ -2,23 +2,23 @@ using System.Collections.Generic;
 
 namespace app_aaw_lib.EsSearch.Sorgu
 {
-	public class TermsBrans : Terms
+	public class TermsTali : Terms
 	{
-		public static TermsBrans Olustur()
+		public static TermsTali Olustur()
 		{
-			TermsBrans retVal = new TermsBrans();
-			retVal.brans = new List<string>();
+			TermsTali retVal = new TermsTali();
+			retVal.tali = new List<string>();
 			return retVal;
 		}
 
 		public override void KriterEkle(string kriterAdi)
 		{
-			brans.Add(kriterAdi);
+			tali.Add(kriterAdi);
 		}
 
 		public override int AdetAl()
 		{
-			return brans.Count;
+			return tali.Count;
 		}
 	}
 }

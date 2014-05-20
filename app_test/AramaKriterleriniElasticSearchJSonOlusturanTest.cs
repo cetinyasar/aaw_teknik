@@ -43,8 +43,8 @@ namespace app_test
 			ElasticSearchGet esg = olusturan.Olustur();
 
 
-			Assert.AreEqual(1, esg.filter.and.Count);
-			Assert.AreEqual(0, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
+			Assert.AreEqual(null, esg.filter);
+			//Assert.AreEqual(0, ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu.Count);
 			//Assert.AreEqual("KKO", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[0]);
 			//Assert.AreEqual("TRF", ((TermsPoliceGrubu)(esg.filter.and[0].terms)).policeGrubu[1]);
 		}

@@ -99,8 +99,12 @@
     <Compile Include="EsSearch\Sorgu\Query.cs" />
     <Compile Include="EsSearch\Sorgu\QueryString.cs" />
     <Compile Include="EsSearch\Sorgu\Terms.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsSorumlu.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsSatici.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsTali.cs" />
     <Compile Include="EsSearch\Sorgu\TermsBrans.cs" />
     <Compile Include="EsSearch\Sorgu\TermsMarka.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsModelYili.cs" />
     <Compile Include="EsSearch\Sorgu\TermsPoliceGrubu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

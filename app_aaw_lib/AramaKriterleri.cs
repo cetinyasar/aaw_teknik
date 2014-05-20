@@ -33,9 +33,12 @@ namespace app_aaw_lib
 	{
 		public List<Kriter> PoliceGrubu { get; set; }
 		public List<Kriter> Brans { get; set; }
+		public List<Kriter> Marka { get; set; }
+		public List<Kriter> ModelYili { get; set; }
 		public List<Kriter> Tali { get; set; }
 		public List<Kriter> Satici { get; set; }
-		public List<Kriter> Marka { get; set; }
+		public List<Kriter> Sorumlu { get; set; }
+		
 		public BaslangicBitisTarihi TanzimTarihAraligi { get; set; }
 
 		public SecilebilirKriter()
@@ -50,9 +53,12 @@ namespace app_aaw_lib
 			SecilebilirKriter retVal = new SecilebilirKriter();
 			retVal.PoliceGrubu = new List<Kriter>();
 			retVal.Brans = new List<Kriter>();
+			retVal.Marka = new List<Kriter>();
+			retVal.ModelYili = new List<Kriter>();
 			retVal.Tali = new List<Kriter>();
 			retVal.Satici = new List<Kriter>();
-			retVal.Marka = new List<Kriter>();
+			retVal.Sorumlu = new List<Kriter>();
+
 			retVal.TanzimTarihAraligi = new BaslangicBitisTarihi();
 			return retVal;
 		}

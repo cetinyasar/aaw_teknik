@@ -28,12 +28,12 @@ namespace app_aaw_lib.EsSearch
 
 			JsonSerializerSettings jss = new JsonSerializerSettings();
 			jss.NullValueHandling = NullValueHandling.Ignore;
-			string serializeObject = JsonConvert.SerializeObject(elasticSearchGet, jss);
+			string elasticSearchQuery = JsonConvert.SerializeObject(elasticSearchGet, jss);
 
 			PoliceAramaMotoru pam = new PoliceAramaMotoru();
-			string aramaSonuc = pam.AramaYap(serializeObject);
+			string aramaSonuc = pam.AramaYap(elasticSearchQuery);
 
-			ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + " }");
+			ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length -1).Replace("\"", "'") + "\" }");
 			//ResponseAyarla(context, sonuc.Basarili ? new FaaliyetIslemOutput {Basarili = true, Faaliyet = new IsFaaliyet().Doldur(IsAkisiInstance.Al(input.IsAkisiInstanceId, TemelVeriIslemleriOlustur()).FaaliyetAl(input.FaaliyetInstanceId), TumKullaniciAdlariniGetir(), IAMSessionNesneleri.Kullanici, TemelVeriIslemleriOlustur())} : new FaaliyetIslemOutput {Basarili = false, Mesaj = sonuc.Mesaj});
 		}
 

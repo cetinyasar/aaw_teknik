@@ -4,6 +4,6 @@ namespace app_aaw_lib.EsSearch.Sorgu
 {
 	public class FacetAnd
 	{
-		public List<object> filters { get; set; }
+		public List<EsAnd> filters { get; set; }
 	}
 }

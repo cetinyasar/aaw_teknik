@@ -10,5 +10,15 @@ namespace app_aaw_lib.EsSearch.Sorgu
 			retVal.marka = new List<string>();
 			return retVal;
 		}
+
+		public override void KriterEkle(string kriterAdi)
+		{
+			marka.Add(kriterAdi);
+		}
+
+		public override int AdetAl()
+		{
+			return marka.Count;
+		}
 	}
 }

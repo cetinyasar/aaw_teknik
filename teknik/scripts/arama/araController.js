@@ -31,15 +31,17 @@ function Arama()
 		//this.AramaSonuc = aramaSonucu.Sonuc[0];
 		this.AramaSonuc = aramaSonucu.Sonuc;
 		this.Kriterler = aramaSonucu.Kriterler;
-		if (this.Kriterler.SecilebilirKriterler.PoliceGrubu.length == 0) {
+		this.Kriterler.EsSearch = aramaSonucu.EsSearch;
+		if (this.Kriterler.SecilebilirKriterler.PoliceGrubu.length == 0) 
 			this.ilkCalistirmaIcinKriterleriAyarla();
-		}
+		else
+			this.ikinciCalistirmaIcinKriterleriAyarla();
+
 		this.VeriAliniyor = false;
 	};
 
 	this.ilkCalistirmaIcinKriterleriAyarla = function ()
 	{
-		debugger;
 		for (var key in this.AramaSonuc.facets) {
 			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;
@@ -55,12 +57,63 @@ function Arama()
 				sk.Adet = value.terms[i].count;
 				if (key == "policeGrubu")
 					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
+				if (key == "brans")
+					this.Kriterler.SecilebilirKriterler.Brans.push(sk);
 				if (key == "marka")
 					this.Kriterler.SecilebilirKriterler.Marka.push(sk);
+				if (key == "modelYili")
+					this.Kriterler.SecilebilirKriterler.ModelYili.push(sk);
+				if (key == "tali")
+					this.Kriterler.SecilebilirKriterler.Tali.push(sk);
+				if (key == "satici")
+					this.Kriterler.SecilebilirKriterler.Satici.push(sk);
+				if (key == "sorumlu")
+					this.Kriterler.SecilebilirKriterler.Sorumlu.push(sk);
 
 			}
 		}
 	};
+
+	this.ikinciCalistirmaIcinKriterleriAyarla = function () {
+		for (var key in this.AramaSonuc.facets) {
+			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
+				continue;
+			if (!this.AramaSonuc.facets.hasOwnProperty(key))
+				continue;
+
+			var value = this.AramaSonuc.facets[key];
+			for (var i = 0; i < value.terms.length; i++) {
+				var sk = new Kriter();
+				sk.Secili = false;
+				sk.Adi = value.terms[i].term;
+				sk.Adet = value.terms[i].count;
+				if (key == "policeGrubu") {
+					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
+					this.Kriterler.SecilebilirKriterler.PoliceGrubu.filter(function(elem) {
+						if (elem.Adi == sk.Adi) {
+							elem.Adet = sk.Adet;
+						}
+						}
+					);
+				}
+				if (key == "brans")
+					this.Kriterler.SecilebilirKriterler.Brans.push(sk);
+				if (key == "marka")
+					this.Kriterler.SecilebilirKriterler.Marka.push(sk);
+				if (key == "modelYili")
+					this.Kriterler.SecilebilirKriterler.ModelYili.push(sk);
+				if (key == "tali")
+					this.Kriterler.SecilebilirKriterler.Tali.push(sk);
+				if (key == "satici")
+					this.Kriterler.SecilebilirKriterler.Satici.push(sk);
+				if (key == "sorumlu")
+					this.Kriterler.SecilebilirKriterler.Sorumlu.push(sk);
+
+				
+			}
+		}
+	};
+
 }
 
 function AramaSonuc() {
@@ -72,6 +125,7 @@ function AramaSonuc() {
 function AramaKriterleri()
 {
 	this.Query = "İNTEGRAL";
+	this.EsSearch = "YOK";
 	this.SecilebilirKriterler = new SecilebilirKriterler();
 }
 
@@ -79,9 +133,12 @@ function SecilebilirKriterler()
 {
 	this.PoliceGrubu = [];
 	this.Brans = [];
+	this.Marka = [];
+	this.ModelYili = [];
 	this.Tali = [];
 	this.Satici = [];
-	this.Marka = [];
+	this.Sorumlu = [];
+	
 }
 
 function Kriter() {

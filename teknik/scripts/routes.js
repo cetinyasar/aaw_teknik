@@ -8,6 +8,12 @@ define([], function () {
                     'arama/araController'
 				]
 			},
+			'/ayarlar': {
+				templateUrl: '/views/ayarlar/ayar.html',
+				dependencies: [
+                    'ayarlar/ayarController'
+				]
+			},
 			'/police': {
 				templateUrl: '/views/police/pol.html',
 				dependencies: [
