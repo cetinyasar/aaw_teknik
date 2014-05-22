@@ -34,6 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaGenel.dll</HintPath>
     </Reference>
+    <Reference Include="AdaHttpHandler">
+      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaHttpHandler.dll</HintPath>
+    </Reference>
     <Reference Include="AdaPublicGenel">
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaPublicGenel.dll</HintPath>
     </Reference>

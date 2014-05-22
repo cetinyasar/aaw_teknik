@@ -74,7 +74,18 @@ function Arama()
 		}
 	};
 
-	this.ikinciCalistirmaIcinKriterleriAyarla = function () {
+	this.tumunuSifirla = function(liste)
+	{
+		for (var i = 1;i < liste.length; i++)
+		{
+			liste[i].Adet = 0;
+		}
+	}
+
+	this.ikinciCalistirmaIcinKriterleriAyarla = function ()
+	{
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.PoliceGrubu);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Brans);
 		for (var key in this.AramaSonuc.facets) {
 			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;
@@ -87,28 +98,20 @@ function Arama()
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
-				if (key == "policeGrubu") {
-					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
-					this.Kriterler.SecilebilirKriterler.PoliceGrubu.filter(function(elem) {
-						if (elem.Adi == sk.Adi) {
-							elem.Adet = sk.Adet;
-						}
-						}
-					);
-				}
+				if (key == "policeGrubu") 
+					this.Kriterler.SecilebilirKriterler.PoliceGrubu.filter(function (elem) {if (elem.Adi == sk.Adi) {elem.Adet = sk.Adet;}});
 				if (key == "brans")
-					this.Kriterler.SecilebilirKriterler.Brans.push(sk);
+					this.Kriterler.SecilebilirKriterler.Brans.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "marka")
-					this.Kriterler.SecilebilirKriterler.Marka.push(sk);
+					this.Kriterler.SecilebilirKriterler.Marka.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "modelYili")
-					this.Kriterler.SecilebilirKriterler.ModelYili.push(sk);
+					this.Kriterler.SecilebilirKriterler.ModelYili.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "tali")
-					this.Kriterler.SecilebilirKriterler.Tali.push(sk);
+					this.Kriterler.SecilebilirKriterler.Tali.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "satici")
-					this.Kriterler.SecilebilirKriterler.Satici.push(sk);
+					this.Kriterler.SecilebilirKriterler.Satici.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "sorumlu")
-					this.Kriterler.SecilebilirKriterler.Sorumlu.push(sk);
-
+					this.Kriterler.SecilebilirKriterler.Sorumlu.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				
 			}
 		}

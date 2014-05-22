@@ -91,12 +91,12 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="hit in Arama.AramaSonuc.hits.hits">
-									<td>{{hit.fields.brans}}</td>
-									<td>{{hit.fields.sirketPoliceNo}}</td>
-									<td>{{hit.fields.musteriAdiAcik}}</td>
-									<td>{{hit.fields.tanzimTarihi}}</td>
-									<td>{{hit.fields.plaka}}</td>
-									<td>{{hit.fields.marka}}</td>
+									<td>{{hit.fields.brans[0]}}</td>
+									<td>{{hit.fields.sirketPoliceNo[0]}}</td>
+									<td>{{hit.fields.musteriAdiAcik[0]}}</td>
+									<td>{{hit.fields.tanzimTarihi[0]}}</td>
+									<td>{{hit.fields.plaka[0]}}</td>
+									<td>{{hit.fields.marka[0]}}</td>
 									<td></td>
 								</tr>
 							</tbody>

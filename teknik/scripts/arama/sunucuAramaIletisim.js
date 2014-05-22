@@ -9,7 +9,9 @@
 			var erteleme = $q;
 			this.veriAl = function(obj)
 			{
-				return this.istekGonder("Arama.Ara.teknik", obj);
+				//return this.istekGonder("Arama.Ara.teknik", obj);
+				alert("gönderiyurm");
+				return this.istekGonder("/app_aaw_lib.EsSearch.AramaHttpHandler.Ara.teknik", obj);
 			}
 
 			this.kriterleriAl = function (obj) {
