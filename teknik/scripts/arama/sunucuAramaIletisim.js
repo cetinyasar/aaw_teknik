@@ -10,8 +10,8 @@
 			this.veriAl = function(obj)
 			{
 				//return this.istekGonder("Arama.Ara.teknik", obj);
-				alert("gönderiyurm");
-				return this.istekGonder("/app_aaw_lib.EsSearch.AramaHttpHandler.Ara.teknik", obj);
+				alert("gönderiyorum");
+				return this.istekGonder("AdaHttpHandler.Ara.teknik", obj);
 			}
 
 			this.kriterleriAl = function (obj) {

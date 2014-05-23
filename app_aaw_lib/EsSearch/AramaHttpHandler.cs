@@ -6,12 +6,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using AdaHttpHandler;
 using app_aaw_lib.EsSearch.Sorgu;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace app_aaw_lib.EsSearch
 {
+	[AdaHttpHandlerClass("AdaHttpHandler")]
 	public class AramaHttpHandler
 	{
 		public void Deneme(HttpContext context)
@@ -19,9 +21,10 @@ namespace app_aaw_lib.EsSearch
 			
 		}
 
-		public void Ara(HttpContext context)
+		[AdaHttpHandlerMethod("Ara")]
+		public string Ara(AramaKriterleri ak)
 		{
-			AramaKriterleri ak = RequestNesneOlustur<AramaKriterleri>(context);
+			//AramaKriterleri ak = RequestNesneOlustur<AramaKriterleri>(context);
 
 			AramaKriterdenElasticSearchOlusturan akeso = new AramaKriterdenElasticSearchOlusturan(ak);
 			ElasticSearchGet elasticSearchGet = akeso.Olustur();
@@ -33,7 +36,9 @@ namespace app_aaw_lib.EsSearch
 			PoliceAramaMotoru pam = new PoliceAramaMotoru();
 			string aramaSonuc = pam.AramaYap(elasticSearchQuery);
 
-			ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length -1).Replace("\"", "'") + "\" }");
+			return "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length - 1).Replace("\"", "'") + "\" }";
+
+			//ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length -1).Replace("\"", "'") + "\" }");
 			//ResponseAyarla(context, sonuc.Basarili ? new FaaliyetIslemOutput {Basarili = true, Faaliyet = new IsFaaliyet().Doldur(IsAkisiInstance.Al(input.IsAkisiInstanceId, TemelVeriIslemleriOlustur()).FaaliyetAl(input.FaaliyetInstanceId), TumKullaniciAdlariniGetir(), IAMSessionNesneleri.Kullanici, TemelVeriIslemleriOlustur())} : new FaaliyetIslemOutput {Basarili = false, Mesaj = sonuc.Mesaj});
 		}
 
