@@ -2,8 +2,8 @@
 {
 	app.controller('araController',
     [
-		'$scope', '$modal', 'sunucuAramaIletisim', 
-		function ($scope, $modal, sunucuAramaIletisim) {
+		'$scope', 'sunucuAramaIletisim', 
+		function ($scope, sunucuAramaIletisim) {
 			$scope.Arama = new Arama();
 
 			$scope.aramaYap = function ()
@@ -76,7 +76,7 @@ function Arama()
 
 	this.tumunuSifirla = function(liste)
 	{
-		for (var i = 1;i < liste.length; i++)
+		for (var i = 0;i < liste.length; i++)
 		{
 			liste[i].Adet = 0;
 		}

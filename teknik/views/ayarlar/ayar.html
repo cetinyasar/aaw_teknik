@@ -1,5 +1,5 @@
 ﻿
-<div ng-controller="araController">
+<div ng-controller="ayarController">
 	<div class="row">
 		<br />
 		<div class="search-classic col-lg-12">
@@ -18,31 +18,153 @@
 							</li>
 							<li>
 								<a data-toggle="tab" href="#panel_tab_example2">
-									Tab 2
+									İndex
 								</a>
 							</li>
-							<li>
+							<!--<li>
 								<a data-toggle="tab" href="#panel_tab_example3">
 									Tab 3
 								</a>
-							</li>
+							</li>-->
 						</ul>
 						<div class="tab-content">
 							<div id="panel_tab_example1" class="tab-pane active">
-								1. Sayfada gösterilecek sonuç adedi
-								2. Gösterilecek kolonlar
-								3. Gruplarda maksimum sayı (facet size)
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-external-link-square"></i>
+										Arama Ayarları
+									</div>
+									<div class="panel-body">
+										<form role="form" class="form-horizontal">
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Arama sunucu adresi
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-12">
+														<input type="text" class="form-control" ng-model="Ayarlar.AramaSunucuAdresi">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Sayfada gösterilecek sonuç adedi
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-2">
+														<input type="text" class="form-control" ng-model="Ayarlar.SayfadaGosterilecekSonucAdedi">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Listelenecek kolonlar
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-12">
+														<input type="text" class="form-control" ng-model="Ayarlar.ListelenecekKolonlar">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Gruplarda gösterilecek adet
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-2">
+														<input type="text" class="form-control" ng-model="Ayarlar.GruplardaGosterilecekAdet">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Değişiklikleri kaydet
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-4">
+														<button class="btn btn-default" type="button" ng-click="aramaAyarlariKaydet()">
+															Kaydet
+														</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div><div id="panel_tab_example2" class="tab-pane">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-external-link-square"></i>
+										İndex oluşturma
+									</div>
+									<div class="panel-body">
+										<form role="form" class="form-horizontal">
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Başlangıç Tanzim Tarihi
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-2">
+														<div ada-tarih myClass="form-control" ng-model="IndexOlusturmaKriterleri.BaslangicTanzimTarihi"></div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Bitiş Tanzim Tarihi
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-2">
+														<div ada-tarih myclass="form-control" ng-model="IndexOlusturmaKriterleri.BitisTanzimTarihi"></div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													İndexleri yeniden oluştur
+												</label>
+												<div class="col-sm-8">
+													<div class="col-sm-4">
+														<button class="btn btn-default" type="button" ng-click="indexleriYenidenOlustur()">
+															Başla
+														</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<i class="fa fa-external-link-square"></i>
+										İndex silme
+									</div>
+									<div class="panel-body">
+										<form role="form" class="form-horizontal">
+											<div class="form-group">
+												<label class="col-sm-3 control-label">
+													Tüm indexleri sil
+												</label>
+												<div class="col-sm-8">
+
+													<button class="btn btn-default" type="button" ng-click="tumIndexleriSil()">
+														Başla
+													</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
-							<div id="panel_tab_example2" class="tab-pane">
-							</div>
-							<div id="panel_tab_example3" class="tab-pane">
-							</div>
+							<!--<div id="panel_tab_example3" class="tab-pane">
+							</div>-->
 						</div>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
-	
-
 </div>

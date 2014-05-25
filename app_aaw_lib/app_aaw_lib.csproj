@@ -53,9 +53,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\__GerekliDLL\Oracle.DataAccess.dll</HintPath>
     </Reference>
-    <Reference Include="policy.1.15.Sybase.Data.AseClient">
-      <HintPath>D:\VS2012\Projects\__GerekliDLL\policy.1.15.Sybase.Data.AseClient.dll</HintPath>
-    </Reference>
     <Reference Include="Sybase.Data.AseClient">
       <HintPath>D:\VS2012\Projects\__GerekliDLL\Sybase.Data.AseClient.dll</HintPath>
     </Reference>
@@ -72,6 +69,7 @@
     <Compile Include="AramaKriterdenElasticSearchOlusturan.cs" />
     <Compile Include="AramaKriterleri.cs" />
     <Compile Include="EsSearch\AramaHttpHandler.cs" />
+    <Compile Include="EsSearch\AyarHttpHandler.cs" />
     <Compile Include="EsSearch\Indexleme\GelenIstekDetay.cs" />
     <Compile Include="EsSearch\Indexleme\HandlerGuvenlik.cs" />
     <Compile Include="EsSearch\Indexleme\ICariApiIstekHandler.cs" />

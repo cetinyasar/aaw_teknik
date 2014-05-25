@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdaGenel.Cesitli;
 using AdaVeriKatmani;
 using Newtonsoft.Json.Linq;
 
 namespace app_aaw_lib.EsSearch.Indexleme
 {
-	public class PoliceTopluIndexleHandler : PoliceIndexleHandler, ICariApiIstekHandler
+	public class PoliceTopluIndexleHandler : PoliceIndexleHandler //, ICariApiIstekHandler
 	{
 
 		public PoliceTopluIndexleHandler()
@@ -18,31 +15,30 @@ namespace app_aaw_lib.EsSearch.Indexleme
 
 		}
 
-		public string IstekIsle(TemelVeriIslemleri temelVeriIslemleri, GelenIstekDetay istekDetay, AAWIndexGuncellemeMotoru igm)
+		//public string IstekIsle(TemelVeriIslemleri temelVeriIslemleri, GelenIstekDetay istekDetay, AAWIndexGuncellemeMotoru igm)
+		public string IstekIsle(TemelVeriIslemleri temelVeriIslemleri, AAWIndexGuncellemeMotoru igm, DateTime baslangicTanzimTarihi, DateTime bitisTanzimTarihi)
 		{
 			Tvi = temelVeriIslemleri;
-			//Response = response;
-
-			tanzimTarihineGoreKayitAlanOlustur(istekDetay, igm);
+			tanzimTarihineGoreKayitAlanOlustur(baslangicTanzimTarihi, bitisTanzimTarihi, igm);
 			return "";
 		}
 
-		private void tanzimTarihineGoreKayitAlanOlustur(GelenIstekDetay istekDetay, AAWIndexGuncellemeMotoru igm)
+		private void tanzimTarihineGoreKayitAlanOlustur(DateTime baslangicTanzimTarihi, DateTime bitisTanzimTarihi, AAWIndexGuncellemeMotoru igm)
 		{
-			JArray keyler = (JArray)istekDetay.Veri["fTnzTar"];
-			DateTime tanzim1 = (DateTime)keyler[0];
-			DateTime tanzim2 = (DateTime)keyler[1];
+			//JArray keyler = (JArray)istekDetay.Veri["fTnzTar"];
+			//DateTime tanzim1 = (DateTime)keyler[0];
+			//DateTime tanzim2 = (DateTime)keyler[1];
 
-			string polKomut = "SELECT * FROM POL WHERE FTNZTAR BETWEEN " + VFPAraclar.sqlIcinTarihStrAl(tanzim1) + " and " + VFPAraclar.sqlIcinTarihStrAl(tanzim2);
+			string polKomut = "SELECT * FROM POL WHERE FTNZTAR BETWEEN " + VFPAraclar.sqlIcinTarihStrAl(baslangicTanzimTarihi) + " and " + VFPAraclar.sqlIcinTarihStrAl(bitisTanzimTarihi);
 			DataTable dtPol = Tvi.Doldur(polKomut + " ORDER BY FPRKPOL");
 			DataTable dtPol2 = Tvi.Doldur("SELECT * FROM POL2 WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FPRKPOL = POL2.FPRKPOL)");
 			DataTable dtKko = Tvi.Doldur("SELECT * FROM KKO WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FPRKPOL = KKO.FPRKPOL)");
 			DataTable dtTrf = Tvi.Doldur("SELECT * FROM TRF WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FPRKPOL = TRF.FPRKPOL)");
 
 			DataTable dtMus = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKMUS = MUS.FPRKMUS)");
-			DataTable dtTa = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKTA = MUS.FPRKMUS)");
-			DataTable dtSat = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSAT = MUS.FPRKMUS)");
-			DataTable dtSor = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSOR = MUS.FPRKMUS)");
+			DataTable dtTa = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKTA = MUS.FPRKMUS AND POL.FFRKTA <> POL.FFRKMUS)");
+			DataTable dtSat = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSAT = MUS.FPRKMUS AND POL.FFRKSAT <> POL.FFRKMUS)");
+			DataTable dtSor = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSOR = MUS.FPRKMUS AND POL.FFRKSOR <> POL.FFRKMUS)");
 
 			IndexMetadataList iml = new IndexMetadataList();
 			iml.KayitTipiAdi = "police";

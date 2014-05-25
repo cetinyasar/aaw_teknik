@@ -42,8 +42,9 @@ require.config({
 			deps: ['angular']
 		},
 		'clipone-main': {
-			deps: ['angular', 'clipone-jquery', 'clipone-jquery-ui', 'clipone-bootstrap', 'clipone-bootstrap-hover-dropdown', 'clipone-jquery-blockUI', 'clipone-jquery-iCheck',
-			'clipone-jquery-perfect-scrollbar-mousewheel', 'clipone-jquery-perfect-scrollbar', 'clipone-jquery-cookie', 'clipone-bootstrap-colorpalette']
+			deps: ['angular', 'clipone-jquery', 'clipone-jquery-ui', 'clipone-bootstrap', 'clipone-bootstrap-hover-dropdown',
+				'clipone-jquery-blockUI', 'clipone-jquery-iCheck', 'clipone-jquery-perfect-scrollbar-mousewheel',
+				'clipone-jquery-perfect-scrollbar', 'clipone-jquery-cookie', 'clipone-bootstrap-colorpalette']
 			
 		},
 		'clipone-jquery-ui': {

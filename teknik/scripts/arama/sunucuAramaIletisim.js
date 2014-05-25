@@ -9,15 +9,25 @@
 			var erteleme = $q;
 			this.veriAl = function(obj)
 			{
-				//return this.istekGonder("Arama.Ara.teknik", obj);
-				alert("gönderiyorum");
-				return this.istekGonder("AdaHttpHandler.Ara.teknik", obj);
+				return this.istekGonder("AramaHttpHandler.Ara.teknik", obj);
 			}
 
 			this.kriterleriAl = function (obj) {
 				return this.istekGonder("Arama.Deneme.teknik", obj);
 			}
 
+			this.ayarlariKaydet = function (obj) {
+				return this.istekGonder("AyarHttpHandler.AyarlariKaydet.teknik", obj);
+			}
+
+			this.indexOlustur = function (obj) {
+				return this.istekGonder("AyarHttpHandler.IndexOlustur.teknik", obj);
+			}
+
+			this.tumIndexSil = function (obj) {
+				return this.istekGonder("AyarHttpHandler.TumIndexSil.teknik", obj);
+			}
+			
 			this.istekGonder = function(istekTipi, veri) {
 				var kilit = erteleme.defer();
 				this.http.post(istekTipi, sunucuyaGondermedenOnceIsle(veri)).success(function (data) {
