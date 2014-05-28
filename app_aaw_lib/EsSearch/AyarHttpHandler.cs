@@ -42,7 +42,7 @@ namespace app_aaw_lib.EsSearch
 
 		private static TemelVeriIslemleri veriIslemleriOlustur()
 		{
-			string connectionString = "Provider=vfpoledb.1;Collating Sequence=TURKISH;DATE=BRITISH;connection Timeout=1200;Data Source=D:\\Evrim\\ADADATA.DBC";
+			string connectionString = "Provider=vfpoledb.1;Collating Sequence=TURKISH;DATE=BRITISH;connection Timeout=1200;Data Source=D:\\AdaData\\Evrim\\ADADATA.DBC";
 			VeritabaniTipi veritabaniTipi = VeritabaniTipi.FoxPro;
 			return new TemelVeriIslemleri(veritabaniTipi, connectionString);
 		}

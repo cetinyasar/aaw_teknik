@@ -16,8 +16,6 @@ namespace app_aaw_lib
 		{
 			From = 0;
 			Size = 100;
-
-
 		}
 
 		public static AramaKriterleri Olustur()

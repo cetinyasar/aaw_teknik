@@ -34,8 +34,8 @@ namespace app_aaw_lib.EsSearch
 			PoliceAramaMotoru pam = new PoliceAramaMotoru();
 			string aramaSonuc = pam.AramaYap(elasticSearchQuery);
 
-			//return "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length - 1).Replace("\"", "'") + "\" }";
-			RootObject ro = JsonConvert.DeserializeObject<RootObject>(aramaSonuc);
+			return "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length - 1).Replace("\"", "'") + "\" }";
+			//RootObject ro = JsonConvert.DeserializeObject<RootObject>(aramaSonuc);
 			return "";
 			//ResponseAyarla(context, "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length -1).Replace("\"", "'") + "\" }");
 			//ResponseAyarla(context, sonuc.Basarili ? new FaaliyetIslemOutput {Basarili = true, Faaliyet = new IsFaaliyet().Doldur(IsAkisiInstance.Al(input.IsAkisiInstanceId, TemelVeriIslemleriOlustur()).FaaliyetAl(input.FaaliyetInstanceId), TumKullaniciAdlariniGetir(), IAMSessionNesneleri.Kullanici, TemelVeriIslemleriOlustur())} : new FaaliyetIslemOutput {Basarili = false, Mesaj = sonuc.Mesaj});

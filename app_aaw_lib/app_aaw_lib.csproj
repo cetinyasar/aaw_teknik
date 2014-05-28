@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,7 +77,6 @@
     <Compile Include="EsSearch\Indexleme\IndexMetadata.cs" />
     <Compile Include="EsSearch\Indexleme\IndexMetadataList.cs" />
     <Compile Include="EsSearch\Indexleme\KayitAlan.cs" />
-    <Compile Include="EsSearch\Indexleme\PoliceAramaHandler.cs" />
     <Compile Include="EsSearch\Indexleme\PoliceIndexleHandler.cs" />
     <Compile Include="EsSearch\Indexleme\PoliceTekIndexleHandler.cs" />
     <Compile Include="EsSearch\Indexleme\PoliceTerimleri.cs" />

@@ -73,7 +73,7 @@ namespace app_aaw_lib.EsSearch.Indexleme
 				//aynı thread içinde yapılan bir işlem ise exception at. 
 				if (!yeniThreaddeIslemYap)
 					throw new Exception("topluEkle hata (" + ex.Message + ") -- JSON: " + json);
-			}
+				}
 
 		}
 
