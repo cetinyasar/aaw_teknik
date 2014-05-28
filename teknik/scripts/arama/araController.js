@@ -86,6 +86,11 @@ function Arama()
 	{
 		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.PoliceGrubu);
 		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Brans);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Marka);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.ModelYili);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Tali);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Satici);
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Sorumlu);
 		for (var key in this.AramaSonuc.facets) {
 			if (isUndefined(this.AramaSonuc.facets) || this.AramaSonuc.facets == null)
 				continue;

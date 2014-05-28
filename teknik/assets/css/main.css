@@ -47,11 +47,12 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	border-radius: 0 0 0 0 !important;
 	color: #858585;
 	font-family: inherit;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 1.2;
-	padding: 5px 4px;
+	padding: 3px 4px;
 	transition-duration: 0.1s;
 	box-shadow: none;
+	height: 26px;
 }
 textarea:hover, input[type="text"]:hover, input[type="password"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="date"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, input[type="number"]:hover, input[type="email"]:hover, input[type="url"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="color"]:hover {
 	border-color: #B5B5B5;
@@ -126,6 +127,7 @@ span.input-help > input {
 	font-style: normal;
 }
 select.form-control {
+	height: 27px;
 	background-color: #FFFFFF;
 	border: 1px solid #D5D5D5;
 	border-radius: 0 0 0 0;
@@ -234,7 +236,7 @@ textarea.autosize {
 .checkbox-table {
 	display: inline-block;
 	margin: 2px 0 0 0;
-	padding-left: 20px;
+	padding-left: 5px;
 	line-height: 10px;
 }
 .checkbox-table label {
@@ -265,6 +267,9 @@ textarea.autosize {
 }
 .has-error .note-editor, .has-error .cke_chrome {
 	border-color: #B94A48 !important;
+}
+.form-group {
+  margin-bottom: 5px;
 }
 .form-group .text {
 	display: block;
@@ -585,6 +590,9 @@ li.dropdown.current-user .dropdown-menu li a {
 /* ---------------------------------------------------------------------- */
 .btn {
 	font-family: 'Open Sans';
+	font-size: 12px;
+	padding-bottom: 2px;
+	padding-top: 2px;
 }
 .btn-teal {
 	background-color: #569099;
@@ -2721,6 +2729,7 @@ td.center .dropdown-menu {
 .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
 
 	vertical-align: middle;
+	padding: 5px;
 }
 
 .editable-element {

@@ -39,7 +39,6 @@
 function IndexOlusturmaKriterleri() {
 	this.BaslangicTanzimTarihi = "01.01.2014";
 	this.BitisTanzimTarihi = "31.01.2014";
-
 }
 
 function Ayarlar() {
