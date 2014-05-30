@@ -40,132 +40,116 @@
 </head>
 <!-- end: HEAD -->
 <!-- start: BODY -->
-<body>
-	<!-- start: HEADER -->
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<!-- start: TOP NAVIGATION CONTAINER -->
-		<div class="container">
-			<div class="navbar-header">
-				<!-- start: RESPONSIVE MENU TOGGLER -->
-				<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-					<span class="clip-list-2"></span>
-				</button>
-				<!-- end: RESPONSIVE MENU TOGGLER -->
-				<!-- start: LOGO -->
-				<a class="navbar-brand" href="index.html">
-					AAW Ortak Login Bölümü
-				</a>
-				<!-- end: LOGO -->
-			</div>
-		</div>
-		<!-- end: TOP NAVIGATION CONTAINER -->
-	</div>
-	<!-- end: HEADER -->
-	<!-- start: MAIN CONTAINER -->
-	<div class="main-container">
-		<div class="navbar-content">
-			<!-- start: SIDEBAR -->
-			<div class="main-navigation navbar-collapse collapse">
-				<!-- start: MAIN MENU TOGGLER BUTTON -->
-				<div class="navigation-toggler">
-					<i class="clip-chevron-left"></i>
-					<i class="clip-chevron-right"></i>
-				</div>
-				<!-- end: MAIN MENU TOGGLER BUTTON -->
-				<!-- start: MAIN NAVIGATION MENU -->
-				<ul class="main-navigation-menu">
-					<li>
-						<a href="/arama">
-							<i class="clip-home-3"></i>
-							<span class="title"> Arama </span><span class="selected"></span>
+	<body>
+		<div id="mainDiv" ng-controller="mainController">
+			<!-- start: HEADER -->
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<!-- start: TOP NAVIGATION CONTAINER -->
+				<div class="container">
+					<div class="navbar-header">
+						<!-- start: RESPONSIVE MENU TOGGLER -->
+						<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+							<span class="clip-list-2"></span>
+						</button>
+						<!-- end: RESPONSIVE MENU TOGGLER -->
+						<!-- start: LOGO -->
+						<a class="navbar-brand" href="index.html">
+							AAW Ortak Login Bölümü
 						</a>
-					</li>
-				</ul>
-				<!-- end: MAIN NAVIGATION MENU -->
+						<!-- end: LOGO -->
+					</div>
+				</div>
+				<!-- end: TOP NAVIGATION CONTAINER -->
 			</div>
-			<!-- end: SIDEBAR -->
-
-		</div>
-		<!-- start: PAGE -->
-		<div class="main-content">
-			<div class="container">
-				<!-- start: PAGE HEADER -->
-				<div class="row">
-					<div class="col-sm-12">
-						<!-- start: PAGE TITLE & BREADCRUMB -->
-						<!--<ol class="breadcrumb">
+			<!-- end: HEADER -->
+			<!-- start: MAIN CONTAINER -->
+			<div class="main-container">
+				<div class="navbar-content">
+					<!-- start: SIDEBAR -->
+					<div class="main-navigation navbar-collapse collapse">
+						<!-- start: MAIN MENU TOGGLER BUTTON -->
+						<div class="navigation-toggler">
+							<i class="clip-chevron-left"></i>
+							<i class="clip-chevron-right"></i>
+						</div>
+						<!-- end: MAIN MENU TOGGLER BUTTON -->
+						<!-- start: MAIN NAVIGATION MENU -->
+						<ul class="main-navigation-menu" ng-repeat="mnu in Menu">
 							<li>
-								<i class="clip-file"></i>
-								<a href="#">
-									Ana Sayfa
+								<a href="/arama">
+									<i class="clip-search-3"></i>
+									<span class="title"> Arama </span><span class="selected"></span>
 								</a>
 							</li>
-							<li class="active">
-								Arama
-							</li>
-						</ol>-->
-						<!-- end: PAGE TITLE & BREADCRUMB -->
+						</ul>
+						<!-- end: MAIN NAVIGATION MENU -->
+					</div>
+					<!-- end: SIDEBAR -->
 
-						<!-- start: TOP NAVIGATION MENU -->
-						<ul class="nav navbar-right">
-							<li class="dropdown current-user">
-								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
-									<span class="username">Çetin Yaşar</span>
-									<i class="clip-chevron-down"></i>
-								</a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="/ayarlar">
-											<i class="clip-user-2"></i>
-											&nbsp;Ayarlar
+				</div>
+				<!-- start: PAGE -->
+				<div class="main-content">
+					<div class="container">
+						<!-- start: PAGE HEADER -->
+						<div class="row">
+							<div class="col-sm-12">
+								<!-- start: TOP NAVIGATION MENU -->
+								<ul class="nav navbar-right">
+									<li class="dropdown current-user">
+										<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+											<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+											<span class="username">Çetin Yaşar</span>
+											<i class="clip-chevron-down"></i>
 										</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="utility_lock_screen.html">
-											<i class="clip-locked"></i>
-											&nbsp;Lock Screen
-										</a>
-									</li>
-									<li>
-										<a href="login_example1.html">
-											<i class="clip-exit"></i>
-											&nbsp;Log Out
-										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="/ayarlar">
+													<i class="clip-user-2"></i>
+													&nbsp;Ayarlar
+												</a>
+											</li>
+											<li class="divider"></li>
+											<li>
+												<a href="utility_lock_screen.html">
+													<i class="clip-locked"></i>
+													&nbsp;Lock Screen
+												</a>
+											</li>
+											<li>
+												<a href="login_example1.html">
+													<i class="clip-exit"></i>
+													&nbsp;Log Out
+												</a>
+											</li>
+										</ul>
 									</li>
 								</ul>
-							</li>
-							<!-- end: USER DROPDOWN -->
-						</ul>
-						<!-- end: TOP NAVIGATION MENU -->
+								<!-- end: TOP NAVIGATION MENU -->
+							</div>
+						</div>
+						<!-- end: PAGE HEADER -->
+						<!-- start: PAGE CONTENT -->
+						<div id="main" ng-view>
 
-
+						</div>
+						<!-- end: PAGE CONTENT-->
 					</div>
-
 				</div>
-				<!-- end: PAGE HEADER -->
-				<!-- start: PAGE CONTENT -->
-				<div id="main" ng-view>
-					
+				<!-- end: PAGE -->
+			</div>
+			<!-- end: MAIN CONTAINER -->
+			<!-- start: FOOTER -->
+			<div class="footer clearfix">
+				<div class="footer-inner">
+					2014 &copy; Ada Yazılım.
 				</div>
-				<!-- end: PAGE CONTENT-->
+				<div class="footer-items">
+					<span class="go-top"><i class="clip-chevron-up"></i></span>
+				</div>
 			</div>
 		</div>
-		<!-- end: PAGE -->
-	</div>
-	<!-- end: MAIN CONTAINER -->
-	<!-- start: FOOTER -->
-	<div class="footer clearfix">
-		<div class="footer-inner">
-			2014 &copy; Ada Yazılım.
-		</div>
-		<div class="footer-items">
-			<span class="go-top"><i class="clip-chevron-up"></i></span>
-		</div>
-	</div>
-	<script type="text/javascript" src="lib/requirejs/require.js" data-main="scripts/onYukleyici.js"></script>
+		<script type="text/javascript" src="lib/requirejs/require.js" data-main="scripts/onYukleyici.js"></script>
 
-</body>
+	</body>
 <!-- end: BODY -->
 </html>

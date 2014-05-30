@@ -1,5 +1,5 @@
 define(['routes', 'services/dependencyResolverFor'], function (config, dependencyResolverFor) {
-	var app = angular.module('app', ['ngRoute', 'ui.bootstrap', 'ada.tarih', 'ada.brans', 'ada.kriterPaneli']);
+	var app = angular.module('app', ['ngRoute', 'ui.bootstrap', 'ada.tarih']);
 
 	app.config(
     [
@@ -37,6 +37,12 @@ define(['routes', 'services/dependencyResolverFor'], function (config, dependenc
         	}
         }
     ]);
+
+	app.controller('mainController', function ($scope, $http, $location)
+	{
+		$scope.Menu = [1,2,3];
+		alert("ok");
+	});
 
 	return app;
 });
