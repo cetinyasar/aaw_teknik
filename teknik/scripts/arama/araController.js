@@ -2,7 +2,7 @@
 {
 	app.controller('araController',
     [
-		'$scope', 'sunucuAramaIletisim', 
+		'$scope', 'sunucuAramaIletisim',
 		function ($scope, sunucuAramaIletisim) {
 			$scope.Arama = new Arama();
 
@@ -132,7 +132,7 @@ function AramaSonuc() {
 
 function AramaKriterleri()
 {
-	this.Query = "İNTEGRAL";
+	this.Query = "";
 	this.EsSearch = "YOK";
 	this.SecilebilirKriterler = new SecilebilirKriterler();
 }

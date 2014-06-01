@@ -1,6 +1,6 @@
 define([], function () {
 	return {
-		defaultRoutePaths: '/',
+		defaultRoutePaths: '/ana',
 		routes: {
 			'/arama': {
 				templateUrl: '/views/arama/ara.html',
@@ -19,7 +19,12 @@ define([], function () {
 				dependencies: [
                     'police/polController'
 				]
+			},
+			'/ana': {
+				templateUrl: '/views/ana.html',
+				dependencies: ['ana']
 			}
+
 		}
 	};
 });

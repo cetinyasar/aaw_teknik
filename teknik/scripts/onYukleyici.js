@@ -5,6 +5,7 @@ require.config({
 		'angular-route': '/lib/angular/angular-route/angular-route',
 		'angular-resource': '/lib/angular/angular-resource/angular-resource',
 		'angular-ui': '/lib/angular/ui-bootstrap-tpls-0.10.0',
+		'aaw-modul': '/scripts/aaw-modul',
 		//clipone tema için gerekli olanlar
 		'clipone-jquery': '/assets/plugins/jquery/2.1.0/jquery.min',
 		'clipone-jquery-ui': '/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min',
@@ -17,16 +18,23 @@ require.config({
 		'clipone-jquery-cookie': '/assets/plugins/jquery-cookie/jquery.cookie',
 		'clipone-bootstrap-colorpalette': '/assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette',
 		'clipone-main': '/assets/js/main',
-		'ada-angular-modules': '/lib/ada/adaAngularModules',
 		'angular-ui-utils': '/lib/angular/angular-ui/ui-utils',
-		'ada-extensions': '/lib/ada/adaExtensions'
-
+		//Ada
+		'ada-angular-modules': '/lib/ada/adaAngularModules',
+		'ada-extensions': '/lib/ada/adaExtensions',
+		//cookie
+		'mdn-cookie': 'mdn-cookie'
+		
+		
 	},
 	shim: {
 		'app': {
-			deps: ['angular', 'angular-route', 'angular-resource', 'angular-ui', 'clipone-main', 'ada-angular-modules']
+			deps: ['angular', 'angular-route', 'angular-resource', 'angular-ui', 'clipone-main', 'ada-angular-modules', 'mdn-cookie', 'aaw-modul']
 		},
 		'angular-route': {
+			deps: ['angular']
+		},
+		'aaw-modul': {
 			deps: ['angular']
 		},
 		'angular-resource': {
@@ -74,7 +82,6 @@ require.config({
 		'clipone-jquery-cookie': {
 			deps: ['clipone-jquery']
 		}
-		
 	}
 });
 
@@ -91,3 +98,4 @@ require
 
     }
 );
+
