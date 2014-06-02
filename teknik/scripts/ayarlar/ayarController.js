@@ -1,8 +1,8 @@
-﻿define(['app', 'arama/sunucuAramaIletisim'], function (app) {
+﻿define(['app', 'arama/sunucuIletisim'], function (app) {
 	app.controller('ayarController',
     [
-		'$scope', 'sunucuAramaIletisim', 'loginKontrol',
-		function ($scope, sunucuAramaIletisim, loginKontrol) {
+		'$scope', 'sunucuIletisim', 'loginKontrol',
+		function ($scope, sunucuIletisim, loginKontrol) {
 			loginKontrol.loginMi("");
 
 			$scope.SunucuIletisimiYapiliyor = false;
@@ -11,7 +11,7 @@
 
 			$scope.aramaAyarlariKaydet = function () {
 				$scope.SunucuIletisimiYapiliyor = true;
-				sunucuAramaIletisim.ayarlariKaydet(this.Ayarlar).then(function (indexlemeSonucu) {
+				sunucuIletisim.ayarlariKaydet(this.Ayarlar).then(function (indexlemeSonucu) {
 					$scope.SunucuIletisimiYapiliyor = false;
 					alert(indexlemeSonucu);
 				});
@@ -19,7 +19,7 @@
 
 			$scope.indexleriYenidenOlustur = function() {
 				$scope.SunucuIletisimiYapiliyor = true;
-				sunucuAramaIletisim.indexOlustur(this.IndexOlusturmaKriterleri).then(function (indexlemeSonucu) {
+				sunucuIletisim.indexOlustur(this.IndexOlusturmaKriterleri).then(function (indexlemeSonucu) {
 					$scope.SunucuIletisimiYapiliyor = false;
 					alert(indexlemeSonucu);
 				});
@@ -28,7 +28,7 @@
 
 			$scope.tumIndexleriSil = function () {
 				$scope.SunucuIletisimiYapiliyor = true;
-				sunucuAramaIletisim.tumIndexSil(this.IndexOlusturmaKriterleri).then(function (indexlemeSonucu) {
+				sunucuIletisim.tumIndexSil(this.IndexOlusturmaKriterleri).then(function (indexlemeSonucu) {
 					$scope.SunucuIletisimiYapiliyor = false;
 					alert(JSON.parse(indexlemeSonucu));
 				});

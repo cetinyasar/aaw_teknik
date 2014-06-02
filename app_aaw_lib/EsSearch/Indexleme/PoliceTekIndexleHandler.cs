@@ -54,7 +54,7 @@ public class PoliceTekIndexleHandler : PoliceIndexleHandler, ICariApiIstekHandle
 				if (dtSor.Rows.Count == 1)
 					drSor = dtSor.Rows[0];
 
-				im.Alanlar.AddRange(KayitAlanOlustur(dtPol.Rows[0], pol2DataRow, drUruneOzel, drMus, drTa, drSat, drSor));
+				im.Alanlar.AddRange(KayitAlanOlustur(dtPol.Rows[0], pol2DataRow, drUruneOzel, drMus, drTa, drSat, drSor, new Dictionary<int,app_aaw_lib.Cesitli.Sirket>()));
 				igm.Guncelle(im, false);
 
 			}

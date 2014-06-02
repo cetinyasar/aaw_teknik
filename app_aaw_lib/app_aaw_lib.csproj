@@ -45,8 +45,9 @@
     <Reference Include="AdaPublicGenel">
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaPublicGenel.dll</HintPath>
     </Reference>
-    <Reference Include="AdaSSO">
-      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaSSO.dll</HintPath>
+    <Reference Include="AdaSSO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\__OutputDLL\AdaSSO.dll</HintPath>
     </Reference>
     <Reference Include="AdaVeriKatmani">
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaVeriKatmani.dll</HintPath>
@@ -80,6 +81,7 @@
     <Compile Include="Cesitli\AAWSabitler.cs" />
     <Compile Include="Cesitli\AAWSessionNesneleri.cs" />
     <Compile Include="Cesitli\HttpHandlerKontrol.cs" />
+    <Compile Include="Cesitli\Sirket.cs" />
     <Compile Include="EsSearch\AramaHttpHandler.cs" />
     <Compile Include="EsSearch\AyarHttpHandler.cs" />
     <Compile Include="EsSearch\Indexleme\GelenIstekDetay.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="EsSearch\Sorgu\Query.cs" />
     <Compile Include="EsSearch\Sorgu\QueryString.cs" />
     <Compile Include="EsSearch\Sorgu\Terms.cs" />
+    <Compile Include="EsSearch\Sorgu\TermsSirketAdi.cs" />
     <Compile Include="EsSearch\Sorgu\TermsSorumlu.cs" />
     <Compile Include="EsSearch\Sorgu\TermsSatici.cs" />
     <Compile Include="EsSearch\Sorgu\TermsTali.cs" />

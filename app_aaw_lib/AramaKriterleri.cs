@@ -37,8 +37,10 @@ namespace app_aaw_lib
 		public List<Kriter> Tali { get; set; }
 		public List<Kriter> Satici { get; set; }
 		public List<Kriter> Sorumlu { get; set; }
+		public List<Kriter> SirketAdi { get; set; }
 		
 		public BaslangicBitisTarihi TanzimTarihAraligi { get; set; }
+		
 
 		public SecilebilirKriter()
 		{
@@ -57,6 +59,7 @@ namespace app_aaw_lib
 			retVal.Tali = new List<Kriter>();
 			retVal.Satici = new List<Kriter>();
 			retVal.Sorumlu = new List<Kriter>();
+			retVal.SirketAdi = new List<Kriter>();
 
 			retVal.TanzimTarihAraligi = new BaslangicBitisTarihi();
 			return retVal;

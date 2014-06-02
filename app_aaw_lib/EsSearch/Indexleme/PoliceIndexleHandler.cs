@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Data;
 using AdaGenel.Cesitli;
 using AdaVeriKatmani;
+using app_aaw_lib.Cesitli;
 
 namespace app_aaw_lib.EsSearch.Indexleme
 {
@@ -10,7 +11,7 @@ namespace app_aaw_lib.EsSearch.Indexleme
 		protected TemelVeriIslemleri Tvi;
 		//protected HttpResponse Response;
 
-		protected IEnumerable<KayitAlan> KayitAlanOlustur(DataRow polRow, DataRow pol2Row, DataRow uruneOzelRow, DataRow drMus, DataRow drTa, DataRow drSat, DataRow drSor)
+		protected IEnumerable<KayitAlan> KayitAlanOlustur(DataRow polRow, DataRow pol2Row, DataRow uruneOzelRow, DataRow drMus, DataRow drTa, DataRow drSat, DataRow drSor, Dictionary<int, Sirket> sirketTanimlari)
 		{
 			List<KayitAlan> retVal = new List<KayitAlan>();
 			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.PoliceGrubu, new astring() { Deger = polRow["POLGRP"].ToString() }, NormalizationTip.Normal));
@@ -30,6 +31,10 @@ namespace app_aaw_lib.EsSearch.Indexleme
 			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.DaskPoliceNo, new astring() { Deger = polRow["fDskPolNo"].ToString().Trim() }, NormalizationTip.Normal));
 			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.SirketDaskPoliceNo, new astring() { Deger = polRow["fSirDskPNo"].ToString().Trim() }, NormalizationTip.Normal));
 			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.EskiPoliceNo, new astring() { Deger = polRow["fEskPolNo"].ToString().Trim() }, NormalizationTip.Normal));
+
+			int ffrkSir = Araclar.ParseInt(polRow["fFrkSir"].ToString());
+			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.SirketPrk, new aint() {Deger = sirketTanimlari[ffrkSir].fPrkSir}, NormalizationTip.Normal));
+			retVal.Add(KayitAlan.Olustur(PoliceTerimleri.SirketAdi, new astring() { Deger = sirketTanimlari[ffrkSir].fSirAdi }, NormalizationTip.Normal));
 
 			if (pol2Row != null)
 				retVal.AddRange(pol2AlanlariniEkle(pol2Row));

@@ -41,6 +41,7 @@ namespace app_aaw_lib
 		{
 			EsFacets retVal = new EsFacets();
 
+			retVal.sirketAdi = bosFacetOlustur("sirketAdi");
 			retVal.policeGrubu = bosFacetOlustur("policeGrubu");
 			retVal.brans = bosFacetOlustur("brans");
 			retVal.marka = bosFacetOlustur("marka");
@@ -53,6 +54,7 @@ namespace app_aaw_lib
 			//EsAnd markaAnd = markaKriterleriniEkle();
 			//EsAnd bransAnd = bransKriterleriniEkle();
 
+			EsAnd sirketAdiAnd;
 			EsAnd markaAnd;
 			EsAnd bransAnd;
 			EsAnd modelYiliAnd;
@@ -60,22 +62,23 @@ namespace app_aaw_lib
 			EsAnd saticiAnd;
 			EsAnd sorumluAnd;
 			EsAnd policeGrubuAnd;
-			aramaIcinTermsOlustur(out policeGrubuAnd, out markaAnd, out bransAnd, out modelYiliAnd, out taliAnd, out saticiAnd, out sorumluAnd);
+			aramaIcinTermsOlustur(out policeGrubuAnd, out markaAnd, out bransAnd, out modelYiliAnd, out taliAnd, out saticiAnd, out sorumluAnd, out sirketAdiAnd);
 
+			retVal.sirketAdi = facetFiltreAyarla(new List<EsAnd> { policeGrubuAnd, markaAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "sirketAdi");
 			//if (policeGrubuAnd.terms.AdetAl() > 0)
-				retVal.policeGrubu = facetFiltreAyarla(new List<EsAnd> { markaAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "policeGrubu");
+				retVal.policeGrubu = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "policeGrubu");
 			//if (markaAnd.terms.AdetAl() > 0)
-				retVal.marka = facetFiltreAyarla(new List<EsAnd> { policeGrubuAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "marka");
+				retVal.marka = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, policeGrubuAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "marka");
 			//if (bransAnd.terms.AdetAl() > 0)
-				retVal.brans = facetFiltreAyarla(new List<EsAnd> { markaAnd, policeGrubuAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "brans");
+				retVal.brans = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, policeGrubuAnd, modelYiliAnd, taliAnd, saticiAnd, sorumluAnd }, "brans");
 			//if (modelYiliAnd.terms.AdetAl() > 0)
-				retVal.modelYili = facetFiltreAyarla(new List<EsAnd> { markaAnd, bransAnd, policeGrubuAnd, taliAnd, saticiAnd, sorumluAnd }, "modelYili");
+				retVal.modelYili = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, bransAnd, policeGrubuAnd, taliAnd, saticiAnd, sorumluAnd }, "modelYili");
 			//if (taliAnd.terms.AdetAl() > 0)
-				retVal.tali = facetFiltreAyarla(new List<EsAnd> { markaAnd, bransAnd, modelYiliAnd, policeGrubuAnd, saticiAnd, sorumluAnd }, "tali");
+				retVal.tali = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, bransAnd, modelYiliAnd, policeGrubuAnd, saticiAnd, sorumluAnd }, "tali");
 			//if (saticiAnd.terms.AdetAl() > 0)
-				retVal.satici = facetFiltreAyarla(new List<EsAnd> { markaAnd, bransAnd, modelYiliAnd, taliAnd, policeGrubuAnd, sorumluAnd }, "satici");
+				retVal.satici = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, bransAnd, modelYiliAnd, taliAnd, policeGrubuAnd, sorumluAnd }, "satici");
 			//if (sorumluAnd.terms.AdetAl() > 0)
-				retVal.sorumlu = facetFiltreAyarla(new List<EsAnd> { markaAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, policeGrubuAnd }, "sorumlu");
+				retVal.sorumlu = facetFiltreAyarla(new List<EsAnd> { sirketAdiAnd, markaAnd, bransAnd, modelYiliAnd, taliAnd, saticiAnd, policeGrubuAnd }, "sorumlu");
 
 			if (_aramaKriterleri.SecilebilirKriterler.TanzimTarihAraligi.IlkTarih.Year > 1910)
 			{
@@ -87,8 +90,9 @@ namespace app_aaw_lib
 		}
 
 		private void aramaIcinTermsOlustur(out EsAnd policeGrubuAnd, out EsAnd markaAnd, out EsAnd bransAnd, out EsAnd modelYiliAnd, out EsAnd taliAnd,
-			out EsAnd saticiAnd, out EsAnd sorumluAnd)
+			out EsAnd saticiAnd, out EsAnd sorumluAnd, out EsAnd sirketAdiAnd)
 		{
+			sirketAdiAnd = kriterleriniEkle(TermsSirketAdi.Olustur(), _aramaKriterleri.SecilebilirKriterler.SirketAdi);
 			policeGrubuAnd = kriterleriniEkle(TermsPoliceGrubu.Olustur(), _aramaKriterleri.SecilebilirKriterler.PoliceGrubu);
 			markaAnd = kriterleriniEkle(TermsMarka.Olustur(), _aramaKriterleri.SecilebilirKriterler.Marka);
 			bransAnd = kriterleriniEkle(TermsBrans.Olustur(), _aramaKriterleri.SecilebilirKriterler.Brans);
@@ -128,10 +132,6 @@ namespace app_aaw_lib
 			facet.terms.field = facetAdi;
 			facet.terms.size = 50;
 
-			//facet.facet_filter = new FacetFacetFilter();
-			//facet.facet_filter.and = new FacetAnd();
-			//facet.facet_filter.and.filters = new List<EsAnd>();
-
 			return facet;
 		}
 
@@ -139,6 +139,7 @@ namespace app_aaw_lib
 		{
 			List<EsAnd> esAnd = new List<EsAnd>();
 
+			EsAnd sirketAdiAnd;
 			EsAnd policeGrubuAnd;
 			EsAnd markaAnd;
 			EsAnd bransAnd;
@@ -146,8 +147,9 @@ namespace app_aaw_lib
 			EsAnd taliAnd;
 			EsAnd saticiAnd;
 			EsAnd sorumluAnd;
-			aramaIcinTermsOlustur(out policeGrubuAnd, out markaAnd, out bransAnd, out modelYiliAnd, out taliAnd, out saticiAnd, out sorumluAnd);
+			aramaIcinTermsOlustur(out policeGrubuAnd, out markaAnd, out bransAnd, out modelYiliAnd, out taliAnd, out saticiAnd, out sorumluAnd, out sirketAdiAnd);
 
+			esAndListeyeEkle(sirketAdiAnd, esAnd);
 			esAndListeyeEkle(policeGrubuAnd, esAnd);
 			esAndListeyeEkle(markaAnd, esAnd);
 			esAndListeyeEkle(bransAnd, esAnd);

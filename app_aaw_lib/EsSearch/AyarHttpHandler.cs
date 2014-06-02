@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdaHttpHandler;
 using AdaVeriKatmani;
+using app_aaw_lib.Cesitli;
 using app_aaw_lib.EsSearch.Indexleme;
 
 namespace app_aaw_lib.EsSearch
@@ -22,10 +23,10 @@ namespace app_aaw_lib.EsSearch
 		public string IndexOlustur(IndexOlusturmaKriterleri ayar)
 		{
 			//ICariApiIstekHandler handler = handlerYarat(iVeri);
-			AAWIndexGuncellemeMotoru igm = new AAWIndexGuncellemeMotoru("http://localhost:9200");
+			AAWIndexGuncellemeMotoru igm = new AAWIndexGuncellemeMotoru(AAWSabitler.ElasticSearchUrl + "/aaw");
 			//string sonuc = handler.IstekIsle(veriIslemleriOlustur(), iVeri, igm);
 			PoliceTopluIndexleHandler handler = new PoliceTopluIndexleHandler();
-			string sonuc = handler.IstekIsle(veriIslemleriOlustur(), igm, ayar.BaslangicTanzimTarihi, ayar.BitisTanzimTarihi);
+			string sonuc = handler.IstekIsle(AAWSabitler.VeriIslemleriOlustur(), igm, ayar.BaslangicTanzimTarihi, ayar.BitisTanzimTarihi);
 			return sonuc;
 		}
 
@@ -33,19 +34,19 @@ namespace app_aaw_lib.EsSearch
 		public string TumIndexSil()
 		{
 			//ICariApiIstekHandler handler = handlerYarat(iVeri);
-			AAWIndexGuncellemeMotoru igm = new AAWIndexGuncellemeMotoru("http://localhost:9200");
+			AAWIndexGuncellemeMotoru igm = new AAWIndexGuncellemeMotoru(AAWSabitler.ElasticSearchUrl + "/aaw");
 			//string sonuc = handler.IstekIsle(veriIslemleriOlustur(), iVeri, igm);
 			TumIndexSilHandler handler = new TumIndexSilHandler();
-			string sonuc = handler.IstekIsle(veriIslemleriOlustur(), igm);
+			string sonuc = handler.IstekIsle(AAWSabitler.VeriIslemleriOlustur(), igm);
 			return sonuc;
 		}
 
-		private static TemelVeriIslemleri veriIslemleriOlustur()
-		{
-			string connectionString = "Provider=vfpoledb.1;Collating Sequence=TURKISH;DATE=BRITISH;connection Timeout=1200;Data Source=D:\\AdaData\\Evrim\\ADADATA.DBC";
-			VeritabaniTipi veritabaniTipi = VeritabaniTipi.FoxPro;
-			return new TemelVeriIslemleri(veritabaniTipi, connectionString);
-		}
+		//private static TemelVeriIslemleri veriIslemleriOlustur()
+		//{
+		//	//string connectionString = "Provider=vfpoledb.1;Collating Sequence=TURKISH;DATE=BRITISH;connection Timeout=1200;Data Source=D:\\AdaData\\Evrim\\ADADATA.DBC";
+		//	VeritabaniTipi veritabaniTipi = VeritabaniTipi.FoxPro;
+		//	return new TemelVeriIslemleri(veritabaniTipi, AAWSabitler.VeritabaniBaglantiString);
+		//}
 	}
 
 

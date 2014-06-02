@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using AdaHttpHandler;
+using AdaHttpHandler.Olay;
 using app_aaw_lib.EsSearch.Sorgu;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -17,6 +18,7 @@ namespace app_aaw_lib.EsSearch
 	public class AramaHttpHandler
 	{
 		[AdaHttpHandlerMethod("Ara")]
+		[LoginGerekli]
 		public string Ara(AramaKriterleri ak)
 		{
 			AramaKriterdenElasticSearchOlusturan akeso = new AramaKriterdenElasticSearchOlusturan(ak);
@@ -30,7 +32,6 @@ namespace app_aaw_lib.EsSearch
 			string aramaSonuc = pam.AramaYap(elasticSearchQuery);
 
 			return "{ \"Sonuc\" : " + aramaSonuc + ", \"Kriterler\" : " + JsonConvert.SerializeObject(ak) + ", \"EsSearch\" : \"" + elasticSearchQuery.Substring(1, elasticSearchQuery.Length - 1).Replace("\"", "'") + "\" }";
-			//RootObject ro = JsonConvert.DeserializeObject<RootObject>(aramaSonuc);
 		}
 
 		protected void ResponseAyarla(HttpContext context, object responseNesnesi)

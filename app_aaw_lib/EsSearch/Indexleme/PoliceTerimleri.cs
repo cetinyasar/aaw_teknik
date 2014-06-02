@@ -5,6 +5,8 @@ namespace app_aaw_lib.EsSearch.Indexleme
 		public static string ESId = "_id";
 		public static string PoliceGrubu = "policeGrubu";
 		public static string Brans = "brans";
+		public static string SirketPrk = "sirketPrk";
+		public static string SirketAdi = "sirketAdi";
 		public static string SirketPoliceNo = "sirketPoliceNo";
 		public static string SirketTecditNo = "sirketTecditNo";
 		public static string SirketZeyilNo = "sirketZeyil";

@@ -11,6 +11,7 @@ namespace app_aaw_lib.EsSearch.Sorgu
 		public List<string> tali { get; set; }
 		public List<string> satici { get; set; }
 		public List<string> sorumlu { get; set; }
+		public List<string> sirketAdi { get; set; }
 		public abstract void KriterEkle(string kriterAdi);
 		public abstract int AdetAl();
 	}

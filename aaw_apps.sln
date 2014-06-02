@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app_test", "app_test\app_te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app_aaw_lib", "app_aaw_lib\app_aaw_lib.csproj", "{5DC6C55A-5C13-4FFD-AB8B-B3370A96D9DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sso", "sso\sso.csproj", "{A3D99D9C-DFE8-43F1-9C23-ACDE6D5BA168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{5DC6C55A-5C13-4FFD-AB8B-B3370A96D9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC6C55A-5C13-4FFD-AB8B-B3370A96D9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC6C55A-5C13-4FFD-AB8B-B3370A96D9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D99D9C-DFE8-43F1-9C23-ACDE6D5BA168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D99D9C-DFE8-43F1-9C23-ACDE6D5BA168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D99D9C-DFE8-43F1-9C23-ACDE6D5BA168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D99D9C-DFE8-43F1-9C23-ACDE6D5BA168}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

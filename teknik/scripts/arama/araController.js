@@ -1,16 +1,17 @@
-﻿define(['app', 'arama/sunucuAramaIletisim'], function (app)
+﻿define(['app', 'arama/sunucuIletisim'], function (app)
 {
 	app.controller('araController',
     [
-		'$scope', 'sunucuAramaIletisim', 'loginKontrol',
-		function ($scope, sunucuAramaIletisim, loginKontrol) {
+		'$scope', 'sunucuIletisim', 'loginKontrol',
+		function ($scope, sunucuIletisim, loginKontrol) {
 
 			loginKontrol.loginMi("");
 			$scope.Arama = new Arama();
 			$scope.aramaYap = function ()
 			{
 				$scope.Arama.VeriAliniyor = true;
-				sunucuAramaIletisim.veriAl(this.Arama.Kriterler).then(function (aramaSonucu) {
+				sunucuIletisim.veriAl(this.Arama.Kriterler).then(function (aramaSonucu) {
+					
 					$scope.Arama.ayarla(aramaSonucu);
 				});
 			}
@@ -56,6 +57,8 @@ function Arama()
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
+				if (key == "sirketAdi")
+					this.Kriterler.SecilebilirKriterler.SirketAdi.push(sk);
 				if (key == "policeGrubu")
 					this.Kriterler.SecilebilirKriterler.PoliceGrubu.push(sk);
 				if (key == "brans")
@@ -85,6 +88,7 @@ function Arama()
 
 	this.ikinciCalistirmaIcinKriterleriAyarla = function ()
 	{
+		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.SirketAdi);
 		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.PoliceGrubu);
 		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Brans);
 		this.tumunuSifirla(this.Kriterler.SecilebilirKriterler.Marka);
@@ -104,8 +108,10 @@ function Arama()
 				sk.Secili = false;
 				sk.Adi = value.terms[i].term;
 				sk.Adet = value.terms[i].count;
-				if (key == "policeGrubu") 
-					this.Kriterler.SecilebilirKriterler.PoliceGrubu.filter(function (elem) {if (elem.Adi == sk.Adi) {elem.Adet = sk.Adet;}});
+				if (key == "sirketAdi")
+					this.Kriterler.SecilebilirKriterler.SirketAdi.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet; } });
+				if (key == "policeGrubu")
+					this.Kriterler.SecilebilirKriterler.PoliceGrubu.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet; } });
 				if (key == "brans")
 					this.Kriterler.SecilebilirKriterler.Brans.filter(function (elem) { if (elem.Adi == sk.Adi) { elem.Adet = sk.Adet;  } });
 				if (key == "marka")
@@ -140,6 +146,7 @@ function AramaKriterleri()
 
 function SecilebilirKriterler()
 {
+	this.SirketAdi = [];
 	this.PoliceGrubu = [];
 	this.Brans = [];
 	this.Marka = [];

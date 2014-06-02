@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using AdaGenel.Cesitli;
 using AdaVeriKatmani;
+using app_aaw_lib.Cesitli;
 using Newtonsoft.Json.Linq;
 
 namespace app_aaw_lib.EsSearch.Indexleme
@@ -40,6 +41,19 @@ namespace app_aaw_lib.EsSearch.Indexleme
 			DataTable dtSat = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSAT = MUS.FPRKMUS AND POL.FFRKSAT <> POL.FFRKMUS)");
 			DataTable dtSor = Tvi.Doldur("SELECT FPRKMUS,FMUSHESKOD,FMUSADi,FMUSSOYADi,FMUSUNV,FMUSTCKiMN,FKULHESKOD,FDOGTAR FROM MUS WHERE EXISTS(" + polKomut.Replace("SELECT *", "SELECT '.'") + " AND POL.FFRKSOR = MUS.FPRKMUS AND POL.FFRKSOR <> POL.FFRKMUS)");
 
+			DataTable dtSir = Tvi.Doldur("SELECT fPrkSir, fSirKod, fSirAdi FROM SIR");
+			Dictionary<int, Sirket> sirketTanimlari = new Dictionary<int, Sirket>();
+			foreach (DataRow dataRow in dtSir.Rows)
+			{
+				sirketTanimlari.Add(Araclar.ParseInt(dataRow["fPrkSir"].ToString()),
+					new Sirket
+					{
+						fPrkSir = Araclar.ParseInt(dataRow["fPrkSir"].ToString()),
+						fSirAdi = dataRow["fSirAdi"].ToString(),
+						fSirKod = dataRow["fSirKod"].ToString()
+					});
+			}
+
 			IndexMetadataList iml = new IndexMetadataList();
 			iml.KayitTipiAdi = "police";
 
@@ -69,7 +83,7 @@ namespace app_aaw_lib.EsSearch.Indexleme
 				DataRow drSor = (dtSor.Select("FPRKMUS = " + dr["FFRKSOR"]).Length == 1 ? dtSor.Select("FPRKMUS = " + dr["FFRKSOR"])[0] : null);
 
 
-				im.Alanlar.AddRange(KayitAlanOlustur(dr, pol2DataRow[0], drUruneOzel, drMus, drTa, drSat, drSor));
+				im.Alanlar.AddRange(KayitAlanOlustur(dr, pol2DataRow[0], drUruneOzel, drMus, drTa, drSat, drSor, sirketTanimlari));
 				iml.Add(prk, im);
 				if (iml.Count == 1000)
 				{

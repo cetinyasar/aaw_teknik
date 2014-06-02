@@ -9,5 +9,6 @@ namespace app_aaw_lib.EsSearch.Sorgu
 		public facet tali { get; set; }
 		public facet satici { get; set; }
 		public facet sorumlu { get; set; }
+		public facet sirketAdi { get; set; }
 	}
 }

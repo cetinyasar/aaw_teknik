@@ -1,9 +1,9 @@
 ﻿define(['app'], function(app)
 {
-	app.service('sunucuAramaIletisim',
+	app.service('sunucuIletisim',
 	[
-		'$http', '$q',
-		function($http, $q)
+		'$http', '$q', 'loginKontrol',
+		function($http, $q, loginKontrol)
 		{
 			this.http = $http;
 			var erteleme = $q;
@@ -31,7 +31,14 @@
 			this.istekGonder = function(istekTipi, veri) {
 				var kilit = erteleme.defer();
 				this.http.post(istekTipi, sunucuyaGondermedenOnceIsle(veri)).success(function (data) {
-					kilit.resolve(sunucudanAldiginVeriyiIsle(data));
+					var islenmisVeri = sunucudanAldiginVeriyiIsle(data);
+					
+					if (islenmisVeri["ExceptionVar"]) {
+						if (islenmisVeri.Mesaj.indexOf("Bu handler metodu çalıştırılamaz (Login olmalısınız)") > -1) {
+							loginKontrol.loginMi("");
+						}
+					}
+					kilit.resolve(islenmisVeri);
 				}).error(function (errorData) { });
 				return kilit.promise;
 			}
