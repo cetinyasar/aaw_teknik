@@ -18,7 +18,7 @@ namespace app_aaw_lib.Cesitli
 				if (!buRequestIcinOncedenKontrolYapildi())
 				{
 					SSOYonetici yonetici = new SSOYonetici(new ElasticSearchIletisimcisi());
-					LoginAramaSonuc sonuc = yonetici.LoginAl(new HttpRequestAyrinti().Doldur(HttpContext.Current.Request));
+					LoginAramaSonuc sonuc = yonetici.LoginAl(new HttpRequestAyrinti(HttpContext.Current.Request));
 					HttpContext.Current.Items.Add("AAW_Kullanici", sonuc.LoginBulundu ? veritabanindanBilgiIleKullaniciNesnesiOlustur(sonuc.LoginBilgi.KullaniciId) : new Kullanici());
 				}
 				return (Kullanici)HttpContext.Current.Items["AAW_Kullanici"];

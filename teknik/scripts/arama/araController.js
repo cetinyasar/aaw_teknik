@@ -2,10 +2,11 @@
 {
 	app.controller('araController',
     [
-		'$scope', 'sunucuAramaIletisim',
-		function ($scope, sunucuAramaIletisim) {
-			$scope.Arama = new Arama();
+		'$scope', 'sunucuAramaIletisim', 'loginKontrol',
+		function ($scope, sunucuAramaIletisim, loginKontrol) {
 
+			loginKontrol.loginMi("");
+			$scope.Arama = new Arama();
 			$scope.aramaYap = function ()
 			{
 				$scope.Arama.VeriAliniyor = true;

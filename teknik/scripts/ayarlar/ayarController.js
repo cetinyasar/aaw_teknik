@@ -1,8 +1,10 @@
 ﻿define(['app', 'arama/sunucuAramaIletisim'], function (app) {
 	app.controller('ayarController',
     [
-		'$scope', 'sunucuAramaIletisim',
-		function ($scope, sunucuAramaIletisim) {
+		'$scope', 'sunucuAramaIletisim', 'loginKontrol',
+		function ($scope, sunucuAramaIletisim, loginKontrol) {
+			loginKontrol.loginMi("");
+
 			$scope.SunucuIletisimiYapiliyor = false;
 			$scope.Ayarlar = new Ayarlar();
 			$scope.IndexOlusturmaKriterleri = new IndexOlusturmaKriterleri();

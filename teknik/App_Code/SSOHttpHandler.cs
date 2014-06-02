@@ -21,7 +21,7 @@ namespace app_teknik
 		public LoginKontrolSonuc LoginKontrol()
 		{
 			SSOYonetici yonetici = new SSOYonetici(new ElasticSearchIletisimcisi());
-			LoginAramaSonuc sonuc = yonetici.LoginAl(new HttpRequestAyrinti().Doldur(HttpContext.Current.Request));
+			LoginAramaSonuc sonuc = yonetici.LoginAl(new HttpRequestAyrinti(HttpContext.Current.Request));
 			return new LoginKontrolSonuc { LoginYapilmis = sonuc.LoginBulundu, LoginUrl = System.Configuration.ConfigurationManager.AppSettings["LoginUrl"] };
 		}
 	}

@@ -1,6 +1,6 @@
 define(['routes', 'services/dependencyResolverFor'],
 	function (config, dependencyResolverFor) {
-		var app = angular.module('app', ['ngRoute', 'ui.bootstrap', 'ada.tarih', 'ada.auth']);
+		var app = angular.module('app', ['ngRoute', 'ui.bootstrap', 'ada.tarih', 'ada.login']);
 
 	app.config(
     [
@@ -30,48 +30,17 @@ define(['routes', 'services/dependencyResolverFor'],
         		$routeProvider.otherwise({ redirectTo: config.defaultRoutePaths });
         	}
 
-        	//loginKontrol.test();
+			
         }
     ]);
 
 	////Ana Uygulama Controller
-	app.controller('mainController', ['$scope', '$rootScope', function ($scope) {
-		//Menü
-		//alert("main2");
-		//$scope.Menu = [];
-		//$rootScope.$on('$routeChangeStart', function (event) {
-		//    alert("routeChangeStart");
-		//    //if (!Auth.isLoggedIn()) {
-		//    //	console.log('DENY');
-		//    //	event.preventDefault();
-		//    //	$location.path('/login');
-		//    //}
-		//    //else {
-		//    //	console.log('ALLOW');
-		//    //	$location.path('/home');
-		//    //}
-		//});
-
-
-		////Her sayfa deðþitiðinde çalýþýr
-		//$scope.$on('$routeChangeSuccess', function () {
-		//	$scope.sayfaDegisti();
-		//});
-
-		//$scope.sayfaDegisti = function () {
-		//	aawClientBootstrap();
-		//};
-
-		//var cookieNull = docCookies.getItem("adaSessionId") == null;
-		//if (cookieNull) {
-		//	alert("cookieNull");
-		//	aawClientBootstrap();
-		//}
-		//else {
-		//	alert("not cookieNull");
-		//	$("#divMain").show();
-		//}
-
+	app.controller('mainController', ['$scope', '$rootScope', function ($scope, $rootScope)
+	{
+		$scope.Menu = [1];
+		//alert($scope.Login.LoginYapilmis);
+		//$scope.Login = { "LoginYapilmis": true } ;
+		//alert($scope.Login.LoginYapilmis);
 	}]);
 
 	return app;

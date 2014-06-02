@@ -5,7 +5,7 @@ require.config({
 		'angular-route': '/lib/angular/angular-route/angular-route',
 		'angular-resource': '/lib/angular/angular-resource/angular-resource',
 		'angular-ui': '/lib/angular/ui-bootstrap-tpls-0.10.0',
-		'aaw-modul': '/scripts/aaw-modul',
+		'aaw-modul': '/scripts/login-kontrol',
 		//clipone tema için gerekli olanlar
 		'clipone-jquery': '/assets/plugins/jquery/2.1.0/jquery.min',
 		'clipone-jquery-ui': '/assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min',

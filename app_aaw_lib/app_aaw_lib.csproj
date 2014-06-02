@@ -46,7 +46,7 @@
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaPublicGenel.dll</HintPath>
     </Reference>
     <Reference Include="AdaSSO">
-      <HintPath>..\..\__OutputDLL\AdaSSO.dll</HintPath>
+      <HintPath>D:\VS2012\Projects\__OutputDLL\AdaSSO.dll</HintPath>
     </Reference>
     <Reference Include="AdaVeriKatmani">
       <HintPath>D:\VS2012\Projects\__OutputDLL\AdaVeriKatmani.dll</HintPath>

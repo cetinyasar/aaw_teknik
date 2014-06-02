@@ -42,11 +42,8 @@
 		//alert("index")
 	</script>
 </head>
-<!-- end: HEAD -->
-	<!-- start: BODY -->
-	
 	<body>
-		<div id="divMain" ng-controller="mainController" style="display:block;">
+		<div id="divMain" ng-controller="mainController" style="display:none">
 			<!-- start: HEADER -->
 			<div class="navbar navbar-inverse navbar-fixed-top">
 				<!-- start: TOP NAVIGATION CONTAINER -->
@@ -63,8 +60,34 @@
 						</a>
 						<!-- end: LOGO -->
 					</div>
+					<div class="navbar-tools">
+						<!-- start: TOP NAVIGATION MENU -->
+						<ul class="nav navbar-right">
+							<li class="dropdown current-user">
+								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+									<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+									<span class="username">Çetin Yaşar</span>
+									<i class="clip-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="utility_lock_screen.html">
+											<i class="clip-locked"></i>
+											&nbsp;Lock Screen
+										</a>
+									</li>
+									<li>
+										<a href="login_example1.html">
+											<i class="clip-exit"></i>
+											&nbsp;Log Out
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!-- end: TOP NAVIGATION CONTAINER -->
+					<!-- end: TOP NAVIGATION CONTAINER -->
 			</div>
 			<!-- end: HEADER -->
 			<!-- start: MAIN CONTAINER -->
@@ -86,6 +109,12 @@
 									<span class="title"> Arama </span><span class="selected"></span>
 								</a>
 							</li>
+							<li>
+								<a href="/ayarlar">
+									<i class="clip-bubble-3"></i>
+									<span class="title"> Ayarlar </span><span class="selected"></span>
+								</a>
+							</li>
 						</ul>
 						<!-- end: MAIN NAVIGATION MENU -->
 					</div>
@@ -99,36 +128,6 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<!-- start: TOP NAVIGATION MENU -->
-								<ul class="nav navbar-right">
-									<li class="dropdown current-user">
-										<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-											<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
-											<span class="username">Çetin Yaşar</span>
-											<i class="clip-chevron-down"></i>
-										</a>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="/ayarlar">
-													<i class="clip-user-2"></i>
-													&nbsp;Ayarlar
-												</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="utility_lock_screen.html">
-													<i class="clip-locked"></i>
-													&nbsp;Lock Screen
-												</a>
-											</li>
-											<li>
-												<a href="login_example1.html">
-													<i class="clip-exit"></i>
-													&nbsp;Log Out
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
 								<!-- end: TOP NAVIGATION MENU -->
 							</div>
 						</div>
@@ -156,5 +155,4 @@
 		<script type="text/javascript" src="lib/requirejs/require.js" data-main="scripts/onYukleyici.js"></script>
 
 	</body>
-<!-- end: BODY -->
 </html>
