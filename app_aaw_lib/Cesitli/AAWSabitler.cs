@@ -10,6 +10,7 @@ namespace app_aaw_lib.Cesitli
 {
 	public class AAWSabitler
 	{
+		public static string LisansSistemiIcinUygulamaId = "AAW";
 		public static string ElasticSearchIndexAdi = "aaw";
 		public static string ElasticSearchUrl;
 		public static Encoding Encoding = Araclar.TurkceEncodingAl();
