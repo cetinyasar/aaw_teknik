@@ -83,6 +83,7 @@
     <Compile Include="Cesitli\HttpHandlerKontrol.cs" />
     <Compile Include="Cesitli\Parametre.cs" />
     <Compile Include="Cesitli\Sirket.cs" />
+    <Compile Include="Cesitli\SSOHttpHandler.cs" />
     <Compile Include="EsSearch\AramaHttpHandler.cs" />
     <Compile Include="EsSearch\AyarHttpHandler.cs" />
     <Compile Include="EsSearch\Indexleme\GelenIstekDetay.cs" />
